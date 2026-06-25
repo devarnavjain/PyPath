@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.intermediate.osmodule",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What does os.getcwd() return?",
+      "options": ["The current working directory path", "The operating system version", "The CPU information", "The user's home directory"],
+      "correct": 0,
+      "explanation": "getcwd() stands for 'get current working directory'. It returns the full path of where your Python script is running."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "Why should you use os.path.join() instead of string concatenation for paths?",
+      "options": ["It uses the correct path separator for the OS", "It's faster than string operations", "It checks if the path exists", "It creates the directory automatically"],
+      "correct": 0,
+      "explanation": "os.path.join() uses the correct separator (\\ on Windows, / on Mac/Linux) so your code works on any OS."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What does os.path.exists() check?",
+      "options": ["Whether a file or directory exists at the given path", "Whether Python is currently running", "Whether a variable has been defined", "Whether a file is open"],
+      "correct": 0,
+      "explanation": "os.path.exists() returns True if the path points to an existing file or directory, False otherwise."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What does os.mkdir() do?",
+      "options": ["Creates a single directory", "Removes a directory", "Lists directory contents", "Changes the current directory"],
+      "correct": 0,
+      "explanation": "os.mkdir() creates a new directory. For nested directories, use os.makedirs() instead."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete: os._____('.') returns a list of filenames in the current directory.",
+      "answer": "listdir",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What does os.path.splitext('data.txt') return?",
+      "options": ["('data', '.txt')", "('data.txt', '')", "('.txt', 'data')", "('data', 'txt')"],
+      "correct": 0,
+      "explanation": "splitext splits the path into (root, extension). For 'data.txt', it returns ('data', '.txt')."
+    }
+  ]
+}

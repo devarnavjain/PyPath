@@ -1,0 +1,109 @@
+{
+  "id": "python.beginner.conditionals",
+  "title": "Making Decisions",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What Are Conditionals?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Conditionals let your program make decisions. Based on whether a condition is <code>True</code> or <code>False</code> (remember booleans?), your code can choose different paths. This is what makes programs smart instead of just running the same thing every time."
+    },
+    {
+      "type": "heading",
+      "content": "The if Statement"
+    },
+    {
+      "type": "paragraph",
+      "content": "The simplest conditional is the <code>if</code> statement. If the condition is <code>True</code>, the indented block runs. If <code>False</code>, it's skipped."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "age = 18\n\nif age >= 18:\n    print('You are old enough to vote!')",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "Indentation is **critical** in Python. The block under if must be indented (4 spaces is the standard). Python uses indentation instead of curly braces <code>{}</code> like other languages. Wrong indentation = error!"
+    },
+    {
+      "type": "heading",
+      "content": "Adding else and elif"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use <code>else</code> to run code when the condition is <code>False</code>. Use <code>elif</code> (short for \"else if\") to check additional conditions."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "age = 15\n\nif age >= 18:\n    print('You can vote!')\nelif age >= 16:\n    print('You can drive!')\nelse:\n    print('Too young to drive or vote.')",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "Python checks conditions from top to bottom. The **first** one that's <code>True</code> runs, and the rest are skipped. So order matters!"
+    },
+    {
+      "type": "heading",
+      "content": "Combining Conditions with and / or"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can check multiple conditions at once using <code>and</code> and <code>or</code>. This builds on your comparison operator knowledge from the booleans lesson."
+    },
+    {
+      "type": "list",
+      "items": [
+        "<code>and</code> — both conditions must be True",
+        "<code>or</code> — at least one condition must be True",
+        "<code>not</code> — reverses a boolean (True becomes False)"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "score = 85\nattendance = 90\n\nif score >= 80 and attendance >= 75:\n    print('You pass the course!')\n\nif score >= 90 or attendance >= 95:\n    print('You get a bonus!')\n\nif not score < 60:\n    print('You are not failing.')",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Using input() with Conditionals"
+    },
+    {
+      "type": "paragraph",
+      "content": "Remember the <code>input()</code> function from earlier? You can combine it with conditionals to make interactive programs that respond differently based on what the user types."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "name = input('Enter your name: ')\n\nif name == 'Alice':\n    print('Welcome back, Alice!')\nelif name == '':\n    print('You did not enter a name.')\nelse:\n    print(f'Nice to meet you, {name}!')",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Notice we used <code>==</code> (comparison) to check the name, not <code>=</code> (assignment). This is a classic mistake — if you write <code>if name = 'Alice'</code>, Python will give you an error!"
+    },
+    {
+      "type": "heading",
+      "content": "Nested Conditionals"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can put an if statement inside another if statement. This is called **nesting**. Use this when you need to check a second condition only after the first one is met."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "age = 20\nhas_id = True\n\nif age >= 18:\n    print('Age check passed.')\n    if has_id:\n        print('Welcome to the venue!')\n    else:\n        print('You need an ID.')\nelse:\n    print('Too young.')",
+      "runnable": true
+    }
+  ]
+}

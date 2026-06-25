@@ -1,0 +1,28 @@
+{
+  "name": "pypath",
+  "version": "0.1.0",
+  "description": "An offline Windows desktop app that teaches Python programming interactively.",
+  "main": "main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "start:dev": "set NODE_ENV=development && electron .",
+    "build": "electron-builder",
+    "postinstall": "electron-rebuild -f -w better-sqlite3",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rebuild": "electron-rebuild -f -w better-sqlite3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "better-sqlite3": "^12.11.1",
+    "electron": "^42.4.1",
+    "monaco-editor": "^0.55.1"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.4",
+    "electron-builder": "^26.15.3",
+    "sharp": "^0.35.2"
+  }
+}

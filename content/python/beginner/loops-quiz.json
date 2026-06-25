@@ -1,0 +1,52 @@
+{
+  "topic_id": "python.beginner.loops",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What does range(4) generate?",
+      "options": ["1, 2, 3, 4", "0, 1, 2, 3", "0, 1, 2, 3, 4", "1, 2, 3"],
+      "correct": 1,
+      "explanation": "range(4) generates 0, 1, 2, 3 — it starts at 0 and stops before 4 (exclusive end)."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "How many times does 'Hello' print in this code?\n\ni = 0\nwhile i < 3:\n    print('Hello')\n    i = i + 1",
+      "options": ["2", "3", "4", "Infinite"],
+      "correct": 1,
+      "explanation": "The loop runs while i < 3. i starts at 0, then 1, then 2 — that's 3 iterations. On i = 3, the condition i < 3 is False, so the loop stops."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "question": "Complete the code to loop through numbers 5, 6, 7, 8, 9: for i in range(5, _____):",
+      "answer": "10",
+      "case_sensitive": true
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What does break do inside a loop?",
+      "options": ["Skips the current iteration", "Exits the loop immediately", "Restarts the loop", "Pauses the loop"],
+      "correct": 1,
+      "explanation": "break immediately exits the loop, regardless of the loop condition. Program execution continues after the loop."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What is printed?\n\nfor i in range(5):\n    if i == 2:\n        break\n    print(i)",
+      "options": ["0 1 2", "0 1", "0 1 2 3 4", "2"],
+      "correct": 1,
+      "explanation": "The loop prints 0 and 1. When i == 2, break exits the loop immediately, so 2, 3, 4 are never printed."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "question": "What keyword skips the rest of the current loop iteration and moves to the next? _____",
+      "answer": "continue",
+      "case_sensitive": true
+    }
+  ]
+}

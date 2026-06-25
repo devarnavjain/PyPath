@@ -1,0 +1,85 @@
+:root {
+  /* Backgrounds */
+  --bg-primary:     #0D1117;   /* Main app background */
+  --bg-secondary:   #161B22;   /* Sidebar, panels */
+  --bg-tertiary:    #21262D;   /* Cards, inputs */
+  --bg-hover:       #2D333B;   /* Hover states */
+  --bg-active:      #388BFD1A; /* Active/selected item bg */
+
+  /* Accents */
+  --accent-green:   #00E676;   /* Primary CTA, success, run button */
+  --accent-amber:   #FFB800;   /* XP, streaks, badges */
+  --accent-blue:    #58A6FF;   /* Links, info, hints */
+  --accent-purple:  #BC8CFF;   /* Projects, advanced tier */
+  --accent-red:     #F85149;   /* Errors, danger */
+
+  /* Text */
+  --text-primary:   #F0F6FC;   /* Main text */
+  --text-secondary: #8B949E;   /* Muted text, labels */
+  --text-tertiary:  #484F58;   /* Placeholder, disabled */
+  --text-inverse:   #0D1117;   /* Text on light accent */
+
+  /* Borders */
+  --border-subtle:  #21262D;   /* Dividers */
+  --border-default: #30363D;   /* Card borders */
+  --border-strong:  #484F58;   /* Input focus, active */
+
+  /* Semantic */
+  --success:        #3FB950;
+  --warning:        #D29922;
+  --error:          #F85149;
+  --info:           #58A6FF;
+
+  /* Editor */
+  --editor-bg:      #0D1117;
+  --output-bg:      #010409;
+
+  /* Spacing scale (8px grid) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Border radius */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.5);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.6);
+  --shadow-glow-green:  0 0 20px rgba(0,230,118,0.15);
+  --shadow-glow-amber:  0 0 20px rgba(255,184,0,0.15);
+
+  /* Typography */
+  --font-code:    'JetBrains Mono', 'Fira Code', monospace;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Font sizes */
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-md:   17px;
+  --text-lg:   20px;
+  --text-xl:   24px;
+  --text-2xl:  32px;
+  --text-3xl:  40px;
+
+  /* Transitions */
+  --transition-fast:   150ms ease-out;
+  --transition-normal: 250ms ease-out;
+  --transition-slow:   400ms ease-out;
+
+  /* Layout */
+  --sidebar-width:     240px;
+  --topbar-height:     52px;
+  --editor-min-width:  420px;
+}

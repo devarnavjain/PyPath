@@ -1,0 +1,73 @@
+{
+  "id": "python.advanced.inheritance",
+  "title": "Inheritance and Polymorphism",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is Inheritance?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Inheritance lets you create a new class from an existing one. The new <strong>child class</strong> automatically gets all the methods and attributes of the <strong>parent class</strong>. You write the shared logic once in the parent, then add or customize only what's different in each child. This is the programming version of 'don't repeat yourself.'"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return 'Some sound'\n\nclass Dog(Animal):\n    pass\n\ndog = Dog('Rex')\nprint(dog.name)\nprint(dog.speak())",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "The syntax <code>class Dog(Animal):</code> means <code>Dog</code> inherits from <code>Animal</code>. The child class gets everything the parent has — <code>dog.name</code> and <code>dog.speak()</code> work even though <code>Dog</code> didn't define them."
+    },
+    {
+      "type": "heading",
+      "content": "Using super()"
+    },
+    {
+      "type": "paragraph",
+      "content": "When you define <code>__init__</code> in a child class, it overrides the parent's <code>__init__</code>. To keep the parent's setup AND add new attributes, call <code>super().__init__()</code>. It's like saying 'do everything the parent does, then add my own stuff.'"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Dog(Animal):\n    def __init__(self, name, breed):\n        super().__init__(name)\n        self.breed = breed\n\n    def info(self):\n        return f'{self.name} is a {self.breed}'\n\ndog = Dog('Rex', 'Labrador')\nprint(dog.info())",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Method Overriding"
+    },
+    {
+      "type": "paragraph",
+      "content": "A child class can redefine a method that exists in the parent. This is called <strong>method overriding</strong>. The child's version runs instead of the parent's. Different child classes can override the same method in different ways — and that's where polymorphism shines."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Animal:\n    def speak(self):\n        return 'Some sound'\n\nclass Dog(Animal):\n    def speak(self):\n        return 'Woof!'\n\nclass Cat(Animal):\n    def speak(self):\n        return 'Meow!'\n\nanimals = [Dog(), Cat()]\nfor a in animals:\n    print(a.speak())",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "<strong>Polymorphism</strong> means 'many forms.' When you call <code>speak()</code> on each animal, Python picks the right version automatically. The loop doesn't care what type each animal is — it just calls <code>speak()</code> and gets the right result. That's polymorphism in action."
+    },
+    {
+      "type": "heading",
+      "content": "Checking Types with isinstance()"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use the built-in <code>isinstance()</code> function to check if an object is an instance of a particular class. It also returns <code>True</code> if the object belongs to a child class — because a Dog IS an Animal."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Animal: pass\nclass Dog(Animal): pass\nclass Cat(Animal): pass\n\ndog = Dog()\nprint(isinstance(dog, Dog))\nprint(isinstance(dog, Animal))\nprint(isinstance(dog, Cat))",
+      "runnable": true
+    }
+  ]
+}

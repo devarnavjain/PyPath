@@ -1,0 +1,52 @@
+{
+  "topic_id": "python.intermediate.modules",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "Which of the following imports only the 'sqrt' function from the math module?",
+      "options": ["import math", "from math import sqrt", "import sqrt from math", "from math import *"],
+      "correct": 1,
+      "explanation": "'from math import sqrt' imports only the sqrt function into the current namespace."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What is the purpose of the 'as' keyword in an import statement?",
+      "options": ["It imports all functions", "It creates an alias for the module", "It imports only async functions", "It checks if the module exists"],
+      "correct": 1,
+      "explanation": "'import module as alias' lets you refer to the module by a shorter or more convenient name."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What is __name__ set to when a Python file is run directly?",
+      "options": ["__module__", "__file__", "__main__", "None"],
+      "correct": 2,
+      "explanation": "When a file is executed directly, __name__ is set to '__main__'. When imported, it is set to the module's name."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "Why should you avoid 'from module import *'?",
+      "options": ["It is slower than other imports", "It can overwrite existing variable names", "It only works with built-in modules", "It raises a syntax warning"],
+      "correct": 1,
+      "explanation": "'from module import *' dumps everything into your namespace, which can accidentally shadow or overwrite your own variables and functions."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete the code: '___ math' imports the math module so you can call math.sqrt().",
+      "answer": "import",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "question": "Which keyword lets you give a module a shorter name when importing? (one word)",
+      "answer": "as",
+      "case_sensitive": true
+    }
+  ]
+}

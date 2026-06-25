@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.beginner.input",
+  "title": "Personalized Greeting",
+  "description": "Write a program that simulates asking for a name and age. Store 'Alex' in a variable called name, store 25 in a variable called age. Then print:\n\nHello Alex, you are 25 years old!\n\nUse variables and an f-string to produce the output.",
+  "xp_reward": 25,
+  "starter_code": "# Store the name and age in variables\n",
+  "expected_output": "Hello Alex, you are 25 years old!\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "name\\s*=\\s*['\"]Alex['\"]",
+      "description": "Creates a variable called 'name' set to 'Alex'",
+      "fail_message": "Make sure you create a variable called 'name' with the value 'Alex'."
+    },
+    {
+      "type": "regex",
+      "pattern": "age\\s*=\\s*25\\b",
+      "description": "Creates a variable called 'age' set to 25",
+      "fail_message": "Make sure you create a variable called 'age' with the value 25."
+    },
+    {
+      "type": "regex",
+      "pattern": "f['\"]",
+      "description": "Uses an f-string to build the output",
+      "fail_message": "Use an f-string (e.g. f\"Hello {name}...\") to build the output instead of hardcoding the full sentence."
+    }
+  ],
+  "hints": [
+    "Create a variable called name with the value 'Alex' and a variable called age with the value 25",
+    "Use an f-string to embed both variables: f\"Hello {name}, you are {age} years old!\"",
+    "The comma after Hello and the spaces around 'you' must match exactly"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "Hello Alex, you are 25 years old!\n"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "python.intermediate.math",
+  "title": "The Math Module",
+  "tier": "intermediate",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "The math Module"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python's <strong>math</strong> module gives you access to common mathematical functions and constants. It's part of the standard library, so you just need to <code>import math</code> and you're ready. From rounding to trigonometry, this module has you covered."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import math\n\nprint('Pi:', math.pi)\nprint('Euler number:', math.e)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Rounding: ceil and floor"
+    },
+    {
+      "type": "paragraph",
+      "content": "Sometimes you need to round a number in a specific direction. <strong>math.ceil()</strong> rounds <strong>up</strong> to the nearest integer (ceiling). <strong>math.floor()</strong> rounds <strong>down</strong> to the nearest integer (floor). This is different from <code>round()</code>, which rounds to the nearest integer."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import math\n\nprice = 4.25\n\nprint(math.ceil(price))\nprint(math.floor(price))\nprint(round(price))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Square Roots and Factorials"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use <strong>math.sqrt()</strong> to calculate the square root of a number. Use <strong>math.factorial()</strong> to calculate the factorial of a non-negative integer. The factorial of 5 (written 5!) is 5 x 4 x 3 x 2 x 1 = 120."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import math\n\nprint(math.sqrt(81))\nprint(math.sqrt(2))\nprint(math.factorial(5))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Power and Exponentiation"
+    },
+    {
+      "type": "paragraph",
+      "content": "While Python has the <code>**</code> operator for exponentiation, <strong>math.pow()</strong> is more precise and always returns a float. Use <code>**</code> for integer power and <code>math.pow()</code> when you need a consistent float result."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import math\n\nprint(math.pow(2, 10))\nprint(2 ** 10)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "The difference: <code>math.pow(2, 3)</code> returns <code>8.0</code> (float), while <code>2 ** 3</code> returns <code>8</code> (int). For most purposes they work the same way, but the type matters in certain situations."
+    },
+    {
+      "type": "heading",
+      "content": "Trigonometry and Angle Conversion"
+    },
+    {
+      "type": "paragraph",
+      "content": "The math module provides <strong>sin()</strong>, <strong>cos()</strong>, and <strong>tan()</strong> for trigonometry. These functions expect angles in <strong>radians</strong>, not degrees. Use <strong>math.radians()</strong> to convert degrees to radians and <strong>math.degrees()</strong> to convert radians to degrees."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import math\n\nangle_deg = 45\nangle_rad = math.radians(angle_deg)\n\nprint('Sine of 45 degrees:', math.sin(angle_rad))\nprint('Cosine of 45 degrees:', math.cos(angle_rad))\nprint('Pi radians in degrees:', math.degrees(math.pi))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "The <strong>5 most useful</strong> functions to remember from the math module: <code>math.ceil()</code>, <code>math.floor()</code>, <code>math.sqrt()</code>, <code>math.factorial()</code>, and <code>math.pow()</code>. Together with <code>math.pi</code>, they handle most everyday math needs."
+    }
+  ]
+}

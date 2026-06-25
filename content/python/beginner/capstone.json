@@ -1,0 +1,60 @@
+{
+  "id": "python.beginner.capstone",
+  "title": "Beginner Capstone Project",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "You've Come a Long Way!"
+    },
+    {
+      "type": "paragraph",
+      "content": "Let's look back at everything you've learned: **variables** to store data, **strings and numbers** to work with text and math, **input()** to get user input, **booleans and conditionals** to make decisions, **loops** to repeat tasks, **functions** to organize code, **lists** to hold collections, and **dictionaries** to label data with keys."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "This lesson doesn't teach anything new. Instead, we'll walk through a complete program that combines **all** of these concepts together. See how the pieces fit!"
+    },
+    {
+      "type": "heading",
+      "content": "A Complete Example"
+    },
+    {
+      "type": "paragraph",
+      "content": "Here's a program that builds a shopping list with prices, lets the user add items, and shows a receipt. It uses variables, functions, lists, dicts, loops, conditionals, and input — everything you've learned."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def show_receipt(items):\n    total = 0\n    print('=== RECEIPT ===')\n    for item in items:\n        print(item['name'] + ': $' + str(item['price']))\n        total = total + item['price']\n    print('Total: $' + str(total))\n\n# With input() you'd write: new_name = input('Add an item: ')\n# But this example uses a preset value so it runs without waiting:\ncart = [\n    {'name': 'Apple', 'price': 1},\n    {'name': 'Banana', 'price': 2},\n    {'name': 'Orange', 'price': 1}\n]\n\nif len(cart) > 5:\n    print('Your cart is full!')\nelse:\n    show_receipt(cart)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Breaking It Down"
+    },
+    {
+      "type": "paragraph",
+      "content": "The program starts by defining a **function** `show_receipt()` that loops through a list of dicts with a **for loop**, accessing each item's `'name'` and `'price'` keys. It calculates a running **total** with the `+` operator on numbers."
+    },
+    {
+      "type": "paragraph",
+      "content": "Then the main code creates a **list of dictionaries** as the starting cart. It uses **input()** and **int()** to get user data, and **append()** to add a new item. An **if/else** condition checks the cart size before showing the receipt."
+    },
+    {
+      "type": "heading",
+      "content": "Your Turn: Number Guessing Game"
+    },
+    {
+      "type": "paragraph",
+      "content": "Now it's your turn to build something from scratch! Head to the **Challenge** tab to build a **Number Guessing Game**. You'll use variables, conditionals, print, and the comparison skills you've mastered."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Remember: every expert was once a beginner. You now have all the tools to write real programs. Take it step by step — and have fun!"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.advanced.regex",
+  "title": "Find Words Starting with B",
+  "description": "Import the re module. Use re.findall() to find all words that start with the letter **b** in the string: **'apple bear banana cherry blueberry date'**. Use the pattern **r'\\bb\\w+'** to match words starting with 'b'. Print the resulting list.",
+  "xp_reward": 25,
+  "starter_code": "# Import the re module\n# Define the string\n# Use re.findall() with the pattern r'\\bb\\w+'\n# Print the result\n",
+  "expected_output": "['bear', 'banana', 'blueberry']\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "(?:import re|from re import)",
+      "description": "Imports the re module",
+      "fail_message": "Import the re module with 'import re' or 'from re import ...'."
+    },
+    {
+      "type": "regex",
+      "pattern": "re\\.\\w+\\(",
+      "description": "Calls a method from the re module (like re.findall())",
+      "fail_message": "Use a re method like re.findall() to perform the pattern matching."
+    }
+  ],
+  "hints": [
+    "Use re.findall(r'\\bb\\w+', text) to find all words starting with 'b'",
+    "The \\b ensures you match word boundaries so 'blueberry' is found but not 'crabapple'",
+    "Pass the result directly to print()"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "['bear', 'banana', 'blueberry']\n"
+    }
+  ]
+}

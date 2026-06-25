@@ -1,0 +1,52 @@
+{
+  "topic_id": "python.beginner.conditionals",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What does the following code print?\n\nx = 10\nif x > 5:\n    print('Big')\nelse:\n    print('Small')",
+      "options": ["Big", "Small", "Big\\nSmall", "Error"],
+      "correct": 0,
+      "explanation": "x > 5 is True (10 > 5), so the if block runs and prints 'Big'. The else block is skipped."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What is wrong with this code?\n\nif x == 5:\nprint('Five')",
+      "options": ["Nothing is wrong", "Missing colon after if", "print('Five') must be indented", "x is not defined"],
+      "correct": 2,
+      "explanation": "The line after an if statement must be indented. Python uses indentation to define code blocks."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "question": "Complete the code to print 'Adult' if age is 18 or more: if age _____ 18:",
+      "answer": ">=",
+      "case_sensitive": true
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What does the following code print?\n\nscore = 75\nif score >= 90:\n    print('A')\nelif score >= 80:\n    print('B')\nelif score >= 70:\n    print('C')\nelse:\n    print('D')",
+      "options": ["A", "B", "C", "D"],
+      "correct": 2,
+      "explanation": "75 >= 90 is False, 75 >= 80 is False, 75 >= 70 is True, so it prints 'C'. Python stops at the first True condition."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What does this code print?\n\ntemp = 25\nif temp > 30 or temp < 0:\n    print('Extreme')\nelse:\n    print('Moderate')",
+      "options": ["Extreme", "Moderate", "True", "Error"],
+      "correct": 1,
+      "explanation": "25 > 30 is False and 25 < 0 is False, so the or condition is False. The else block runs and prints 'Moderate'."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "question": "What keyword lets you check another condition after an if statement fails? _____",
+      "answer": "elif",
+      "case_sensitive": true
+    }
+  ]
+}

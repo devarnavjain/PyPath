@@ -1,0 +1,88 @@
+{
+  "id": "python.intermediate.sets",
+  "title": "Sets",
+  "tier": "intermediate",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is a Set?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A **set** is an unordered collection of **unique** elements. You create a set with curly braces `{}` or the `set()` constructor. Duplicates are automatically removed — every item appears at most once. This makes sets perfect for eliminating duplicates and testing membership."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "fruits = {'apple', 'banana', 'cherry', 'apple'}\nprint(fruits)\n\n# Using set() on a list to remove duplicates\nnumbers = [1, 2, 2, 3, 3, 3]\nunique = set(numbers)\nprint(unique)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "Empty curly braces `{}` create an empty dictionary, not an empty set! Use `set()` for an empty set. Python distinguishes them by context."
+    },
+    {
+      "type": "heading",
+      "content": "Adding and Removing Items"
+    },
+    {
+      "type": "paragraph",
+      "content": "Sets are mutable — you can add and remove items. Use `add()` to insert a single item, `remove()` to delete (raises an error if missing), and `discard()` to delete (no error if missing). The `pop()` method removes and returns an arbitrary item."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "colors = {'red', 'green', 'blue'}\ncolors.add('yellow')\nprint(colors)\n\ncolors.remove('red')\nprint(colors)\n\ncolors.discard('purple')\nprint(colors)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Set Operations: Union, Intersection, Difference"
+    },
+    {
+      "type": "paragraph",
+      "content": "Sets shine with **mathematical set operations**. Use `|` for **union** (all items from both sets), `&` for **intersection** (items in both), `-` for **difference** (items in first but not second), and `^` for **symmetric difference** (items in either, but not both)."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "a = {1, 2, 3, 4}\nb = {3, 4, 5, 6}\n\nprint('Union:', a | b)\nprint('Intersection:', a & b)\nprint('Difference a-b:', a - b)\nprint('Symmetric diff:', a ^ b)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Membership Testing"
+    },
+    {
+      "type": "paragraph",
+      "content": "Testing whether an item exists in a set is extremely fast — much faster than checking a list, especially for large collections. Use the `in` keyword just like with lists, but the performance is dramatically better."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "allowed_roles = {'admin', 'editor', 'user'}\n\nrole = 'admin'\nprint(role in allowed_roles)\n\nrole = 'guest'\nprint(role in allowed_roles)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Frozenset: an Immutable Set"
+    },
+    {
+      "type": "paragraph",
+      "content": "A **frozenset** is an immutable version of a set. Once created, you cannot add or remove items. This makes it hashable, so you can use it as a dictionary key or include it inside another set."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "frozen = frozenset([1, 2, 3, 3])\nprint(frozen)\n\n# frozen.add(4)  # AttributeError: 'frozenset' object has no attribute 'add'\n\n# Frozensets can be used as dictionary keys\ninventory = {frozenset({'a', 'b'}): 5}\nprint(inventory)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Need to check if a value is in a collection? Use a set. The `in` operator on a set runs in constant time `O(1)`, compared to linear time `O(n)` for a list. This matters when your data grows large."
+    }
+  ]
+}

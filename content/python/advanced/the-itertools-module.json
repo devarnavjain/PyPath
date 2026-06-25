@@ -1,0 +1,82 @@
+{
+  "id": "python.advanced.itertools",
+  "title": "The Itertools Module",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "The Itertools Module"
+    },
+    {
+      "type": "paragraph",
+      "content": "The <strong>itertools</strong> module is a collection of fast, memory-efficient tools for working with iterators. These functions are the Swiss Army knife of iteration — they let you chain, cycle, combine, and permute data with minimal code and maximum performance. All itertools functions return lazy iterators, meaning they compute values only as you consume them."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Because itertools functions return <strong>lazy iterators</strong> (not lists), you'll often wrap them in <code>list()</code> to see the results or use them directly in for loops. This laziness is what makes them memory-efficient for large datasets."
+    },
+    {
+      "type": "heading",
+      "content": "chain() — Combine Iterables"
+    },
+    {
+      "type": "paragraph",
+      "content": "<code>itertools.chain()</code> takes multiple iterables and returns a single iterator that yields elements from the first, then the second, and so on — like concatenating sequences without creating a new list. It's perfect for looping over several sequences as if they were one."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import itertools\n\nlist_a = [1, 2, 3]\nlist_b = ['a', 'b', 'c']\nlist_c = [True, False]\n\ncombined = list(itertools.chain(list_a, list_b, list_c))\nprint('Chained:', combined)\n\n# Useful for iterating without creating a new list\nfor item in itertools.chain(list_a, list_b):\n    print(item, end=' ')\nprint()",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "cycle() — Infinite Looping"
+    },
+    {
+      "type": "paragraph",
+      "content": "<code>itertools.cycle()</code> takes an iterable and infinitely repeats it. It's great for alternating patterns, round-robin scheduling, or creating repeating sequences. Since it's infinite, you should always break out of the loop or use it with something like <code>zip()</code> to limit the output."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import itertools\n\n# Cycle through colors for labeling\ncolors = itertools.cycle(['red', 'green', 'blue'])\nitems = ['item1', 'item2', 'item3', 'item4', 'item5']\n\nfor item in items:\n    print(f'{next(colors)}: {item}')\n\n# Using zip to limit a cycle\nlimited = list(zip(range(5), itertools.cycle(['A', 'B'])))\nprint('Cycled pairs:', limited)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "product() — Cartesian Product"
+    },
+    {
+      "type": "paragraph",
+      "content": "<code>itertools.product()</code> computes the Cartesian product of input iterables — every possible combination of elements. It's equivalent to nested for loops but in a single function. Use the optional <code>repeat</code> parameter to compute the product of an iterable with itself multiple times."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import itertools\n\nsuits = ['hearts', 'diamonds']\nranks = ['A', 'K', 'Q']\n\ncards = list(itertools.product(suits, ranks))\nprint('Card combos:', cards)\nprint('Total:', len(cards))\n\n# Product with repeat — like multiple dice\noutcomes = list(itertools.product([1, 2, 3], repeat=2))\nprint('Dice pairs:', outcomes)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "permutations() and combinations()"
+    },
+    {
+      "type": "paragraph",
+      "content": "<code>itertools.permutations()</code> generates all possible orderings (where order matters), while <code>itertools.combinations()</code> generates all unique selections (where order does not matter). Both take an iterable and a length parameter <code>r</code>. These are essential for combinatorics, puzzle solving, and brute-force searching."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import itertools\n\nteam = ['Alice', 'Bob', 'Charlie']\n\n# All ordered pairs (order matters)\nperms = list(itertools.permutations(team, 2))\nprint('Permutations:', perms)\nprint('Count:', len(perms))\n\n# All unordered pairs (order doesn't matter)\ncombs = list(itertools.combinations(team, 2))\nprint('Combinations:', combs)\nprint('Count:', len(combs))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Remember: <strong>permutations</strong> are for arrangements (order matters, like a race podium) and <strong>combinations</strong> are for selections (order doesn't matter, like picking a committee). permutations yields <code>n! / (n-r)!</code> results; combinations yields <code>n! / (r! * (n-r)!)</code>."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+appId: com.pypath.app
+productName: PyPath
+directories:
+  output: dist
+win:
+  target: nsis
+  icon: assets/icons/icon.ico
+files:
+  - main/**
+  - renderer/**
+  - content/**
+  - assets/**
+  - node_modules/**
+  - package.json

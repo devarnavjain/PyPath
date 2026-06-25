@@ -1,0 +1,19 @@
+{
+  "topic_id": "python.beginner.introduction",
+  "title": "Your First Program",
+  "description": "Write a Python program that prints the exact message below:\n\nHello, PyPath!\n\nUse a single print() statement with the text inside quotes.",
+  "xp_reward": 25,
+  "starter_code": "# Write your code here\n",
+  "expected_output": "Hello, PyPath!\n",
+  "hints": [
+    "Use the print() function with a string inside quotes",
+    "Make sure the text inside the quotes matches exactly: Hello, PyPath!",
+    "Don't forget the closing parenthesis at the end"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "Hello, PyPath!\n"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "python.advanced.generators",
+  "title": "Generators and Iterators",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What Are Generators?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A generator is a special type of iterator that produces values on demand instead of storing them all in memory at once. Think of it like a conveyor belt — items arrive one at a time when you ask for them, rather than stacking everything on your desk at once. This makes generators incredibly memory-efficient for large sequences."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# A regular list stores everything in memory\nnumbers = [1, 2, 3, 4, 5]\n\n# A generator produces values one at a time\ndef count_up_to(n):\n    i = 1\n    while i <= n:\n        yield i\n        i += 1\n\ncounter = count_up_to(5)\nprint(next(counter))  # 1\nprint(next(counter))  # 2\nprint(next(counter))  # 3",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "The yield keyword is what makes a function a generator. When Python sees yield, it knows to return a generator object that can be iterated. Unlike return, yield saves the function's state so execution can resume later."
+    },
+    {
+      "type": "heading",
+      "content": "The next() Function and StopIteration"
+    },
+    {
+      "type": "paragraph",
+      "content": "You retrieve values from a generator using the built-in next() function. Each call to next() runs the generator function until it hits the next yield statement. When the generator has no more values to produce, it raises a StopIteration exception — this is how Python's for loop knows when to stop automatically."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def three_items():\n    yield 'a'\n    yield 'b'\n    yield 'c'\n\ngen = three_items()\nprint(next(gen))\nprint(next(gen))\nprint(next(gen))\n# next(gen) would raise StopIteration here\n\n# A for loop handles StopIteration automatically\nfor item in three_items():\n    print(item.upper())",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Generator Expressions"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python offers a compact syntax for generators called generator expressions. They look like list comprehensions but use parentheses () instead of square brackets []. The difference is huge: a list comprehension builds the entire list in memory, while a generator expression produces items lazily — one at a time as you iterate."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# List comprehension — builds entire list in memory\nsquares_list = [x * x for x in range(10)]\nprint(squares_list)\n\n# Generator expression — produces values lazily\nsquares_gen = (x * x for x in range(10))\nprint(squares_gen)  # generator object, not values\n\n# Iterate to get the values\nfor val in squares_gen:\n    print(val, end=' ')",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "When to Use Generators"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use generators when working with large datasets, infinite sequences, or streams of data where storing everything in memory would be wasteful. Common use cases include reading large files line by line, generating Fibonacci numbers indefinitely, and processing real-time data feeds. If you can process data one chunk at a time, a generator is likely the right choice."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Generators are single-use iterables. Once exhausted, you cannot reuse them. If you need to iterate again, you must create a new generator instance by calling the generator function again."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.beginner.strings",
+  "title": "String Explorer",
+  "description": "Create a variable called 'text' with the value 'python programming'. Print the length of text, then print text converted to uppercase, one per line.\n\nThe output should be exactly:\n18\nPYTHON PROGRAMMING",
+  "xp_reward": 25,
+  "starter_code": "# Create a variable called 'text'\n",
+  "expected_output": "18\nPYTHON PROGRAMMING\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "text\\s*=\\s*['\"]python programming['\"]",
+      "description": "Creates a variable called 'text' with the value 'python programming'",
+      "fail_message": "Create a variable called 'text' set to 'python programming'."
+    },
+    {
+      "type": "regex",
+      "pattern": "\\.upper\\(\\)",
+      "description": "Calls the .upper() method on the text variable",
+      "fail_message": "Use the .upper() method to convert text to uppercase instead of printing a hardcoded string."
+    },
+    {
+      "type": "regex",
+      "pattern": "len\\(",
+      "description": "Uses the len() function to get the string length",
+      "fail_message": "Use the len() function to get the length of the string instead of hardcoding the number 18."
+    }
+  ],
+  "hints": [
+    "Store the string 'python programming' in a variable called text",
+    "Use len(text) to find the length, and text.upper() for uppercase",
+    "Print each result on its own line using separate print() calls"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "18\nPYTHON PROGRAMMING\n"
+    }
+  ]
+}

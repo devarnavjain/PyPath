@@ -1,0 +1,88 @@
+{
+  "id": "python.beginner.lists",
+  "title": "Lists",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is a List?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A **list** is a collection of items stored in a single variable. Think of it like a numbered container where each item has a position. Lists are created using square brackets `[]` with items separated by commas."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Lists are **ordered** and **mutable** — meaning you can change items after creating the list. This makes them one of the most powerful tools in Python."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "numbers = [1, 2, 3, 4, 5]\nfruits = ['apple', 'banana', 'cherry']\nmixed = [1, 'hello', True, 3.14]\n\nprint(fruits)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Accessing Items with Indexing"
+    },
+    {
+      "type": "paragraph",
+      "content": "Each item in a list has an **index** — its position number. Indexing starts at **0**, so the first item is at index `0`, the second at index `1`, and so on. You can also use **negative indexing** to count from the end, where `-1` is the last item."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "fruits = ['apple', 'banana', 'cherry', 'date']\n\nprint(fruits[0])\nprint(fruits[2])\nprint(fruits[-1])\nprint(fruits[-2])",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Slicing Lists"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can grab a **slice** (a portion) of a list using the colon syntax: `list[start:end]`. The start index is **included**, the end index is **excluded**. Leave out start to begin at index 0, or leave out end to go to the end."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "numbers = [10, 20, 30, 40, 50]\n\nprint(numbers[1:4])\nprint(numbers[:3])\nprint(numbers[2:])",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Modifying Lists"
+    },
+    {
+      "type": "paragraph",
+      "content": "Lists are mutable, so you can change, add, and remove items. Use `append()` to add to the end, `insert()` to add at a specific position, `remove()` to delete by value, and `pop()` to remove and return an item by index."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "tasks = ['learn Python', 'build project']\ntasks.append('deploy app')\nprint(tasks)\n\ntasks.insert(1, 'write tests')\nprint(tasks)\n\ndone = tasks.pop(0)\nprint('Finished:', done)\nprint(tasks)\n\ntasks.remove('deploy app')\nprint(tasks)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Length and Looping"
+    },
+    {
+      "type": "paragraph",
+      "content": "The `len()` function tells you how many items are in a list. You can loop through a list with a `for` loop — just like you learned in the loops lesson — to work with each item one at a time."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "colors = ['red', 'green', 'blue']\nprint('Count:', len(colors))\n\nfor color in colors:\n    print(color)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Lists and `for` loops are a perfect pair. Whenever you have a list of things to process, a `for` loop lets you handle each one without repeating code."
+    }
+  ]
+}

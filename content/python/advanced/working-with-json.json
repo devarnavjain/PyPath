@@ -1,0 +1,88 @@
+{
+  "id": "python.advanced.json",
+  "title": "Working with JSON",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is JSON?"
+    },
+    {
+      "type": "paragraph",
+      "content": "<strong>JSON</strong> (JavaScript Object Notation) is a lightweight data interchange format that's easy for humans to read and write, and easy for machines to parse and generate. It looks a lot like a Python dictionary, but with a few rules: keys must be strings in double quotes, strings use double quotes only, and the format supports strings, numbers, booleans, arrays (lists), objects (dicts), and <code>null</code>."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "{\n  \"name\": \"Alice\",\n  \"age\": 30,\n  \"is_student\": false,\n  \"courses\": [\"Python\", \"Data Science\"],\n  \"address\": null\n}",
+      "runnable": false
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "JSON is everywhere — web APIs, configuration files, saved game data, and database exports all use JSON. If your program talks to the internet, it almost certainly speaks JSON."
+    },
+    {
+      "type": "heading",
+      "content": "Python Dicts to JSON: json.dumps()"
+    },
+    {
+      "type": "paragraph",
+      "content": "<code>json.dumps()</code> (dump-string) converts a Python object (dict, list, etc.) into a JSON-formatted string. Python's <code>True</code> becomes <code>true</code>, <code>None</code> becomes <code>null</code>, and single quotes become double quotes. This is called <strong>serialization</strong>."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import json\n\nperson = {\n    'name': 'Alice',\n    'age': 30,\n    'is_student': False,\n    'courses': ['Python', 'Data Science']\n}\n\njson_string = json.dumps(person)\nprint(json_string)\nprint(type(json_string))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "JSON to Python: json.loads()"
+    },
+    {
+      "type": "paragraph",
+      "content": "<code>json.loads()</code> (load-string) does the reverse — it takes a JSON-formatted string and converts it back into a Python object. JSON <code>true</code> becomes <code>True</code>, <code>null</code> becomes <code>None</code>, and JSON objects become Python dictionaries. This is called <strong>deserialization</strong>."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import json\n\ndata = '{\"name\": \"Bob\", \"age\": 25, \"active\": true}'\nparsed = json.loads(data)\n\nprint('Name:', parsed['name'])\nprint('Age:', parsed['age'])\nprint('Active:', parsed['active'])\nprint('Type:', type(parsed))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Writing and Reading JSON Files"
+    },
+    {
+      "type": "paragraph",
+      "content": "When working with files, use <code>json.dump()</code> (no 's') to write directly to a file, and <code>json.load()</code> (no 's') to read JSON from a file. The 's' versions work with strings; the no-'s' versions work with file objects. This is a common point of confusion — remember: <strong>s = string</strong>."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import json\nimport tempfile\nimport os\n\n# Create a temporary file to demonstrate\nfilepath = os.path.join(tempfile.gettempdir(), 'demo.json')\n\ndata = {'title': 'Demo', 'completed': True, 'count': 42}\n\n# Write to file\nwith open(filepath, 'w') as f:\n    json.dump(data, f)\n\n# Read from file\nwith open(filepath, 'r') as f:\n    loaded = json.load(f)\n\nprint('Loaded data:', loaded)\n\n# Cleanup\nos.remove(filepath)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Pretty-Printing with Indentation"
+    },
+    {
+      "type": "paragraph",
+      "content": "By default, <code>json.dumps()</code> produces compact output with no spaces. Pass the <code>indent</code> parameter to make the output human-readable with proper indentation. You can also use <code>sort_keys=True</code> to sort dictionary keys alphabetically."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import json\n\nperson = {\n    'name': 'Charlie',\n    'age': 28,\n    'skills': ['Python', 'SQL', 'Regex'],\n    'address': {'city': 'London', 'zip': 'EC1A'}\n}\n\nprint(json.dumps(person, indent=2))\nprint('---')\nprint(json.dumps(person, indent=2, sort_keys=True))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "<code>indent=2</code> or <code>indent=4</code> are the most common choices for pretty-printing. Use <code>indent=None</code> (default) for compact output when you care about file size over readability."
+    }
+  ]
+}

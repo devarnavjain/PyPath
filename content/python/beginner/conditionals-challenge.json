@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.beginner.conditionals",
+  "title": "Grade Checker",
+  "description": "Write a program that sets score = 85. Use if/elif/else to print:\n- 'Grade: A' if score >= 90\n- 'Grade: B' if score >= 80\n- Otherwise, 'Grade: C'",
+  "xp_reward": 25,
+  "starter_code": "# Set your score and print the grade\n",
+  "expected_output": "Grade: B\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "\\bif\\b",
+      "description": "Uses an 'if' statement for conditional logic",
+      "fail_message": "Use an 'if' statement to check the score condition instead of hardcoding the output."
+    },
+    {
+      "type": "regex",
+      "pattern": "\\belif\\b",
+      "description": "Uses an 'elif' statement for the second condition",
+      "fail_message": "Use 'elif' for the second condition (score >= 80) to practice chaining conditions."
+    }
+  ],
+  "hints": [
+    "Start by creating a variable: score = 85",
+    "Use if score >= 90: first, then elif score >= 80:, then else:",
+    "Make sure the print statements are indented correctly under each condition"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "Grade: B\n"
+    }
+  ]
+}

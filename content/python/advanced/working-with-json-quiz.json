@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.advanced.json",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What does json.dumps() do?",
+      "options": ["Converts a Python object to a JSON string", "Parses a JSON string into a Python object", "Writes JSON data directly to a file", "Reads JSON data from a file"],
+      "correct": 0,
+      "explanation": "json.dumps() (dump-string) serializes a Python object into a JSON-formatted string. The 's' stands for string."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What does json.loads('{\"key\": 5}') return?",
+      "options": ["A Python dictionary {'key': 5}", "A JSON object string", "A file object", "A formatted string with indentation"],
+      "correct": 0,
+      "explanation": "json.loads() (load-string) parses a JSON string and returns the corresponding Python object. The JSON object becomes a Python dict."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "How must strings be enclosed in valid JSON?",
+      "options": ["Double quotes only", "Single quotes only", "Either single or double quotes", "Backticks"],
+      "correct": 0,
+      "explanation": "JSON requires double quotes for strings. Single quotes are not valid JSON syntax and will cause json.loads() to raise an error."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "Which method do you use to write JSON directly to a file object?",
+      "options": ["json.dump()", "json.dumps()", "json.write()", "json.tofile()"],
+      "correct": 0,
+      "explanation": "json.dump() (no 's') writes directly to a file object opened for writing. json.dumps() returns a string instead."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete: json.______({'name': 'Sam'}) returns the string '{\"name\": \"Sam\"}'.",
+      "answer": "dumps",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "Why is JSON so commonly used in web APIs?",
+      "options": ["It is lightweight, language-independent, and human-readable", "It is the fastest data format in existence", "It only works with Python programs", "It requires no parsing at all"],
+      "correct": 0,
+      "explanation": "JSON is lightweight, text-based, and language-independent. Almost every programming language can parse JSON, making it the universal data format for web APIs."
+    }
+  ]
+}

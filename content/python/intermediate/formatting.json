@@ -1,0 +1,88 @@
+{
+  "id": "python.intermediate.formatting",
+  "title": "String Formatting in Depth",
+  "tier": "intermediate",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "f-Strings: The Modern Way"
+    },
+    {
+      "type": "paragraph",
+      "content": "**f-strings** (formatted string literals) are the cleanest and most popular way to format strings in Python. Prefix a string with `f` or `F` and embed expressions inside `{}` curly braces. You can put any Python expression inside — variables, arithmetic, even function calls."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "name = 'Alice'\nage = 30\nprint(f'My name is {name} and I am {age} years old.')\n\n# Expressions work too\nprint(f'In 5 years, I will be {age + 5}.')",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "f-strings were introduced in Python 3.6 and are now the recommended way to format strings. They are faster, more readable, and less error-prone than the older methods."
+    },
+    {
+      "type": "heading",
+      "content": "Format Specifiers"
+    },
+    {
+      "type": "paragraph",
+      "content": "After a colon inside `{}`, you can add a **format specifier** that controls how the value is displayed. Common specifiers include `.2f` for 2 decimal places, `:>10` for right-aligning in a 10-character field, `:<10` for left-aligning, and `:^20` for centering in a 20-character field."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "pi = 3.14159265\nprint(f'Pi to 2 decimals: {pi:.2f}')\nprint(f'Pi to 4 decimals: {pi:.4f}')\n\n# Padding and alignment\nname = 'Python'\nprint(f'|{name:>10}|')   # right aligned\nprint(f'|{name:<10}|')   # left aligned\nprint(f'|{name:^10}|')   # centered",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Formatting Percentages and Large Numbers"
+    },
+    {
+      "type": "paragraph",
+      "content": "Format specifiers handle percentages with `:.2%` (multiplies by 100 and adds `%`) and large numbers with comma separators using `:,` or `:_`. These are incredibly handy for data reports and user-facing output."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "score = 0.875\nprint(f'Your score: {score:.1%}')\n\nbig_number = 1234567\nprint(f'Population: {big_number:,}')\nprint(f'With underscores: {big_number:_}')",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "The format() Method"
+    },
+    {
+      "type": "paragraph",
+      "content": "Before f-strings, the `str.format()` method was the go-to approach. It still works and is useful when you need to store a template string separately from the data. Use `{}` as placeholders and pass values to `.format()`."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "template = 'Hello, {}! You have {} new messages.'\nprint(template.format('Bob', 5))\n\n# Named placeholders\nmsg = '{name} scored {score:.2f} points'\nprint(msg.format(name='Diana', score=92.5))\n\n# Positional indexing\ntemplate = '{1} is the {0} of {2}'\nprint(template.format('capital', 'Paris', 'France'))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "The Old % Formatting"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python's original string formatting used the `%` operator, similar to C's `printf`. While still functional, it is less flexible and harder to read than f-strings or `.format()`. You may encounter it in older codebases."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "name = 'Eve'\nage = 28\nprint('Name: %s, Age: %d' % (name, age))\n\n# With formatting\npi = 3.14159\nprint('Pi = %.3f' % pi)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "The `%s` is for strings, `%d` for integers, `%f` for floats. The `%.3f` means 3 decimal places. Modern code should prefer f-strings, but knowing `%` formatting helps when reading legacy Python."
+    }
+  ]
+}

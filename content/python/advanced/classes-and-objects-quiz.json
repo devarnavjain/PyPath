@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.advanced.classes",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What keyword is used to define a class in Python?",
+      "options": ["class", "def", "struct", "object"],
+      "correct": 0,
+      "explanation": "The 'class' keyword defines a class. 'def' defines a function, and Python doesn't use 'struct' or 'object' as keywords for defining classes."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What does the __init__ method do?",
+      "options": ["Deletes an object from memory", "Initializes a new instance's attributes", "Prints all attributes of an object", "Returns the class itself"],
+      "correct": 1,
+      "explanation": "__init__ is the constructor method. It runs automatically when a new instance is created and is used to set up initial attribute values."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What does 'self' represent inside a class method?",
+      "options": ["The class itself", "The current instance of the class", "The parent class", "The module containing the class"],
+      "correct": 1,
+      "explanation": "'self' refers to the specific instance that called the method. When you call my_dog.bark(), Python passes my_dog as self automatically."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "How do you create a new instance of a class called Car?",
+      "options": ["Car()", "create Car()", "new Car()", "Car.instance()"],
+      "correct": 0,
+      "explanation": "You create an instance by calling the class like a function: Car(). Python handles memory allocation and calls __init__ automatically."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Inside a class method, the first parameter is always _____",
+      "answer": "self",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What is an attribute in a class?",
+      "options": ["A function defined inside a class", "A variable stored on an instance", "A file that contains a class", "A type of loop in Python"],
+      "correct": 1,
+      "explanation": "An attribute is a variable associated with an instance, usually set in __init__ with self.attribute_name = value. Methods are behaviors, attributes are data."
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "python.beginner.numbers",
+  "title": "Numbers and Math",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "Numbers in Python"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python has two main numeric types: <strong>integers</strong> (whole numbers) and <strong>floats</strong> (numbers with a decimal point). Understanding how Python handles numbers is essential for almost every program you'll write."
+    },
+    {
+      "type": "heading",
+      "content": "Integers (int)"
+    },
+    {
+      "type": "paragraph",
+      "content": "An <strong>integer</strong> is a whole number — positive, negative, or zero — without a decimal point. Use <code>type()</code> to check the type of any value."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "age = 25\nprint(age)\nprint(type(age))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Floats (float)"
+    },
+    {
+      "type": "paragraph",
+      "content": "A <strong>float</strong> is a number with a decimal point. Even a number like <code>7.0</code> is a float, not an integer."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "pi = 3.14\nprint(pi)\nprint(type(pi))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Basic Arithmetic"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python supports all the standard math operators: <code>+</code> (addition), <code>-</code> (subtraction), <code>*</code> (multiplication), and <code>/</code> (division)."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "a = 10\nb = 3\nprint(a + b)\nprint(a - b)\nprint(a * b)\nprint(a / b)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Notice that <code>10 / 3</code> returns <code>3.333... </code> (a float), even though both numbers are integers. In Python 3, division always returns a float. Use <code>//</code> if you want integer division instead."
+    },
+    {
+      "type": "heading",
+      "content": "Floor Division, Modulo, and Exponents"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python has three extra operators: <code>//</code> (floor division — divides and rounds down), <code>%</code> (modulo — returns the remainder), and <code>**</code> (exponent — raises to a power)."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "print(10 // 3)\nprint(10 % 3)\nprint(2 ** 4)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "The modulo operator <code>%</code> is great for checking if a number is even or odd: <code>number % 2 == 0</code> means the number is even."
+    },
+    {
+      "type": "heading",
+      "content": "Order of Operations"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python follows standard math rules (<strong>PEMDAS</strong>): Parentheses first, then Exponents, then Multiplication/Division, then Addition/Subtraction. Use parentheses to make your intent clear."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "result = (5 + 3) * 2\nprint(result)",
+      "runnable": true
+    }
+  ]
+}

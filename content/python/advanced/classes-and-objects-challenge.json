@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.advanced.classes",
+  "title": "Pet Class",
+  "description": "Create a class called Pet with an __init__ method that accepts name and age parameters. Store them as instance attributes. Then add a method called introduce that prints exactly: 'My name is {name} and I am {age} years old'. Finally, create an instance pet = Pet('Fluffy', 3) and call pet.introduce().",
+  "xp_reward": 25,
+  "starter_code": "# Define your Pet class here\n\n# Create an instance and call introduce()\n",
+  "expected_output": "My name is Fluffy and I am 3 years old\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "\\bclass\\b",
+      "description": "Defines a class using the class keyword",
+      "fail_message": "You need to define a class using the 'class' keyword."
+    },
+    {
+      "type": "regex",
+      "pattern": "__init__",
+      "description": "Has an __init__ method to set up attributes",
+      "fail_message": "Your class needs an __init__ method to set up the name and age attributes."
+    },
+    {
+      "type": "regex",
+      "pattern": "def\\s+introduce\\(\\s*self",
+      "description": "Has an introduce method with self as the first parameter",
+      "fail_message": "Define an 'introduce' method with 'self' as its first parameter."
+    }
+  ],
+  "hints": [
+    "Use class Pet: to define the class, then def __init__(self, name, age): inside it",
+    "Store attributes with self.name = name and self.age = age",
+    "In the introduce method, use print(f\"My name is {self.name} and I am {self.age} years old\")"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "My name is Fluffy and I am 3 years old\n"
+    }
+  ]
+}

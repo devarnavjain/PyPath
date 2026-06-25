@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.beginner.numbers",
+  "title": "Area of a Circle",
+  "description": "Write code that calculates and prints the area of a circle with radius 5. Use the formula area = 3.14 * radius * radius.\n\nThe output should be exactly:\nThe area of a circle with radius 5 is 78.5",
+  "xp_reward": 25,
+  "starter_code": "# Use 3.14 for pi\n",
+  "expected_output": "The area of a circle with radius 5 is 78.5\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "radius\\s*=\\s*5\\b",
+      "description": "Creates a variable called 'radius' set to 5",
+      "fail_message": "Make sure you create a variable called 'radius' with the value 5."
+    },
+    {
+      "type": "regex",
+      "pattern": "\\*",
+      "description": "Uses multiplication (*) to calculate the area",
+      "fail_message": "Use the multiplication operator (*) to calculate radius * radius * 3.14 instead of hardcoding the result."
+    },
+    {
+      "type": "regex",
+      "pattern": "3\\.14",
+      "description": "Uses 3.14 as the value of pi",
+      "fail_message": "Use 3.14 in your calculation instead of hardcoding the final number 78.5."
+    }
+  ],
+  "hints": [
+    "Create a variable called radius and set it to 5",
+    "Calculate the area using: 3.14 * radius * radius",
+    "Use an f-string like f\"The area... is {area}\" to format the output"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "The area of a circle with radius 5 is 78.5\n"
+    }
+  ]
+}

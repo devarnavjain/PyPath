@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.advanced.inheritance",
+  "title": "Animal Sounds",
+  "description": "Create a parent class called Animal with a method speak that returns 'Some sound'. Create two child classes: Dog(Animal) and Cat(Animal) that each override speak(). Dog.speak() must return 'Woof! Woof!' and Cat.speak() must return 'Meow!'. Then create instances dog = Dog() and cat = Cat(), and use print() to output their speak() results, each on its own line.",
+  "xp_reward": 25,
+  "starter_code": "# Define Animal class and child classes here\n\n# Create instances and print their sounds\n",
+  "expected_output": "Woof! Woof!\nMeow!\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "class\\s+\\w+\\(\\s*\\w+\\s*\\)",
+      "description": "Creates at least one child class that inherits from a parent",
+      "fail_message": "Create child classes that inherit from a parent class using the syntax class Child(Parent):"
+    },
+    {
+      "type": "regex",
+      "pattern": "def\\s+speak\\(\\s*self",
+      "description": "Defines a speak method with self as the first parameter",
+      "fail_message": "Each class needs a speak() method with 'self' as its first parameter."
+    },
+    {
+      "type": "regex",
+      "pattern": "return\\s+['\"]",
+      "description": "Uses return to send back a string value",
+      "fail_message": "Use 'return' to send the sound string back from the speak() method instead of printing inside it."
+    }
+  ],
+  "hints": [
+    "Parent class Animal should have def speak(self): return 'Some sound'",
+    "Child classes: class Dog(Animal): with its own def speak(self): method that returns the dog sound",
+    "At the end, print(dog.speak()) and print(cat.speak()) each on separate lines"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "Woof! Woof!\nMeow!\n"
+    }
+  ]
+}

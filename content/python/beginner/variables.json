@@ -1,0 +1,107 @@
+{
+  "id": "python.beginner.variables",
+  "title": "Variables and Data Types",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is a Variable?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A variable is like a labeled box where you store data. You give it a name and assign a value using the <code>=</code> sign. The value can be a number, text, or many other types of data."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "name = 'Alice'\nage = 25\nheight = 1.68\n\nprint(name)\nprint(age)\nprint(height)",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "In this example, we created three variables: <code>name</code> (a string), <code>age</code> (an integer), and <code>height</code> (a float). The <code>print()</code> function displays their values."
+    },
+    {
+      "type": "heading",
+      "content": "Variable Naming Rules"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python has rules for naming variables. Follow these to avoid errors:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Names must start with a letter or underscore (_)",
+        "The rest can contain letters, numbers, and underscores",
+        "Names are case-sensitive (age, Age, and AGE are different)",
+        "Cannot use Python keywords (if, for, while, etc.) as names",
+        "Use descriptive names — <code>student_count</code> not <code>sc</code>"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Use snake_case for variable names in Python: <code>user_name</code>, <code>total_score</code>, <code>is_ready</code>. This is the Python convention."
+    },
+    {
+      "type": "heading",
+      "content": "Basic Data Types"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python has several built-in data types. Here are the most common ones:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<code>int</code> — Whole numbers like 42, -7, 0",
+        "<code>float</code> — Decimal numbers like 3.14, -0.5, 2.0",
+        "<code>str</code> — Text like 'Hello', 'Python', '42'",
+        "<code>bool</code> — True or False values",
+        "<code>NoneType</code> — Represents 'no value' (None)"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Different data types in Python\nmy_int = 10\nmy_float = 3.14\nmy_str = 'PyPath'\nmy_bool = True\nmy_none = None\n\nprint(type(my_int))\nprint(type(my_float))\nprint(type(my_str))\nprint(type(my_bool))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "The <code>type()</code> function tells you what type a value is. It's very useful for debugging!"
+    },
+    {
+      "type": "heading",
+      "content": "String Operations"
+    },
+    {
+      "type": "paragraph",
+      "content": "Strings have special operations. You can combine them with <code>+</code> (concatenation) and repeat them with <code>*</code>:"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "first = 'Py'\nlast = 'Path'\nfull = first + last\nprint(full)\n\nlaugh = 'Ha' * 3\nprint(laugh)\n\n# f-strings (Python 3.6+)\nname = 'Alice'\nprint(f'Hello, {name}!')",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "You cannot concatenate strings with numbers directly. <code>'Age: ' + 25</code> will cause an error. Use an f-string instead: <code>f'Age: {25}'</code>."
+    },
+    {
+      "type": "heading",
+      "content": "Practice"
+    },
+    {
+      "type": "paragraph",
+      "content": "Create a variable called <code>greeting</code> that stores the string 'Hello, PyPath!' and print it. Then create two number variables, add them together, and print the result."
+    }
+  ]
+}

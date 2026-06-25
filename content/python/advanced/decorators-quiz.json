@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.advanced.decorators",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What is a decorator in Python?",
+      "options": ["A function that modifies another function's behavior", "A special type of class", "A built-in function for formatting text", "A variable that stores multiple values"],
+      "correct": 0,
+      "explanation": "A decorator is a function that takes another function, wraps it with additional behavior, and returns the modified version. It's a way to extend functionality without changing the original code."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What does @timer above a function definition do?",
+      "options": ["Runs a stopwatch in the background", "Applies the timer decorator to the function below", "Creates a timer object called timer", "Stops the function from running"],
+      "correct": 1,
+      "explanation": "@timer is shorthand for function_name = timer(function_name). It applies the timer decorator to the function defined right below it."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What does the wrapper function inside a decorator typically do?",
+      "options": ["Replaces the original function completely", "Wraps around the original function, running extra code before and after", "Deletes the original function from memory", "Creates a duplicate of the original function"],
+      "correct": 1,
+      "explanation": "The wrapper function runs code before the original function, calls the original function, then runs code after. This 'wrapping' is what adds the extra behavior."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "question": "Which functools function should you use on your wrapper to preserve the original function's metadata? functools._____",
+      "answer": "wraps",
+      "case_sensitive": true
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "@my_decorator is shorthand for which of the following?",
+      "options": ["func = my_decorator(func)", "func = my_decorator()", "my_decorator(func)", "import my_decorator"],
+      "correct": 0,
+      "explanation": "@my_decorator is syntactic sugar. It means function_name = my_decorator(function_name). The decorator receives the function as an argument and returns the modified version."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "A common use case for decorators is:",
+      "options": ["Looping through lists", "Adding logging to functions automatically", "Creating new data types", "Importing modules"],
+      "correct": 1,
+      "explanation": "Decorators are commonly used for cross-cutting concerns like logging, timing, access control, and caching — behaviors that apply across many functions without modifying each one individually."
+    }
+  ]
+}

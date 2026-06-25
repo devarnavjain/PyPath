@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.advanced.magicmethods",
+  "title": "Vector Addition with Magic Methods",
+  "description": "Create a class called Vector with an __init__ method that takes x and y parameters and stores them as attributes. Implement __str__ to return '(x, y)' with the actual x and y values. Implement __add__ to return a new Vector whose x = self.x + other.x and y = self.y + other.y. Then create v1 = Vector(2, 3) and v2 = Vector(4, 5), and use print(v1 + v2) to show the result.",
+  "xp_reward": 25,
+  "starter_code": "# Define your Vector class here\n\n# Create vectors and print the result of addition\n",
+  "expected_output": "(6, 8)\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "\\bclass\\b",
+      "description": "Defines a class using the class keyword",
+      "fail_message": "You need to define a Vector class using the 'class' keyword."
+    },
+    {
+      "type": "regex",
+      "pattern": "__str__",
+      "description": "Implements __str__ for string representation",
+      "fail_message": "Add an __str__ method so that print() shows the vector as (x, y)."
+    },
+    {
+      "type": "regex",
+      "pattern": "__add__",
+      "description": "Implements __add__ for the + operator",
+      "fail_message": "Add an __add__ method that returns a new Vector with summed coordinates."
+    }
+  ],
+  "hints": [
+    "Define __str__(self) to return f'({self.x}, {self.y})'",
+    "Define __add__(self, other) to return Vector(self.x + other.x, self.y + other.y)",
+    "Create v1 = Vector(2, 3) and v2 = Vector(4, 5), then print(v1 + v2)"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "(6, 8)\n"
+    }
+  ]
+}

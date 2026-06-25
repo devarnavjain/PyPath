@@ -1,0 +1,27 @@
+{
+  "topic_id": "python.advanced.generators",
+  "title": "Even Number Generator",
+  "description": "Write a generator function called even_numbers(limit) that yields all even numbers from 0 up to (and including) the given limit. Then use a for loop to iterate over even_numbers(10) and print each value on its own line.",
+  "xp_reward": 25,
+  "starter_code": "# Write your generator function here\ndef even_numbers(limit):\n    # Use a for loop and yield\n    pass\n\n# Iterate and print\nfor num in even_numbers(10):\n    print(num)",
+  "expected_output": "0\n2\n4\n6\n8\n10\n",
+  "hints": [
+    "Use a for loop with range(limit + 1) and check if each number is even with i % 2 == 0",
+    "Inside the if block, use yield i to produce the even number",
+    "Your for loop at the bottom is already correct — just fill in the generator function body"
+  ],
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "yield",
+      "description": "Uses the yield keyword inside the generator",
+      "fail_message": "Your function must use the yield keyword to be a proper generator. Using return will not work here."
+    }
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "0\n2\n4\n6\n8\n10\n"
+    }
+  ]
+}

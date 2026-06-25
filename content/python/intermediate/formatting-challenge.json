@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.intermediate.formatting",
+  "title": "Format a Score with f-Strings",
+  "description": "Create variables `name = 'Alice'` and `score = 87.5`. Then use an **f-string with a format specifier** to print exactly: `Alice scored 87.50%`. The score must show exactly 2 decimal places (`.2f`) followed by a percent sign `%`.",
+  "xp_reward": 25,
+  "starter_code": "name = 'Alice'\nscore = 87.5\n\n# Use an f-string to print the formatted result\n",
+  "expected_output": "Alice scored 87.50%\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "f['\"]",
+      "description": "Uses an f-string (starts with f followed by a quote)",
+      "fail_message": "Use an f-string prefixed with 'f' like: f'...' or f\"...\""
+    },
+    {
+      "type": "regex",
+      "pattern": ":\\..*f",
+      "description": "Uses a format specifier with 'f' for float formatting",
+      "fail_message": "Add a format specifier like :.2f inside curly braces to show the score with 2 decimal places."
+    }
+  ],
+  "hints": [
+    "Your f-string should look like: f'...'",
+    "Use {score:.2f} inside the f-string to show the score with 2 decimal places",
+    "The final output should be: Alice scored 87.50% — note the percent sign is a literal character, not part of the format specifier"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "Alice scored 87.50%\n"
+    }
+  ]
+}

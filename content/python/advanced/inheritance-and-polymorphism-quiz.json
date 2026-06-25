@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.advanced.inheritance",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What is the correct syntax for class B inheriting from class A?",
+      "options": ["class B(A):", "class B inherits A:", "class B -> A:", "B extends A:"],
+      "correct": 0,
+      "explanation": "In Python, inheritance uses parentheses: class Child(Parent): . The other options are not valid Python syntax."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What does super() do inside a child class method?",
+      "options": ["Creates a new parent instance", "Calls a method from the parent class", "Deletes the child class", "Returns None automatically"],
+      "correct": 1,
+      "explanation": "super() gives you access to the parent class's methods. It's commonly used in __init__ to run the parent's setup code before adding child-specific attributes."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What is method overriding?",
+      "options": ["Deleting a method from the parent", "Redefining a parent method in the child class", "Creating two methods with the same name", "Importing a method from another file"],
+      "correct": 1,
+      "explanation": "Method overriding means writing a new version of a parent method in the child class. When you call the method on a child instance, the child's version runs instead of the parent's."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "question": "What built-in function checks whether an object is an instance of a class? _____",
+      "answer": "isinstance",
+      "case_sensitive": true
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "If Dog inherits from Animal, what does isinstance(dog, Animal) return?",
+      "options": ["True", "False", "An error", "None"],
+      "correct": 0,
+      "explanation": "isinstance returns True because Dog IS an Animal through inheritance. A child instance is considered an instance of the parent class too."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What does polymorphism allow you to do?",
+      "options": ["Have multiple classes with the same method name behave differently", "Have many methods in one class", "Write slower code intentionally", "Use multiple files in a project"],
+      "correct": 0,
+      "explanation": "Polymorphism means different classes respond to the same method call in their own way. You can write code that works on a parent type and it automatically works for all child types."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "python.advanced.args",
+  "title": "Variable Arguments (*args and **kwargs)",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "The Problem: Functions With Flexible Arguments"
+    },
+    {
+      "type": "paragraph",
+      "content": "Sometimes you don't know in advance how many arguments a function should accept. Maybe you're building a logger that handles any number of messages, or a configuration function that accepts arbitrary options. Python solves this with *args and **kwargs — special syntax that lets functions accept variable numbers of positional and keyword arguments."
+    },
+    {
+      "type": "heading",
+      "content": "*args — Variable Positional Arguments"
+    },
+    {
+      "type": "paragraph",
+      "content": "The *args parameter collects any number of positional arguments into a tuple. The name args is just a convention — the magic is in the single asterisk *. You can pass zero, one, or many arguments, and they all get packed into a tuple that you can iterate over or index into."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def sum_all(*args):\n    total = 0\n    for num in args:\n        total += num\n    return total\n\nprint(sum_all(1, 2, 3))       # 6\nprint(sum_all(10, 20))        # 30\nprint(sum_all())              # 0\n\n# args is a tuple\nprint(type(args))  # <class 'tuple'>",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "**kwargs — Variable Keyword Arguments"
+    },
+    {
+      "type": "paragraph",
+      "content": "The **kwargs parameter collects any number of keyword arguments into a dictionary. The double asterisk ** is the key (pun intended). Each keyword argument becomes a key-value pair in the kwargs dict, letting you handle named parameters dynamically."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def print_person(**kwargs):\n    for key, value in kwargs.items():\n        print(f'{key}: {value}')\n\nprint_person(name='Alice', age=30, city='New York')\n# Output:\n# name: Alice\n# age: 30\n# city: New York",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Combining *args and **kwargs"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can use both *args and **kwargs in the same function. The rule is: positional arguments come first, then *args, then **kwargs. This pattern is especially common in wrapper functions that pass through arguments to another function — it's called the 'pass-through' or 'proxy' pattern."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def wrapper(*args, **kwargs):\n    print(f'Positional: {args}')\n    print(f'Keyword: {kwargs}')\n\nwrapper('hello', 42, x=10, y=20)\n# Output:\n# Positional: ('hello', 42)\n# Keyword: {'x': 10, 'y': 20}",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "The Unpacking Operators (* and **)"
+    },
+    {
+      "type": "paragraph",
+      "content": "The * and ** operators also work in reverse — they unpack iterables and dictionaries when calling functions. Use * to unpack a list or tuple into positional arguments, and ** to unpack a dict into keyword arguments. This is incredibly useful when you have data in a collection that needs to be passed to a function."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def introduce(name, age, city):\n    print(f'{name} is {age} years old from {city}')\n\n# Unpack a list into positional arguments\nperson_info = ['Bob', 25, 'London']\nintroduce(*person_info)\n\n# Unpack a dict into keyword arguments\nperson_dict = {'name': 'Eve', 'age': 28, 'city': 'Paris'}\nintroduce(**person_dict)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "You don't have to name them args and kwargs. The * and ** are what matter. For example, *items and **options work exactly the same way. But args and kwargs are the universal convention — stick with them for readability."
+    }
+  ]
+}

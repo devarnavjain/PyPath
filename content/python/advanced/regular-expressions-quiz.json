@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.advanced.regex",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What does re.search() return when it finds a match?",
+      "options": ["A Match object", "A list of all matches", "A boolean True", "A string of the matched text"],
+      "correct": 0,
+      "explanation": "re.search() returns a Match object with methods like .group(), .start(), and .end(). If no match is found, it returns None."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "Which pattern matches any digit character?",
+      "options": ["\\d", "\\w", "\\s", "\\D"],
+      "correct": 0,
+      "explanation": "\\d matches any digit (0-9). \\w matches word characters, \\s matches whitespace, and \\D matches anything that is NOT a digit."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What does re.findall() return?",
+      "options": ["A list of all non-overlapping matches", "A single Match object", "A string of the first match", "An iterator of matches"],
+      "correct": 0,
+      "explanation": "re.findall() returns a list of all non-overlapping matches in the string. Each match is returned as a string."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "In the pattern r'colou?r', what does the ? mean?",
+      "options": ["The 'u' is optional (0 or 1 time)", "The 'u' must appear exactly once", "Match any single character", "Match the 'u' one or more times"],
+      "correct": 0,
+      "explanation": "The ? quantifier means the preceding element appears 0 or 1 time. 'colou?r' matches both 'color' and 'colour'."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete: re.__________(r'\\d+', 'order 42 and 99') returns ['42', '99'].",
+      "answer": "findall",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What does r'\\w+' match in the string 'hello_world!'?",
+      "options": ["['hello_world']", "['hello', 'world']", "['hello_']", "['hello_world!']"],
+      "correct": 0,
+      "explanation": "\\w matches letters, digits, and the underscore. Since underscore is a word character, 'hello_world' is matched as one continuous word. The '!' breaks the match."
+    }
+  ]
+}

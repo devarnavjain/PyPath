@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.intermediate.tuples",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What brackets are used to create a tuple?",
+      "options": ["Square brackets []", "Parentheses ()", "Curly braces {}", "Angle brackets <>"],
+      "correct": 1,
+      "explanation": "Tuples use parentheses () — square brackets are for lists, curly braces are for sets and dicts."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What happens if you try to change an item in a tuple after creating it?",
+      "options": ["It changes successfully", "Python ignores the change silently", "Python raises a TypeError", "The tuple is deleted and recreated"],
+      "correct": 2,
+      "explanation": "Tuples are immutable — Python raises a TypeError if you try to assign a new value to an index."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "How do you create a tuple with a single element?",
+      "options": ["single = (42)", "single = (42,)", "single = [42]", "single = tuple(42)"],
+      "correct": 1,
+      "explanation": "A trailing comma (42,) is required — without it, Python treats (42) as just the number 42 in parentheses."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What is the result of tuple([1, 2, 3])?",
+      "options": [ "[1, 2, 3]", "(1, 2, 3)", "{1, 2, 3}", "Error"],
+      "correct": 1,
+      "explanation": "tuple() converts any iterable (like a list) into a tuple, producing (1, 2, 3)."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete the unpacking: x, y, z = _____ where the variable holds the tuple (10, 20, 30).",
+      "answer": "(10, 20, 30)",
+      "case_sensitive": false
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "Why are tuples preferred over lists for dictionary keys?",
+      "options": ["Tuples are faster to iterate", "Tuples are hashable and lists are not", "Tuples use less memory", "Tuples can hold more items"],
+      "correct": 1,
+      "explanation": "Dictionary keys must be hashable. Lists are mutable and therefore unhashable, while tuples are immutable and hashable."
+    }
+  ]
+}

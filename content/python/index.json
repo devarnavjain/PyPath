@@ -1,0 +1,423 @@
+{
+  "language": "python",
+  "version": "3.12",
+  "tiers": {
+    "beginner": {
+      "label": "Beginner",
+      "color": "#00E676",
+      "topics": [
+        { "id": "python.beginner.introduction", "title": "Introduction to Python", "description": "What Python is and why it matters", "estimated_minutes": 10, "files": { "lesson": "beginner/introduction.json", "quiz": "beginner/introduction-quiz.json", "challenge": "beginner/introduction-challenge.json" } },
+        { "id": "python.beginner.variables", "title": "Variables", "description": "Storing data with variables", "estimated_minutes": 15, "prerequisites": ["python.beginner.introduction"], "files": { "lesson": "beginner/variables.json", "quiz": "beginner/variables-quiz.json", "challenge": "beginner/variables-challenge.json" } },
+        {
+          "id": "python.beginner.numbers",
+          "title": "Numbers and Math",
+          "description": "Working with integers, floats, and arithmetic operations",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.beginner.variables"],
+          "files": {
+            "lesson": "beginner/numbers.json",
+            "quiz": "beginner/numbers-quiz.json",
+            "challenge": "beginner/numbers-challenge.json"
+          }
+        },
+        {
+          "id": "python.beginner.strings",
+          "title": "Strings and Text",
+          "description": "Creating, combining, and working with text using strings",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.beginner.variables"],
+          "files": {
+            "lesson": "beginner/strings.json",
+            "quiz": "beginner/strings-quiz.json",
+            "challenge": "beginner/strings-challenge.json"
+          }
+        },
+        {
+          "id": "python.beginner.input",
+          "title": "Getting User Input",
+          "description": "Reading keyboard input with the input() function",
+          "estimated_minutes": 10,
+          "prerequisites": ["python.beginner.strings"],
+          "files": {
+            "lesson": "beginner/input.json",
+            "quiz": "beginner/input-quiz.json",
+            "challenge": "beginner/input-challenge.json"
+          }
+        },
+        {
+          "id": "python.beginner.booleans",
+          "title": "Booleans and Comparisons",
+          "description": "Understanding True, False, and comparison operators",
+          "estimated_minutes": 10,
+          "prerequisites": ["python.beginner.numbers"],
+          "files": {
+            "lesson": "beginner/booleans.json",
+            "quiz": "beginner/booleans-quiz.json",
+            "challenge": "beginner/booleans-challenge.json"
+          }
+        },
+        {
+          "id": "python.beginner.conditionals",
+          "title": "Making Decisions",
+          "description": "Using if, elif, and else to control program flow",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.beginner.booleans", "python.beginner.input"],
+          "files": {
+            "lesson": "beginner/conditionals.json",
+            "quiz": "beginner/conditionals-quiz.json",
+            "challenge": "beginner/conditionals-challenge.json"
+          }
+        },
+        {
+          "id": "python.beginner.loops",
+          "title": "Loops and Repetition",
+          "description": "Repeating code with for loops and while loops",
+          "estimated_minutes": 20,
+          "prerequisites": ["python.beginner.conditionals"],
+          "files": {
+            "lesson": "beginner/loops.json",
+            "quiz": "beginner/loops-quiz.json",
+            "challenge": "beginner/loops-challenge.json"
+          }
+        },
+        { "id": "python.beginner.functions", "title": "Functions", "description": "Reusable code with functions", "estimated_minutes": 20 },
+        {
+          "id": "python.beginner.lists",
+          "title": "Lists",
+          "description": "Creating, indexing, and modifying ordered collections",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.beginner.loops"],
+          "files": {
+            "lesson": "beginner/lists.json",
+            "quiz": "beginner/lists-quiz.json",
+            "challenge": "beginner/lists-challenge.json"
+          }
+        },
+        {
+          "id": "python.beginner.dicts",
+          "title": "Dictionaries",
+          "description": "Storing and looking up data with key-value pairs",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.beginner.lists"],
+          "files": {
+            "lesson": "beginner/dicts.json",
+            "quiz": "beginner/dicts-quiz.json",
+            "challenge": "beginner/dicts-challenge.json"
+          }
+        },
+        {
+          "id": "python.beginner.capstone",
+          "title": "Beginner Capstone Project",
+          "description": "Build a complete program like a calculator or number guessing game in a final challenge",
+          "estimated_minutes": 25,
+          "prerequisites": ["python.beginner.dicts", "python.beginner.functions"],
+          "files": {
+            "lesson": "beginner/capstone.json",
+            "quiz": "beginner/capstone-quiz.json",
+            "challenge": "beginner/capstone-challenge.json"
+          }
+        }
+      ]
+    },
+    "intermediate": {
+      "label": "Intermediate",
+      "color": "#BC8CFF",
+      "topics": [
+        {
+          "id": "python.intermediate.tuples",
+          "title": "Tuples",
+          "description": "Immutable sequences and when to use them",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.beginner.lists"],
+          "files": {
+            "lesson": "intermediate/tuples.json",
+            "quiz": "intermediate/tuples-quiz.json",
+            "challenge": "intermediate/tuples-challenge.json"
+          }
+        },
+        {
+          "id": "python.intermediate.sets",
+          "title": "Sets",
+          "description": "Unordered collections of unique elements",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.intermediate.tuples"],
+          "files": {
+            "lesson": "intermediate/sets.json",
+            "quiz": "intermediate/sets-quiz.json",
+            "challenge": "intermediate/sets-challenge.json"
+          }
+        },
+        {
+          "id": "python.intermediate.comprehensions",
+          "title": "List and Dict Comprehensions",
+          "description": "Concise ways to create lists and dictionaries in one line",
+          "estimated_minutes": 20,
+          "prerequisites": ["python.beginner.lists", "python.beginner.loops"],
+          "files": {
+            "lesson": "intermediate/comprehensions.json",
+            "quiz": "intermediate/comprehensions-quiz.json",
+            "challenge": "intermediate/comprehensions-challenge.json"
+          }
+        },
+        {
+          "id": "python.intermediate.formatting",
+          "title": "String Formatting in Depth",
+          "description": "f-strings, the format() method, and advanced string manipulation",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.beginner.strings"],
+          "files": {
+            "lesson": "intermediate/formatting.json",
+            "quiz": "intermediate/formatting-quiz.json",
+            "challenge": "intermediate/formatting-challenge.json"
+          }
+        },
+        {
+          "id": "python.intermediate.fileio",
+          "title": "Reading and Writing Files",
+          "description": "Opening, reading, writing, and appending to files",
+          "estimated_minutes": 20,
+          "prerequisites": ["python.beginner.strings"],
+          "files": {
+            "lesson": "intermediate/fileio.json",
+            "quiz": "intermediate/fileio-quiz.json",
+            "challenge": "intermediate/fileio-challenge.json"
+          }
+        },
+        {
+          "id": "python.intermediate.errors",
+          "title": "Error Handling with Try and Except",
+          "description": "Catching and handling errors gracefully with try/except/finally",
+          "estimated_minutes": 20,
+          "prerequisites": ["python.beginner.functions"],
+          "files": {
+            "lesson": "intermediate/errors.json",
+            "quiz": "intermediate/errors-quiz.json",
+            "challenge": "intermediate/errors-challenge.json"
+          }
+        },
+        {
+          "id": "python.intermediate.modules",
+          "title": "Modules and Imports",
+          "description": "Importing standard modules and creating your own",
+          "estimated_minutes": 20,
+          "prerequisites": ["python.beginner.functions"],
+          "files": {
+            "lesson": "intermediate/modules.json",
+            "quiz": "intermediate/modules-quiz.json",
+            "challenge": "intermediate/modules-challenge.json"
+          }
+        },
+        {
+          "id": "python.intermediate.random",
+          "title": "The Random Module",
+          "description": "Generating random numbers, choices, and shuffling sequences",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.intermediate.modules"],
+          "files": {
+            "lesson": "intermediate/random.json",
+            "quiz": "intermediate/random-quiz.json",
+            "challenge": "intermediate/random-challenge.json"
+          }
+        },
+        {
+          "id": "python.intermediate.datetime",
+          "title": "Working with Dates and Time",
+          "description": "Using the datetime module to handle dates, times, and durations",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.intermediate.modules"],
+          "files": {
+            "lesson": "intermediate/datetime.json",
+            "quiz": "intermediate/datetime-quiz.json",
+            "challenge": "intermediate/datetime-challenge.json"
+          }
+        },
+        {
+          "id": "python.intermediate.math",
+          "title": "The Math Module",
+          "description": "Mathematical functions, constants, and utilities in the math module",
+          "estimated_minutes": 10,
+          "prerequisites": ["python.intermediate.modules"],
+          "files": {
+            "lesson": "intermediate/math.json",
+            "quiz": "intermediate/math-quiz.json",
+            "challenge": "intermediate/math-challenge.json"
+          }
+        },
+        {
+          "id": "python.intermediate.builtins",
+          "title": "Useful Built-in Functions",
+          "description": "enumerate, zip, sorted, map, filter, any, all, and other hidden gems",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.beginner.loops", "python.beginner.lists"],
+          "files": {
+            "lesson": "intermediate/builtins.json",
+            "quiz": "intermediate/builtins-quiz.json",
+            "challenge": "intermediate/builtins-challenge.json"
+          }
+        },
+        {
+          "id": "python.intermediate.osmodule",
+          "title": "The OS Module",
+          "description": "Working with file paths, directories, and environment variables",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.intermediate.modules", "python.intermediate.fileio"],
+          "files": {
+            "lesson": "intermediate/osmodule.json",
+            "quiz": "intermediate/osmodule-quiz.json",
+            "challenge": "intermediate/osmodule-challenge.json"
+          }
+        }
+      ]
+    },
+    "advanced": {
+      "label": "Advanced",
+      "color": "#FFB800",
+      "topics": [
+        {
+          "id": "python.advanced.classes",
+          "title": "Classes and Objects",
+          "description": "Understanding object-oriented programming with classes, instances, and methods",
+          "estimated_minutes": 25,
+          "prerequisites": ["python.beginner.functions", "python.intermediate.modules"],
+          "files": {
+            "lesson": "advanced/classes-and-objects.json",
+            "quiz": "advanced/classes-and-objects-quiz.json",
+            "challenge": "advanced/classes-and-objects-challenge.json"
+          }
+        },
+        {
+          "id": "python.advanced.inheritance",
+          "title": "Inheritance and Polymorphism",
+          "description": "Extending classes through inheritance, super(), and method overriding",
+          "estimated_minutes": 20,
+          "prerequisites": ["python.advanced.classes"],
+          "files": {
+            "lesson": "advanced/inheritance-and-polymorphism.json",
+            "quiz": "advanced/inheritance-and-polymorphism-quiz.json",
+            "challenge": "advanced/inheritance-and-polymorphism-challenge.json"
+          }
+        },
+        {
+          "id": "python.advanced.magicmethods",
+          "title": "Magic Methods",
+          "description": "Customizing behavior with __str__, __repr__, __add__, __eq__, and more",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.advanced.classes"],
+          "files": {
+            "lesson": "advanced/magic-methods.json",
+            "quiz": "advanced/magic-methods-quiz.json",
+            "challenge": "advanced/magic-methods-challenge.json"
+          }
+        },
+        {
+          "id": "python.advanced.decorators",
+          "title": "Decorators",
+          "description": "Modifying and extending functions with the @decorator pattern",
+          "estimated_minutes": 20,
+          "prerequisites": ["python.advanced.classes"],
+          "files": {
+            "lesson": "advanced/decorators.json",
+            "quiz": "advanced/decorators-quiz.json",
+            "challenge": "advanced/decorators-challenge.json"
+          }
+        },
+        {
+          "id": "python.advanced.generators",
+          "title": "Generators and Iterators",
+          "description": "Creating iterators with yield and understanding the iteration protocol",
+          "estimated_minutes": 25,
+          "prerequisites": ["python.advanced.classes", "python.intermediate.comprehensions"],
+          "files": {
+            "lesson": "advanced/generators-and-iterators.json",
+            "quiz": "advanced/generators-and-iterators-quiz.json",
+            "challenge": "advanced/generators-and-iterators-challenge.json"
+          }
+        },
+        {
+          "id": "python.advanced.context",
+          "title": "Context Managers",
+          "description": "Managing resources with the with statement and building custom context managers",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.intermediate.errors", "python.intermediate.fileio"],
+          "files": {
+            "lesson": "advanced/context-managers.json",
+            "quiz": "advanced/context-managers-quiz.json",
+            "challenge": "advanced/context-managers-challenge.json"
+          }
+        },
+        {
+          "id": "python.advanced.lambda",
+          "title": "Lambda Functions",
+          "description": "Writing small anonymous functions with lambda expressions",
+          "estimated_minutes": 10,
+          "prerequisites": ["python.beginner.functions", "python.intermediate.comprehensions"],
+          "files": {
+            "lesson": "advanced/lambda-functions.json",
+            "quiz": "advanced/lambda-functions-quiz.json",
+            "challenge": "advanced/lambda-functions-challenge.json"
+          }
+        },
+        {
+          "id": "python.advanced.args",
+          "title": "Variable Arguments with args and kwargs",
+          "description": "Writing flexible functions that accept any number of arguments",
+          "estimated_minutes": 10,
+          "prerequisites": ["python.beginner.functions"],
+          "files": {
+            "lesson": "advanced/variable-arguments.json",
+            "quiz": "advanced/variable-arguments-quiz.json",
+            "challenge": "advanced/variable-arguments-challenge.json"
+          }
+        },
+        {
+          "id": "python.advanced.regex",
+          "title": "Regular Expressions",
+          "description": "Pattern matching and text extraction with the re module",
+          "estimated_minutes": 20,
+          "prerequisites": ["python.beginner.strings"],
+          "files": {
+            "lesson": "advanced/regular-expressions.json",
+            "quiz": "advanced/regular-expressions-quiz.json",
+            "challenge": "advanced/regular-expressions-challenge.json"
+          }
+        },
+        {
+          "id": "python.advanced.json",
+          "title": "Working with JSON",
+          "description": "Reading, writing, and manipulating JSON data with the json module",
+          "estimated_minutes": 15,
+          "prerequisites": ["python.intermediate.fileio", "python.intermediate.modules"],
+          "files": {
+            "lesson": "advanced/working-with-json.json",
+            "quiz": "advanced/working-with-json-quiz.json",
+            "challenge": "advanced/working-with-json-challenge.json"
+          }
+        },
+        {
+          "id": "python.advanced.collections",
+          "title": "The Collections Module",
+          "description": "Specialized data structures: deque, Counter, defaultdict, and namedtuple",
+          "estimated_minutes": 20,
+          "prerequisites": ["python.intermediate.tuples", "python.intermediate.modules"],
+          "files": {
+            "lesson": "advanced/the-collections-module.json",
+            "quiz": "advanced/the-collections-module-quiz.json",
+            "challenge": "advanced/the-collections-module-challenge.json"
+          }
+        },
+        {
+          "id": "python.advanced.itertools",
+          "title": "The Itertools Module",
+          "description": "Powerful iterator tools: chain, cycle, product, permutations, and combinations",
+          "estimated_minutes": 20,
+          "prerequisites": ["python.intermediate.comprehensions", "python.advanced.generators"],
+          "files": {
+            "lesson": "advanced/the-itertools-module.json",
+            "quiz": "advanced/the-itertools-module-quiz.json",
+            "challenge": "advanced/the-itertools-module-challenge.json"
+          }
+        }
+      ]
+    }
+  }
+}

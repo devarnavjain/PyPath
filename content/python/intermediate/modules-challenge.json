@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.intermediate.modules",
+  "title": "Using the Math Module",
+  "description": "Import the 'math' module and use its 'sqrt' function to calculate the square root of 144. Print the result as a number (not a string).",
+  "xp_reward": 25,
+  "starter_code": "# Import math and use sqrt\n\n",
+  "expected_output": "12.0\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "import\\s+math",
+      "description": "Imports the math module",
+      "fail_message": "You must import the math module using 'import math'."
+    },
+    {
+      "type": "regex",
+      "pattern": "math\\.sqrt\\s*\\(",
+      "description": "Uses math.sqrt() to calculate the square root",
+      "fail_message": "Use math.sqrt() to calculate the square root of 144."
+    }
+  ],
+  "hints": [
+    "Start with 'import math' at the top of your code",
+    "Call math.sqrt(144) to calculate the square root",
+    "Pass the result directly to print()"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "12.0\n"
+    }
+  ]
+}

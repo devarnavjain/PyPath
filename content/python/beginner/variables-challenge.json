@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.beginner.variables",
+  "title": "Variable Greeting",
+  "description": "Create a variable called 'language' with the value 'Python', and a variable called 'version' with the value 3. Then use an f-string to print:\n\nMy language is Python and its version is 3.",
+  "xp_reward": 25,
+  "starter_code": "# Create your variables here\n\n# Use print() with an f-string\n",
+  "expected_output": "My language is Python and its version is 3.\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "language\\s*=\\s*['\"]Python['\"]",
+      "description": "Creates a variable called 'language' set to 'Python'",
+      "fail_message": "Make sure you create a variable called 'language' set to 'Python'."
+    },
+    {
+      "type": "regex",
+      "pattern": "version\\s*=\\s*3\\b",
+      "description": "Creates a variable called 'version' set to 3",
+      "fail_message": "Make sure you create a variable called 'version' set to 3."
+    },
+    {
+      "type": "regex",
+      "pattern": "f['\"]",
+      "description": "Uses an f-string to format the output",
+      "fail_message": "Use an f-string (e.g. f'...') to build the output, not a plain hardcoded string."
+    }
+  ],
+  "hints": [
+    "Use language = 'Python' to store the string value",
+    "Use version = 3 to store the number (no quotes needed)",
+    "Use f'My language is {language} and its version is {version}.' for the output"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "My language is Python and its version is 3.\n"
+    }
+  ]
+}

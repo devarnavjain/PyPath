@@ -1,0 +1,93 @@
+{
+  "id": "python.intermediate.tuples",
+  "title": "Tuples",
+  "tier": "intermediate",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is a Tuple?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A **tuple** is an ordered collection of items, just like a list. The big difference? Tuples are **immutable** — once you create one, you cannot change, add, or remove items. You create a tuple using **parentheses** `()` instead of square brackets."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "coordinates = (10, 20)\ncolors = ('red', 'green', 'blue')\nsingle_item = (42,)\n\nprint(coordinates)\nprint(colors)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "A tuple with one item needs a trailing comma: `(42,)`. Without the comma, Python sees it as just parentheses around a value, not a tuple."
+    },
+    {
+      "type": "heading",
+      "content": "Tuples vs Lists"
+    },
+    {
+      "type": "paragraph",
+      "content": "Tuples and lists are similar, but the difference in mutability matters. Use a **list** when the data might change (adding, removing, sorting). Use a **tuple** when the data should stay fixed — like days of the week, RGB color values, or coordinates that should not move."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "rgb_red = (255, 0, 0)\nweekdays = ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday')\n\n# This works with lists but NOT with tuples:\n# rgb_red[0] = 200  # TypeError: 'tuple' object does not support item assignment\n\nprint('You can still read items:', rgb_red[0])",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Since tuples cannot change, they are **hashable** — so they can be used as dictionary keys, unlike lists. This makes tuples essential for certain data structures."
+    },
+    {
+      "type": "heading",
+      "content": "The tuple() Constructor"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can convert other sequences into a tuple using `tuple()`. This is useful when you have a list that you want to freeze — or when you need a hashable version of a sequence to use as a dictionary key."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "my_list = [1, 2, 3, 4]\nmy_tuple = tuple(my_list)\nprint(my_tuple)\n\n# Also works with strings:\nletter_tuple = tuple('hello')\nprint(letter_tuple)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Tuple Packing and Unpacking"
+    },
+    {
+      "type": "paragraph",
+      "content": "**Packing** means creating a tuple by grouping values. **Unpacking** means assigning each item of a tuple to a separate variable. This is one of the most elegant features of Python — it works with lists too, but tuples are the classic example."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Packing\npoint = (5, 10, 15)\n\n# Unpacking\nx, y, z = point\nprint('x:', x, 'y:', y, 'z:', z)\n\n# Swapping variables using tuple unpacking\na, b = 1, 2\na, b = b, a\nprint('a:', a, 'b:', b)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "When to Choose Tuples"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use tuples when you want to communicate: *\"this data should not change.\"* They are safer for constants, fixed configuration values, and function return values that should stay together. Many Python functions return tuples naturally — the `divmod()` function returns `(quotient, remainder)` as a tuple."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Functions can return multiple values as a tuple\ndef min_max(numbers):\n    return (min(numbers), max(numbers))\n\nresult = min_max([4, 9, 1, 7, 3])\nprint(result)\n\nlow, high = result\nprint('Lowest:', low, 'Highest:', high)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Tuples use less memory than lists and are slightly faster to access. For large amounts of fixed data, tuples are both safer and more efficient."
+    }
+  ]
+}

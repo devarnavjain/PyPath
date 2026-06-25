@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.beginner.dicts",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "How do you access the value for key 'name' in a dict called person?",
+      "options": ["person['name']", "person('name')", "person.name", "person{'name'}"],
+      "correct": 0,
+      "explanation": "Square brackets with the key name: person['name'] gives the value for that key."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What does .keys() return?",
+      "options": ["All values in the dict", "All keys in the dict", "All items as tuples", "The number of entries"],
+      "correct": 1,
+      "explanation": ".keys() returns a view of all the keys in the dictionary."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What is len({'a': 1, 'b': 2, 'c': 3})?",
+      "options": ["3", "6", "Error", "1"],
+      "correct": 0,
+      "explanation": "len() counts the number of key-value pairs — there are 3 entries."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "question": "Complete: my_dict._____() returns all key-value pairs as tuples you can unpack.",
+      "answer": "items",
+      "case_sensitive": true
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What happens if you access a key that doesn't exist in a dict?",
+      "options": ["Returns None silently", "Raises a KeyError", "Returns 0", "Automatically creates the key"],
+      "correct": 1,
+      "explanation": "Accessing a missing key raises a KeyError — the key must exist to retrieve its value."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "Which way can you loop through all the keys of a dict named my_dict?",
+      "options": ["for key in my_dict:", "for key in my_dict.keys():", "for key in my_dict.values():", "Both A and B"],
+      "correct": 3,
+      "explanation": "Both 'for key in my_dict:' and 'for key in my_dict.keys():' work to iterate over keys."
+    }
+  ]
+}

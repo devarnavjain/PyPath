@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.beginner.capstone",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What does [1, 2, 3, 4][::-1] return?",
+      "options": ["[4, 3, 2, 1]", "[1, 2, 3, 4]", "[4, 3, 2]", "Error"],
+      "correct": 0,
+      "explanation": "[::-1] uses slicing with a step of -1 to reverse the list, giving [4, 3, 2, 1]."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What is the output of print(type({'a': 1}))?",
+      "options": ["<class 'list'>", "<class 'dict'>", "<class 'tuple'>", "Error"],
+      "correct": 1,
+      "explanation": "{} creates a dictionary, so type() returns <class 'dict'>."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What does this code print?\n\nfor i in range(3):\n    if i == 1:\n        print('yes')",
+      "options": ["yes", "yes yes", "yes\nyes\nyes", "Nothing"],
+      "correct": 0,
+      "explanation": "range(3) gives 0, 1, 2. Only when i equals 1 does it print 'yes' — so 'yes' is printed once."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "question": "Complete: The _____ function returns the number of items in a list or key-value pairs in a dictionary.",
+      "answer": "len",
+      "case_sensitive": true
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What is the output of this code?\n\nx = 5\ndef add(y):\n    return x + y\nprint(add(3))",
+      "options": ["5", "8", "3", "Error"],
+      "correct": 1,
+      "explanation": "The function add(y) returns x + y. x is 5 from the outer scope, y is 3, so 5 + 3 = 8."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What is the result of list({'a': 1, 'b': 2}.keys())?",
+      "options": ["['a', 'b']", "[1, 2]", "['a', 1, 'b', 2]", "Error"],
+      "correct": 0,
+      "explanation": ".keys() returns the keys 'a' and 'b', and list() converts them to ['a', 'b']."
+    }
+  ]
+}

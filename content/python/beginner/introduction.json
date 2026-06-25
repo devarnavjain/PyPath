@@ -1,0 +1,94 @@
+{
+  "id": "python.beginner.introduction",
+  "title": "Introduction to Python",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is Python?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python is a high-level, interpreted programming language known for its readability and simplicity. It was created by Guido van Rossum and first released in 1991. Python's design philosophy emphasizes code readability with its notable use of significant indentation."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Python is named after the British comedy group Monty Python, not the snake! You'll find Monty Python references throughout Python culture."
+    },
+    {
+      "type": "heading",
+      "content": "Why Learn Python?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python is one of the most popular programming languages in the world. Here's why:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Beginner-friendly — reads like plain English",
+        "Versatile — web development, data science, AI, automation, and more",
+        "Huge community — millions of developers ready to help",
+        "Rich ecosystem — thousands of free libraries and frameworks",
+        "High demand — Python developers are among the most sought-after"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Python consistently ranks in the top 3 programming languages on the TIOBE index and is the #1 language for data science."
+    },
+    {
+      "type": "heading",
+      "content": "Your First Python Program"
+    },
+    {
+      "type": "paragraph",
+      "content": "The classic first program in any language prints \"Hello, World!\" to the screen. In Python, this is incredibly simple:"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "print('Hello, World!')",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "When you run this code, Python executes the <code>print()</code> function, which displays whatever is inside the parentheses on the screen. The text inside quotes is called a <code>string</code>."
+    },
+    {
+      "type": "heading",
+      "content": "How Python Code Runs"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unlike compiled languages like C++ or Java, Python is <strong>interpreted</strong>. This means you write code and run it immediately without a separate compilation step. Here's the flow:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "You write Python code in a file (.py)",
+        "The Python interpreter reads your code line by line",
+        "It translates each line into machine instructions",
+        "Your program executes and produces output"
+      ],
+      "ordered": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "Python is case-sensitive. <code>Print</code> is different from <code>print</code>. Always use the correct casing!"
+    },
+    {
+      "type": "heading",
+      "content": "Your Turn"
+    },
+    {
+      "type": "paragraph",
+      "content": "Try modifying the example above. Change the message inside the quotes to print your own name or a different greeting. In the next section, we'll explore how to store and work with data using variables."
+    }
+  ]
+}

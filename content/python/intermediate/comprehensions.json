@@ -1,0 +1,88 @@
+{
+  "id": "python.intermediate.comprehensions",
+  "title": "List and Dict Comprehensions",
+  "tier": "intermediate",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is a List Comprehension?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A **list comprehension** is a concise way to create a list in a single line. Instead of writing a for loop with `append()`, you write `[expression for item in iterable]`. It is faster to write, faster to read, and often faster to execute."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Traditional loop\nsquares = []\nfor x in range(1, 6):\n    squares.append(x ** 2)\nprint('Loop:', squares)\n\n# List comprehension\nsquares2 = [x ** 2 for x in range(1, 6)]\nprint('Comprehension:', squares2)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Adding a Condition"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can filter items by adding an `if` condition at the end: `[expression for item in iterable if condition]`. Only items that make the condition `True` are included."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "numbers = list(range(1, 11))\nprint('All:', numbers)\n\n# Only even numbers\nevens = [n for n in numbers if n % 2 == 0]\nprint('Evens:', evens)\n\n# Squares of odd numbers only\nodd_squares = [n ** 2 for n in numbers if n % 2 != 0]\nprint('Odd Squares:', odd_squares)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "List comprehensions are a Python hallmark — you will see them everywhere. Get comfortable reading them left to right: *\"take n for each n in numbers if n is even.\"*"
+    },
+    {
+      "type": "heading",
+      "content": "Dict Comprehensions"
+    },
+    {
+      "type": "paragraph",
+      "content": "**Dict comprehensions** work the same way but produce dictionaries. Use curly braces with a key-value expression: `{key: value for item in iterable}`. This is perfect for transforming or filtering dictionaries."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Create a mapping from word to its length\nwords = ['hello', 'python', 'world']\nword_lengths = {word: len(word) for word in words}\nprint(word_lengths)\n\n# Square numbers as a dict\nsquares_dict = {x: x ** 2 for x in range(1, 6)}\nprint(squares_dict)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Nested Comprehensions"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can nest comprehensions to work with multiple levels — like flattening a matrix or creating pairs from two lists. The order of the `for` clauses matches the order of a nested loop: outer loop first, inner loop second."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Flatten a 2D matrix\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nflat = [item for row in matrix for item in row]\nprint('Flattened:', flat)\n\n# Pairs from two lists\ncolors = ['red', 'green']\nsizes = ['S', 'M', 'L']\npairs = [(c, s) for c in colors for s in sizes]\nprint('Pairs:', pairs)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "Nested comprehensions can become hard to read. If you have more than two `for` clauses, consider using a regular loop instead. Readability counts!"
+    },
+    {
+      "type": "heading",
+      "content": "Set Comprehensions and Generator Expressions"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can also write **set comprehensions** with `{expr for item in iterable}` (using curly braces without the colon), and **generator expressions** with `(expr for item in iterable)` — parentheses instead of brackets. Generator expressions are memory-efficient because they produce items one at a time instead of building a full list."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Set comprehension — unique squares\nunique_squares = {x ** 2 for x in range(-4, 5)}\nprint('Set:', unique_squares)\n\n# Generator expression — sum without creating a list\ntotal = sum(x ** 2 for x in range(1, 6))\nprint('Sum of squares:', total)",
+      "runnable": true
+    }
+  ]
+}

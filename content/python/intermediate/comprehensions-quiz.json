@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.intermediate.comprehensions",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What does [x * 2 for x in range(3)] return?",
+      "options": ["[0, 2, 4]", "[1, 2, 3]", "[2, 4, 6]", "[0, 1, 2]"],
+      "correct": 0,
+      "explanation": "range(3) produces 0, 1, 2. Doubling each gives [0, 2, 4]."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What does [n for n in [1, 2, 3, 4, 5] if n > 3] return?",
+      "options": ["[3, 4, 5]", "[4, 5]", "[1, 2, 3]", "[5]"],
+      "correct": 1,
+      "explanation": "The condition 'if n > 3' keeps only values 4 and 5."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "How do you write a dict comprehension that squares numbers 1 through 4?",
+      "options": ["[x: x**2 for x in range(1,5)]", "{x: x**2 for x in range(1,5)}", "{x**2 for x in range(1,5)}", "dict(x: x**2 for x in range(1,5))"],
+      "correct": 1,
+      "explanation": "Dict comprehensions use curly braces with a colon separating key and value: {x: x**2 for x in range(1,5)}."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What is the result of [item for row in [[1,2],[3,4]] for item in row]?",
+      "options": ["[[1,2], [3,4]]", "[1, 2, 3, 4]", "[3, 4]", "Error"],
+      "correct": 1,
+      "explanation": "This nested comprehension flattens the 2D list: outer loop takes each row, inner loop takes each item. Result is [1, 2, 3, 4]."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete the comprehension: [word._____() for word in ['hello', 'world']] would give ['HELLO', 'WORLD'].",
+      "answer": "upper",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What is the difference between a list comprehension and a generator expression?",
+      "options": ["They are exactly the same", "A list comprehension builds the full list in memory; a generator yields items one at a time", "A generator expression uses brackets, a list comprehension uses parentheses", "Generator expressions are faster than list comprehensions for all cases"],
+      "correct": 1,
+      "explanation": "List comprehensions create the entire list immediately. Generator expressions (parentheses) produce items lazily, saving memory for large sequences."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "python.intermediate.modules",
+  "title": "Modules and Imports",
+  "tier": "intermediate",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is a Module?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A **module** is a Python file (`.py`) containing functions, classes, and variables that you can reuse. Python ships with a huge **standard library** of modules — `math`, `random`, `os`, `json`, and hundreds more — so you don't have to write everything from scratch."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Import the math module and use its sqrt function\nimport math\nprint(math.sqrt(25))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "The standard library is one of Python's greatest strengths. Before writing your own solution, check if a built-in module already does what you need."
+    },
+    {
+      "type": "heading",
+      "content": "Different Ways to Import"
+    },
+    {
+      "type": "paragraph",
+      "content": "There are several import styles. `import module` gives you access to everything but requires the module name prefix. `from module import name` brings specific names into your namespace so you can use them directly. `import module as alias` lets you use a shorter name."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Style 1: import module\nimport math\nprint(math.pi)\n\n# Style 2: from module import name\nfrom math import sqrt\nprint(sqrt(16))\n\n# Style 3: import module as alias\nimport math as m\nprint(m.floor(3.7))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "Avoid `from module import *` — it imports **everything** into your namespace, which can accidentally overwrite your own variables and makes it hard to tell where a function came from."
+    },
+    {
+      "type": "heading",
+      "content": "Creating Your Own Module"
+    },
+    {
+      "type": "paragraph",
+      "content": "Any `.py` file can be imported as a module. Create a file called `greetings.py` with a function, then import it from another script. Just make sure both files are in the same directory."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# greetings.py\n\ndef say_hello(name):\n    return f'Hello, {name}!'",
+      "runnable": false
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# main.py — imports your custom module\nimport greetings\n\nmessage = greetings.say_hello('Alice')\nprint(message)",
+      "runnable": false
+    },
+    {
+      "type": "heading",
+      "content": "The __name__ == '__main__' Pattern"
+    },
+    {
+      "type": "paragraph",
+      "content": "When a Python file is run directly, the special variable `__name__` is set to `'__main__'`. When it is imported as a module, `__name__` is set to the module's name. This lets you write code that runs only when the file is executed directly, not when imported."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def greet(name):\n    return f'Hi {name}!'\n\nif __name__ == '__main__':\n    # This only runs when the file is executed directly\n    print(greet('World'))",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "This pattern is essential for writing reusable modules that also work as standalone scripts."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "python.advanced.decorators",
+  "title": "Decorators",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is a Decorator?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A <strong>decorator</strong> is a function that takes another function and extends its behavior without permanently modifying it. Think of it like wrapping a gift — the original item is still there, but now it has a decorative wrapper that adds something extra. Decorators are a powerful tool for adding logging, timing, access control, and more to existing functions."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def my_decorator(func):\n    def wrapper():\n        print('Something before')\n        func()\n        print('Something after')\n    return wrapper\n\ndef say_hello():\n    print('Hello!')\n\nsay_hello = my_decorator(say_hello)\n\nsay_hello()",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "The @ Syntax"
+    },
+    {
+      "type": "paragraph",
+      "content": "Instead of manually reassigning <code>say_hello = my_decorator(say_hello)</code>, Python gives you a cleaner shortcut: the <code>@</code> symbol. Just write <code>@decorator_name</code> right above the function definition."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def my_decorator(func):\n    def wrapper():\n        print('Something before')\n        func()\n        print('Something after')\n    return wrapper\n\n@my_decorator\ndef say_hello():\n    print('Hello!')\n\nsay_hello()",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "<code>@my_decorator</code> is exactly equivalent to <code>say_hello = my_decorator(say_hello)</code>. The decorator runs when the function is <strong>defined</strong>, not when it's called. The decorated version replaces the original."
+    },
+    {
+      "type": "heading",
+      "content": "How the Wrapper Works"
+    },
+    {
+      "type": "paragraph",
+      "content": "A decorator typically defines an inner function called a <strong>wrapper</strong>. The wrapper runs code before and after calling the original function. The decorator returns this wrapper, which now takes the place of the original function. When you call the decorated function later, you're actually calling the wrapper."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def timer(func):\n    def wrapper():\n        import time\n        start = time.time()\n        func()\n        end = time.time()\n        print(f'Took {end - start:.4f} seconds')\n    return wrapper\n\n@timer\ndef slow_function():\n    total = 0\n    for i in range(1000000):\n        total += i\n    print(f'Sum: {total}')\n\nslow_function()",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Preserving Metadata with functools.wraps"
+    },
+    {
+      "type": "paragraph",
+      "content": "When a decorator replaces a function with a wrapper, the original function's metadata (name, docstring, etc.) gets lost. The <code>functools.wraps</code> decorator copies that metadata from the original function to the wrapper, so your decorated functions keep their identity."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "from functools import wraps\n\ndef my_decorator(func):\n    @wraps(func)\n    def wrapper():\n        print('Before')\n        func()\n        print('After')\n    return wrapper\n\n@my_decorator\ndef greet():\n    '''Says hello to the world.'''\n    print('Hello!')\n\nprint(greet.__name__)\nprint(greet.__doc__)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Common Uses for Decorators"
+    },
+    {
+      "type": "paragraph",
+      "content": "Decorators are everywhere in real Python code. Common examples include: <strong>logging</strong> (automatically log every function call), <strong>timing</strong> (measure execution time), <strong>authentication</strong> (check user permissions before running), <strong>caching</strong> (store and reuse results of expensive calls), and <strong>input validation</strong> (check arguments before the function runs)."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "Always add <code>@wraps(func)</code> from functools to your wrapper functions in real projects. It's a best practice that prevents subtle bugs when other code inspects your decorated functions."
+    }
+  ]
+}

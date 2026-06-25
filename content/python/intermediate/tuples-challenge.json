@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.intermediate.tuples",
+  "title": "Tuple Unpacking Practice",
+  "description": "Create a tuple called **colors** with the values `'red'`, `'green'`, `'blue'` (in that order). Then **unpack** it into three variables and print each variable on its own line.",
+  "xp_reward": 25,
+  "starter_code": "# Create your tuple and unpack it here\n",
+  "expected_output": "red\ngreen\nblue\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "colors\\s*=\\s*\\(.*red.*green.*blue",
+      "description": "Creates a variable called 'colors' that holds a tuple with the items 'red', 'green', 'blue'",
+      "fail_message": "Make sure you create a tuple variable called 'colors' with three string items: 'red', 'green', 'blue'."
+    },
+    {
+      "type": "regex",
+      "pattern": "\\w+\\s*,\\s*\\w+\\s*,\\s*\\w+\\s*=\\s*colors",
+      "description": "Unpacks the tuple into three separate variables",
+      "fail_message": "Use tuple unpacking to assign the three items to three variables: var1, var2, var3 = colors"
+    }
+  ],
+  "hints": [
+    "Create the tuple with parentheses: colors = ('red', 'green', 'blue')",
+    "Unpack with: c1, c2, c3 = colors",
+    "Print each variable on its own line: print(c1), print(c2), print(c3)"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "red\ngreen\nblue\n"
+    }
+  ]
+}

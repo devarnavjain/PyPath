@@ -1,0 +1,27 @@
+{
+  "topic_id": "python.advanced.lambda",
+  "title": "Sort by Second Element",
+  "description": "You have a list of tuples: data = [(1, 3), (4, 1), (2, 2)]. Use sorted() with a lambda as the key to sort the tuples by their second element (index 1) in ascending order. Print the sorted list.",
+  "xp_reward": 25,
+  "starter_code": "data = [(1, 3), (4, 1), (2, 2)]\n\n# Use sorted() with a lambda to sort by the second element\nsorted_data = sorted(data, key=lambda x: x[1])\nprint(sorted_data)",
+  "expected_output": "[(4, 1), (2, 2), (1, 3)]\n",
+  "hints": [
+    "The key parameter of sorted() expects a function that returns the value to sort by",
+    "Each tuple x has x[0] as the first element and x[1] as the second element",
+    "Your lambda should look like: lambda x: x[1]"
+  ],
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "lambda",
+      "description": "Uses the lambda keyword for the sort key",
+      "fail_message": "You must use a lambda function as the key argument to sorted(). Do not define a separate named function with def."
+    }
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "[(4, 1), (2, 2), (1, 3)]\n"
+    }
+  ]
+}

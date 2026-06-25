@@ -1,0 +1,107 @@
+{
+  "id": "python.intermediate.fileio",
+  "title": "Reading and Writing Files",
+  "tier": "intermediate",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "Opening Files with open()"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python's built-in `open()` function lets you work with files on your computer. You pass it a file path and a **mode** that says what you want to do: `'r'` for **read**, `'w'` for **write** (overwrites!), `'a'` for **append**, and `'r+'` for **read and write**."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "file = open('example.txt', 'r')\ncontent = file.read()\nprint(content)\nfile.close()",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "**Always close your files!** If you forget to call `.close()`, data might not be saved and your program could leak memory. The `with` statement (next step) handles this automatically."
+    },
+    {
+      "type": "heading",
+      "content": "The with Statement (Context Manager)"
+    },
+    {
+      "type": "paragraph",
+      "content": "The `with` statement automatically closes the file when the block ends — even if an error occurs. This is the **preferred** way to handle files in Python."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "with open('example.txt', 'w') as file:\n    file.write('Hello, world!')",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "In this example, `'w'` mode **creates** the file if it doesn't exist, or **overwrites** it if it does. The file is automatically closed when the `with` block finishes."
+    },
+    {
+      "type": "heading",
+      "content": "Reading from a File"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use `.read()` to read the entire file as a single string, or `.readlines()` to get a **list** where each line is one element."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "with open('example.txt', 'r') as file:\n    lines = file.readlines()\n    for line in lines:\n        print(line.strip())",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Use `.strip()` to remove the trailing newline (`\\n`) from each line. Otherwise you'll get double-spaced output when using `print()` because `print` adds its own newline."
+    },
+    {
+      "type": "heading",
+      "content": "Writing to a File"
+    },
+    {
+      "type": "paragraph",
+      "content": "The `.write()` method writes a string to a file. It does **not** add a newline automatically — add `\\n` yourself if you want line breaks."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "with open('notes.txt', 'w') as file:\n    file.write('Line 1\\n')\n    file.write('Line 2\\n')\n    file.write('Line 3\\n')",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "If you want to add to an **existing** file without erasing it, use `'a'` (append) mode instead of `'w'`."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "with open('notes.txt', 'a') as file:\n    file.write('Another line\\n')",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "File Modes Summary"
+    },
+    {
+      "type": "paragraph",
+      "content": "Here are the most common file modes: `'r'` — **read** (default, error if file doesn't exist), `'w'` — **write** (creates or overwrites), `'a'` — **append** (creates or adds to end), `'r+'` — **read and write** (error if file doesn't exist). You can also use `'b'` for binary files like images."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Quick reference\n# 'r'  — read (default)\n# 'w'  — write (overwrites!)\n# 'a'  — append\n# 'r+' — read + write\n# 'rb' — read binary\n# 'wb' — write binary",
+      "runnable": false
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Be **very careful** with `'w'` mode — it silently **deletes** the file's contents before writing. There is no undo! Always double-check your file path."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.advanced.decorators",
+  "title": "Shout Decorator",
+  "description": "Define a decorator function called shout that wraps a function. The wrapper should print 'BEFORE' before calling the original function, and 'AFTER' after calling it. Then apply @shout to a function called greet that prints 'Hello!'. Finally, call greet(). Make sure to use the @shout syntax above the greet definition.\n\nExpected output:\nBEFORE\nHello!\nAFTER",
+  "xp_reward": 25,
+  "starter_code": "# Define your decorator here\n\n# Apply it to a function and call it\n",
+  "expected_output": "BEFORE\nHello!\nAFTER\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "@\\w+",
+      "description": "Uses the @decorator syntax to apply the decorator",
+      "fail_message": "Use the @shout syntax above the greet() function definition to apply the decorator."
+    },
+    {
+      "type": "regex",
+      "pattern": "def\\s+wrapper\\(",
+      "description": "Defines a wrapper function inside the decorator",
+      "fail_message": "Define a wrapper function inside your decorator that wraps the original function."
+    },
+    {
+      "type": "regex",
+      "pattern": "def\\s+shout\\(",
+      "description": "Defines the shout decorator function",
+      "fail_message": "Define a function called 'shout' that takes a function as its parameter."
+    }
+  ],
+  "hints": [
+    "Define shout(func): with an inner def wrapper(): that prints 'BEFORE', calls func(), then prints 'AFTER'",
+    "Return the wrapper function from shout without calling it — just return wrapper",
+    "Apply it with @shout right above def greet():, which should print 'Hello!'"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "BEFORE\nHello!\nAFTER\n"
+    }
+  ]
+}

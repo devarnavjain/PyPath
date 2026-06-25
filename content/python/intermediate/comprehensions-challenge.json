@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.intermediate.comprehensions",
+  "title": "Square Numbers with a Comprehension",
+  "description": "Use a **list comprehension** to create a list of squares for numbers **1 through 5** (inclusive). Assign the result to a variable called **squares** and print it.",
+  "xp_reward": 25,
+  "starter_code": "# Use a list comprehension to create squares of 1 through 5\n",
+  "expected_output": "[1, 4, 9, 16, 25]\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "\\[.*for\\s+\\w+\\s+in\\s+",
+      "description": "Uses a list comprehension with a 'for' clause inside brackets",
+      "fail_message": "Use a list comprehension inside square brackets: [expression for item in iterable]"
+    },
+    {
+      "type": "regex",
+      "pattern": "\\bsquares\\s*=",
+      "description": "Assigns the result to a variable called 'squares'",
+      "fail_message": "Assign the result of the list comprehension to a variable named 'squares'."
+    }
+  ],
+  "hints": [
+    "Use range(1, 6) to get the numbers 1 through 5",
+    "Square each number with x ** 2",
+    "Write: squares = [x ** 2 for x in range(1, 6)] then print(squares)"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "[1, 4, 9, 16, 25]\n"
+    }
+  ]
+}

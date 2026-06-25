@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.advanced.args",
+  "title": "Flexible Print Info Function",
+  "description": "Write a function called print_info that accepts any number of positional arguments via *args and any number of keyword arguments via **kwargs. For each positional argument, print 'arg: {value}'. For each keyword argument, print '{key}: {value}'. Then call print_info with positional arguments 'hello' and 'world', and keyword arguments name='Python' and version=3.",
+  "xp_reward": 25,
+  "starter_code": "def print_info(*args, **kwargs):\n    # Print positional arguments\n    for arg in args:\n        print(f'arg: {arg}')\n    # Print keyword arguments\n    for key, value in kwargs.items():\n        print(f'{key}: {value}')\n\n# Call the function\nprint_info('hello', 'world', name='Python', version=3)",
+  "expected_output": "arg: hello\narg: world\nname: Python\nversion: 3\n",
+  "hints": [
+    "Use for arg in args: to loop through positional arguments",
+    "Use for key, value in kwargs.items(): to loop through keyword arguments",
+    "The function call is already provided — just fill in the function body to print each item"
+  ],
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "\\*\\w*args",
+      "description": "Uses *args in the function signature",
+      "fail_message": "Your function must use *args to accept variable positional arguments."
+    },
+    {
+      "type": "regex",
+      "pattern": "\\*\\*\\w*kwargs",
+      "description": "Uses **kwargs in the function signature",
+      "fail_message": "Your function must use **kwargs to accept variable keyword arguments."
+    }
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "arg: hello\narg: world\nname: Python\nversion: 3\n"
+    }
+  ]
+}

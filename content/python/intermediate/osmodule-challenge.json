@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.intermediate.osmodule",
+  "title": "Split the Extension",
+  "description": "Import the os module. Create a variable called <code>file_path</code> with the value <code>'data.txt'</code>. Use **os.path.splitext()** to split it, and print just the extension part (the second element of the returned tuple).\n\nExpected output: .txt",
+  "xp_reward": 25,
+  "starter_code": "# Import the os module\n# Create file_path = 'data.txt'\n# Print just the extension using os.path.splitext()\n",
+  "expected_output": ".txt\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "import os",
+      "description": "Imports the os module",
+      "fail_message": "Import the os module with 'import os'."
+    },
+    {
+      "type": "regex",
+      "pattern": "os\\.path\\.splitext\\(",
+      "description": "Uses os.path.splitext() to split the file extension",
+      "fail_message": "Use os.path.splitext() to get the extension instead of hardcoding '.txt'."
+    }
+  ],
+  "hints": [
+    "Start with: import os",
+    "Create: file_path = 'data.txt'",
+    "Call os.path.splitext(file_path) — it returns a tuple like ('data', '.txt'). Get the second element with [1] and print it."
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": ".txt\n"
+    }
+  ]
+}

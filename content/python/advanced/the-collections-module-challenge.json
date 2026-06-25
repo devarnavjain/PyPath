@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.advanced.collections",
+  "title": "Deque Language Queue",
+  "description": "Import **deque** from the collections module. Create a deque initialized with **['PHP', 'Java']**. Use **.appendleft()** to add **'Python'** to the front of the deque, then use **.append()** to add **'C++'** to the end. Convert the deque to a list and print it.",
+  "xp_reward": 25,
+  "starter_code": "# Import deque from collections\n# Create a deque with 'PHP' and 'Java'\n# Add 'Python' to the front\n# Add 'C++' to the end\n# Convert to list and print\n",
+  "expected_output": "['Python', 'PHP', 'Java', 'C++']\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "(?:from collections import|import collections)",
+      "description": "Imports from the collections module",
+      "fail_message": "Import deque from collections with 'from collections import deque'."
+    },
+    {
+      "type": "regex",
+      "pattern": "deque\\(",
+      "description": "Creates a deque object",
+      "fail_message": "Create a deque with deque() — for example: d = deque(['PHP', 'Java'])."
+    }
+  ],
+  "hints": [
+    "Start with: from collections import deque",
+    "Create: d = deque(['PHP', 'Java'])",
+    "Add items: d.appendleft('Python') and d.append('C++'), then print(list(d))"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "['Python', 'PHP', 'Java', 'C++']\n"
+    }
+  ]
+}

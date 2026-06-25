@@ -1,0 +1,92 @@
+{
+  "id": "python.intermediate.errors",
+  "title": "Error Handling with Try and Except",
+  "tier": "intermediate",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "Why Handle Errors?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Programs crash when they hit unexpected situations: a user enters text instead of a number, a file doesn't exist, or you divide by zero. Instead of letting your program crash, you can **catch** these errors and respond gracefully."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Without error handling — crash!\nx = int(input('Enter a number: '))\nresult = 10 / x\nprint(result)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Try running the code above and entering `0`. Python raises a **ZeroDivisionError** and the program stops. Now let's fix that with `try/except`."
+    },
+    {
+      "type": "heading",
+      "content": "Basic Try / Except"
+    },
+    {
+      "type": "paragraph",
+      "content": "Wrap risky code in a `try` block. If an error happens, Python jumps to the `except` block instead of crashing."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "try:\n    x = int(input('Enter a number: '))\n    result = 10 / x\n    print(f'Result: {result}')\nexcept:\n    print('Something went wrong!')",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Catching Specific Exceptions"
+    },
+    {
+      "type": "paragraph",
+      "content": "A bare `except:` catches **everything**, which can hide bugs. It's better to catch **specific** exception types so you handle each situation appropriately."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "try:\n    x = int(input('Enter a number: '))\n    result = 10 / x\nexcept ValueError:\n    print('That is not a valid number!')\nexcept ZeroDivisionError:\n    print('Cannot divide by zero!')",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Common built-in exceptions: `ValueError` (bad conversion), `ZeroDivisionError`, `FileNotFoundError`, `TypeError`, `IndexError`. Always catch the most specific exception you expect."
+    },
+    {
+      "type": "heading",
+      "content": "Else and Finally Clauses"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can add an `else` block that runs **only** if no exception occurred, and a `finally` block that runs **no matter what** — useful for cleanup like closing files."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "try:\n    x = int(input('Enter a number: '))\n    result = 10 / x\nexcept ZeroDivisionError:\n    print('Cannot divide by zero!')\nelse:\n    print(f'Result is {result}')\nfinally:\n    print('Execution finished.')",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Raising Exceptions with raise"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can **intentionally** trigger an exception using the `raise` keyword. This is useful for validating inputs or signaling that something is wrong in your own code."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def set_age(age):\n    if age < 0 or age > 150:\n        raise ValueError('Age must be between 0 and 150')\n    print(f'Age set to {age}')\n\ntry:\n    set_age(-5)\nexcept ValueError as e:\n    print(f'Error: {e}')",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "The `as e` part captures the exception object so you can access its error message (stored in `e`)."
+    }
+  ]
+}

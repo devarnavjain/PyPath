@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.intermediate.fileio",
+  "title": "File Read and Write",
+  "description": "Write a program that creates a file named \"output.txt\", writes the text \"Hello, file!\" to it, then opens the file, reads its contents, and prints them to the screen.",
+  "xp_reward": 25,
+  "starter_code": "# Write your file handling code here\n\n",
+  "expected_output": "Hello, file!\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "open\\(['\"][^'\"]+['\"],\\s*['\"]w['\"]\\)",
+      "description": "Opens a file in write mode",
+      "fail_message": "Make sure you open a file with write mode ('w') to create and write to it."
+    },
+    {
+      "type": "regex",
+      "pattern": "with\\s+open\\(",
+      "description": "Uses the with statement to open a file",
+      "fail_message": "Use the 'with' statement to open files — it automatically handles closing."
+    },
+    {
+      "type": "regex",
+      "pattern": "\\.read\\(\\)|\\.readlines\\(\\)",
+      "description": "Reads the file contents back",
+      "fail_message": "Use .read() or .readlines() to read the contents of the file after writing."
+    }
+  ],
+  "hints": [
+    "Use 'with' to open the file in write ('w') mode, then call .write('Hello, file!')",
+    "In a separate 'with' block, open the same file in read ('r') mode and call .read()",
+    "Pass the result of .read() directly to print() to display it"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "Hello, file!\n"
+    }
+  ]
+}

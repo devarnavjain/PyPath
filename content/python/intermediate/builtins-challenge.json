@@ -1,0 +1,27 @@
+{
+  "topic_id": "python.intermediate.builtins",
+  "title": "Zip and Print Scores",
+  "description": "Given two lists: <code>names = ['Alice', 'Bob', 'Charlie']</code> and <code>scores = [85, 92, 78]</code>, use **zip()** to pair them and print each name with its score in the format <code>name: score</code> on separate lines.\n\nExpected output:\nAlice: 85\nBob: 92\nCharlie: 78",
+  "xp_reward": 25,
+  "starter_code": "names = ['Alice', 'Bob', 'Charlie']\nscores = [85, 92, 78]\n\n# Use zip() to print name: score for each pair\n",
+  "expected_output": "Alice: 85\nBob: 92\nCharlie: 78\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "zip\\(",
+      "description": "Uses the zip() function to pair names and scores",
+      "fail_message": "Use zip(names, scores) to pair the lists together instead of printing them one by one."
+    }
+  ],
+  "hints": [
+    "Loop with: for name, score in zip(names, scores):",
+    "Inside the loop, use print(f'{name}: {score}') to format each line",
+    "zip() pairs items by position — Alice gets 85, Bob gets 92, Charlie gets 78"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "Alice: 85\nBob: 92\nCharlie: 78\n"
+    }
+  ]
+}

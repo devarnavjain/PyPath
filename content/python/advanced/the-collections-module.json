@@ -1,0 +1,77 @@
+{
+  "id": "python.advanced.collections",
+  "title": "The Collections Module",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "The Collections Module"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python's <strong>collections</strong> module provides specialized container data types that go beyond the built-in <code>list</code>, <code>dict</code>, <code>tuple</code>, and <code>set</code>. When you need a data structure with a specific behavior — like fast appends on both ends, automatic counting, or never-missing dictionary keys — collections has exactly what you need."
+    },
+    {
+      "type": "heading",
+      "content": "deque — Double-Ended Queue"
+    },
+    {
+      "type": "paragraph",
+      "content": "A <strong>deque</strong> (pronounced 'deck', short for double-ended queue) is like a list optimized for fast appends and pops from <em>both</em> ends — O(1) on either side. Lists are O(n) for inserting at the beginning, but deques handle it instantly. Use <code>append()</code> and <code>pop()</code> for the right side, <code>appendleft()</code> and <code>popleft()</code> for the left."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "from collections import deque\n\nqueue = deque(['Alice', 'Bob', 'Charlie'])\n\nqueue.append('Diana')\nqueue.appendleft('Zara')\n\nprint('Queue:', list(queue))\n\nfirst = queue.popleft()\nprint('Served:', first)\nprint('Remaining:', list(queue))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Counter — Counting Made Easy"
+    },
+    {
+      "type": "paragraph",
+      "content": "<strong>Counter</strong> is a dictionary subclass designed for counting hashable objects. Just pass it any iterable (a string, a list, etc.) and it tallies every element. It has useful methods like <code>.most_common()</code> to get the top N items, and supports arithmetic like addition and subtraction between Counters."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "from collections import Counter\n\n# Count letters in a word\nletter_count = Counter('mississippi')\nprint('Letter counts:', dict(letter_count))\n\n# Count items in a list\nfruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']\nfruit_count = Counter(fruits)\nprint('Most common:', fruit_count.most_common(2))\n\n# Subtraction\nsurvey_a = Counter(red=5, blue=3)\nsurvey_b = Counter(red=2, blue=4, green=1)\ndiff = survey_a - survey_b\nprint('Difference:', dict(diff))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "defaultdict — No More KeyErrors"
+    },
+    {
+      "type": "paragraph",
+      "content": "<strong>defaultdict</strong> is a dictionary that never raises <code>KeyError</code>. When you access a missing key, it automatically creates a default value using a factory function you provide. Common factories: <code>int</code> (default 0), <code>list</code> (default []), <code>str</code> (default ''), or <code>set</code> (default set())."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "from collections import defaultdict\n\n# Group words by their first letter\nwords = ['apple', 'banana', 'apricot', 'blueberry', 'cherry']\ngroups = defaultdict(list)\n\nfor word in words:\n    groups[word[0]].append(word)\n\nprint(dict(groups))\n\n# Count without worrying about missing keys\ncounter = defaultdict(int)\nfor char in 'hello':\n    counter[char] += 1\n\nprint('Char counts:', dict(counter))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Before defaultdict, you'd need to write <code>if key not in my_dict: my_dict[key] = []</code> before every append. defaultdict eliminates this boilerplate entirely — it's cleaner, more readable, and less error-prone."
+    },
+    {
+      "type": "heading",
+      "content": "namedtuple — Lightweight Objects"
+    },
+    {
+      "type": "paragraph",
+      "content": "<strong>namedtuple</strong> creates a simple, immutable class with named fields — like a tuple but with attribute access via dot notation. It's perfect for lightweight data objects where you don't need the overhead of a full class. Access fields by name (<code>point.x</code>) or by index (<code>point[0]</code>)."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "from collections import namedtuple\n\n# Define a Point type\nPoint = namedtuple('Point', ['x', 'y'])\np1 = Point(3, 5)\np2 = Point(-1, 2)\n\n# Access by name\nprint('p1:', p1.x, p1.y)\n\n# Access by index\nprint('p2 x-coord:', p2[0])\n\n# Calculate distance\ndistance = ((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2) ** 0.5\nprint('Distance:', round(distance, 2))\n\n# Unpacking works too\nx, y = p1\nprint('Unpacked:', x, y)",
+      "runnable": true
+    }
+  ]
+}

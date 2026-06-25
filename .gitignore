@@ -1,0 +1,6 @@
+node_modules/
+dist/
+database/*.db
+.env
+*.log
+AGENTS.md

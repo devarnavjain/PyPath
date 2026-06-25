@@ -1,0 +1,118 @@
+{
+  "id": "python.beginner.loops",
+  "title": "Loops and Repetition",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "Why Loops?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Sometimes you need to repeat an action many times. Writing the same code over and over is tedious. **Loops** let you repeat code automatically. Python has two main types: <code>for</code> loops and <code>while</code> loops."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Think of loops like telling a computer: \"Keep doing this until I say stop.\" It's one of the main reasons computers are useful — they never get bored doing repetitive tasks!"
+    },
+    {
+      "type": "heading",
+      "content": "The for Loop with range()"
+    },
+    {
+      "type": "paragraph",
+      "content": "The <code>for</code> loop is perfect when you know how many times to repeat. Combined with <code>range()</code>, you can repeat a block a specific number of times."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# range(5) gives 0, 1, 2, 3, 4\nfor i in range(5):\n    print(i)",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "<code>range(start, stop)</code> lets you choose where to begin and end. Note that <code>stop</code> is **exclusive** — it stops before reaching that number."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# range(1, 6) gives 1, 2, 3, 4, 5\nfor num in range(1, 6):\n    print(num)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Looping Over Strings"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can also loop over each character in a string. This builds on what you learned in the strings lesson."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "word = 'PyPath'\nfor letter in word:\n    print(letter)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "The while Loop"
+    },
+    {
+      "type": "paragraph",
+      "content": "A <code>while</code> loop runs as long as a condition is <code>True</code> (just like an <code>if</code> statement, but it repeats!). Be careful — if the condition never becomes <code>False</code>, you get an **infinite loop**."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "count = 0\nwhile count < 5:\n    print(f'Count is {count}')\n    count = count + 1\n\nprint('Done!')",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "Always make sure your while loop's condition will eventually become False. If you forget to update the variable (like <code>count = count + 1</code> above), your loop runs forever and crashes your program!"
+    },
+    {
+      "type": "heading",
+      "content": "break and continue"
+    },
+    {
+      "type": "paragraph",
+      "content": "Two special keywords let you control loops more precisely:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<code>break</code> — exits the loop immediately",
+        "<code>continue</code> — skips the rest of the current iteration and moves to the next one"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "for i in range(10):\n    if i == 3:\n        continue\n    if i == 7:\n        break\n    print(i)",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "This code prints 0, 1, 2, 4, 5, 6. It skips 3 (continue) and stops entirely when i reaches 7 (break)."
+    },
+    {
+      "type": "heading",
+      "content": "The else Clause on Loops"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python has a unique feature — loops can have an <code>else</code> block! The <code>else</code> runs only if the loop finished normally (not interrupted by <code>break</code>)."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "for i in range(3):\n    print(i)\nelse:\n    print('Loop finished without break!')\n\nprint('---')\n\nfor i in range(3):\n    if i == 1:\n        break\n    print(i)\nelse:\n    print('This will not print.')",
+      "runnable": true
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "python.advanced.context",
+  "title": "Context Managers",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What Are Context Managers?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A context manager is a Python construct that handles setup and cleanup automatically. Think of it like a hotel room: when you check in (enter), everything is ready for you. When you check out (exit), the cleaning staff tidies up without you lifting a finger. The with statement is how you use context managers, and it guarantees cleanup even if errors occur."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Without a context manager — manual cleanup needed\nfile = open('example.txt', 'w')\nfile.write('hello')\nfile.close()  # Easy to forget!\n\n# With a context manager — automatic cleanup\nwith open('example.txt', 'w') as file:\n    file.write('hello')\n# File is closed automatically here, even if an error occurs",
+      "runnable": false
+    },
+    {
+      "type": "heading",
+      "content": "The with Statement"
+    },
+    {
+      "type": "paragraph",
+      "content": "The with statement is Python's clean, safe way to work with resources. The syntax is: with expression as variable:. The expression must produce a context manager object. The as variable part is optional — use it when you need access to the managed resource. Python guarantees that cleanup code runs when the block exits, whether normally, by return, or by exception."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Multiple context managers can be chained\nwith open('input.txt', 'r') as infile, open('output.txt', 'w') as outfile:\n    for line in infile:\n        outfile.write(line.upper())\n# Both files are closed automatically",
+      "runnable": false
+    },
+    {
+      "type": "heading",
+      "content": "Creating Custom Context Managers"
+    },
+    {
+      "type": "paragraph",
+      "content": "Any class can act as a context manager by implementing two methods: __enter__ and __exit__. The __enter__ method runs when execution enters the with block — it sets up resources and optionally returns an object assigned by as. The __exit__ method runs when the block exits — it handles cleanup and receives any exception details."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Timer:\n    def __enter__(self):\n        import time\n        self.start = time.time()\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        import time\n        elapsed = time.time() - self.start\n        print(f'Elapsed: {elapsed:.3f}s')\n        # Return False to propagate exceptions (default behavior)\n        return False\n\nwith Timer() as t:\n    total = sum(range(1000000))\n    print(f'Sum: {total}')",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "The __exit__ method receives three arguments: exc_type (exception class), exc_val (exception instance), and exc_tb (traceback). If the block completes without error, all three are None. Return True from __exit__ to suppress an exception, or False (default) to let it propagate."
+    },
+    {
+      "type": "heading",
+      "content": "The contextlib Module"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python's contextlib module provides helpers for working with context managers. The @contextmanager decorator lets you create one using a generator function instead of a class — just put setup code before yield, cleanup after, and any yield value becomes what the as variable receives. The closing() utility creates a context manager that calls .close() on an object automatically."
+    }
+  ]
+}

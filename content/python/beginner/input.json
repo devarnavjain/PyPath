@@ -1,0 +1,82 @@
+{
+  "id": "python.beginner.input",
+  "title": "Getting User Input",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "Getting User Input"
+    },
+    {
+      "type": "paragraph",
+      "content": "Programs are much more interesting when they can respond to the user. Python's <code>input()</code> function lets you ask the user for information and store their response."
+    },
+    {
+      "type": "heading",
+      "content": "Using the input() Function"
+    },
+    {
+      "type": "paragraph",
+      "content": "The <code>input()</code> function displays a <strong>prompt</strong> message and waits for the user to type something. Whatever the user types is returned as a <strong>string</strong>."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "name = input(\"Enter your name: \")\nprint(\"Hello, \" + name + \"!\")",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "<code>input()</code> always returns a <strong>string</strong> — even if the user types a number! If you type <code>42</code>, you get the string <code>\"42\"</code>, not the integer <code>42</code>. You must convert it if you need to do math."
+    },
+    {
+      "type": "heading",
+      "content": "Converting Input to Numbers"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use <code>int()</code> to convert a string to an integer, or <code>float()</code> to convert to a decimal number. This is called <strong>type conversion</strong> or <strong>casting</strong>."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "age = input(\"How old are you? \")\nage = int(age)\nnext_year = age + 1\nprint(f\"Next year you'll be {next_year}\")",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Using Input with f-strings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Combine <code>input()</code> with <strong>f-strings</strong> to create friendly, personalized messages. This is one of the most common patterns in beginner programs."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "city = input(\"What city do you live in? \")\nprint(f\"{city} sounds like a great place!\")",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Putting It All Together"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can even call <code>int()</code> and <code>input()</code> together on one line. This asks for input and immediately converts it to a number."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "name = input(\"What's your name? \")\nage = int(input(\"How old are you? \"))\nprint(f\"Hi {name}! In 10 years, you'll be {age + 10}.\")",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Always convert user input as <strong>early as possible</strong> — right after you get it. This makes your code cleaner and catches conversion errors in one predictable place."
+    }
+  ]
+}

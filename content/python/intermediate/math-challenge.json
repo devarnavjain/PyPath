@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.intermediate.math",
+  "title": "Square Root and Factorial",
+  "description": "Import the math module. Use **math.sqrt()** to calculate the square root of 81 and **math.factorial()** to calculate the factorial of 5. Print both results separated by a space (sqrt first, then factorial).",
+  "xp_reward": 25,
+  "starter_code": "# Import the math module\n# Calculate and print sqrt(81) and factorial(5)\n",
+  "expected_output": "9.0 120\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "import math",
+      "description": "Imports the math module",
+      "fail_message": "Import the math module with 'import math'."
+    },
+    {
+      "type": "regex",
+      "pattern": "math\\.sqrt\\(",
+      "description": "Uses math.sqrt() to calculate a square root",
+      "fail_message": "Use math.sqrt(81) to calculate the square root instead of hardcoding 9.0."
+    },
+    {
+      "type": "regex",
+      "pattern": "math\\.factorial\\(",
+      "description": "Uses math.factorial() to calculate a factorial",
+      "fail_message": "Use math.factorial(5) to calculate the factorial instead of hardcoding 120."
+    }
+  ],
+  "hints": [
+    "Start with: import math",
+    "Call math.sqrt(81) and math.factorial(5)",
+    "Print both in one line: print(math.sqrt(81), math.factorial(5))"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "9.0 120\n"
+    }
+  ]
+}

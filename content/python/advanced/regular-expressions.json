@@ -1,0 +1,115 @@
+{
+  "id": "python.advanced.regex",
+  "title": "Regular Expressions",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What Are Regular Expressions?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A <strong>regular expression</strong> (or regex) is a sequence of characters that defines a search pattern. Think of it as a super-powered search bar — instead of searching for exact text, you can search for <em>patterns</em> like 'any 3-digit number', 'a valid email address', or 'every word that starts with a capital letter'. Python's <code>re</code> module gives you regex powers in the standard library."
+    },
+    {
+      "type": "heading",
+      "content": "Basic Patterns: \\d, \\w, and ."
+    },
+    {
+      "type": "paragraph",
+      "content": "Regex uses special escape sequences to represent categories of characters:<br><br><code>\\d</code> — any digit (0-9)<br><code>\\w</code> — any word character (letter, digit, or underscore)<br><code>\\s</code> — any whitespace (space, tab, newline)<br><code>.</code> (dot) — any character except newline"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import re\n\ntext = 'Order #42: ship by 2025'\n\n# Find the first digit\nmatch = re.search(r'\\d+', text)\nprint('First number:', match.group())\n\n# Find all word sequences\nwords = re.findall(r'\\w+', text)\nprint('All words:', words)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Always prefix your regex patterns with <code>r</code> (raw string) like <code>r'\\d+'</code>. Without the <code>r</code>, Python would interpret <code>\\d</code> as an escaped 'd' instead of a regex digit pattern."
+    },
+    {
+      "type": "heading",
+      "content": "Quantifiers: *, +, and ?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Quantifiers control <em>how many</em> characters to match:<br><br><code>*</code> — 0 or more times<br><code>+</code> — 1 or more times<br><code>?</code> — 0 or 1 time (optional)<br><code>{3}</code> — exactly 3 times<br><code>{2,5}</code> — between 2 and 5 times"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import re\n\n# 'colou?r' matches both 'color' and 'colour'\nprint(re.findall(r'colou?r', 'color and colour are the same'))\n\n# '\\d{3}-\\d{4}' matches phone prefixes like 555-1234\nprint(re.findall(r'\\d{3}-\\d{4}', 'Call 555-1234 or 555-5678'))\n\n# '.+' matches everything (greedy)\nprint(re.findall(r'.+', 'Hello, world!'))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Quantifiers are <strong>greedy</strong> by default — they match as much as possible. Add <code>?</code> after a quantifier (like <code>*?</code> or <code>+?</code>) to make it <strong>lazy</strong>, matching the shortest possible string."
+    },
+    {
+      "type": "heading",
+      "content": "Character Sets with []"
+    },
+    {
+      "type": "paragraph",
+      "content": "Square brackets define a <strong>character set</strong> — match any one character from the set:<br><br><code>[aeiou]</code> — any vowel<br><code>[0-9]</code> — same as <code>\\d</code><br><code>[a-zA-Z]</code> — any letter<br><code>[^0-9]</code> — any character that is NOT a digit (the <code>^</code> negates the set)"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import re\n\n# Find all vowels\nvowels = re.findall(r'[aeiou]', 'Hello, Python World!')\nprint('Vowels found:', vowels)\n\n# Find all non-digit characters\nnon_digits = re.findall(r'[^0-9]', 'Room 42, Door 7B')\nprint('Non-digit chars:', non_digits)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "re.search() — Finding a Match"
+    },
+    {
+      "type": "paragraph",
+      "content": "<code>re.search(pattern, string)</code> scans through the string looking for the first location where the pattern matches. If found, it returns a <strong>Match object</strong> with useful methods like <code>.group()</code> (the matched text), <code>.start()</code> and <code>.end()</code> (positions). If no match is found, it returns <code>None</code>."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import re\n\ntext = 'My email is alice@example.com'\nmatch = re.search(r'\\w+@\\w+\\.\\w+', text)\n\nif match:\n    print('Found:', match.group())\n    print('Start:', match.start())\n    print('End:', match.end())",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "re.findall() — Finding All Matches"
+    },
+    {
+      "type": "paragraph",
+      "content": "<code>re.findall(pattern, string)</code> returns <strong>all</strong> non-overlapping matches as a list of strings. This is the function you reach for when you want every occurrence of a pattern — all phone numbers in a document, all hashtags in a post, or all URLs in a page."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import re\n\nlog = 'Error: 404 on /home, Error: 500 on /login, Error: 403 on /admin'\nerrors = re.findall(r'\\d{3}', log)\nprint('Error codes:', errors)\n\n# Extract words starting with capital letters\nnames = re.findall(r'[A-Z]\\w*', 'Alice and Bob visited New York in January')\nprint('Capitalized words:', names)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "re.sub() — Search and Replace"
+    },
+    {
+      "type": "paragraph",
+      "content": "<code>re.sub(pattern, replacement, string)</code> replaces every match with a replacement string. This is regex-powered find-and-replace. You can even use matched groups in the replacement with <code>\\1</code>, <code>\\2</code>, etc."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import re\n\n# Replace all digits with '#'\ntext = 'My PIN is 1234 and code is 9876'\ncensored = re.sub(r'\\d', '#', text)\nprint(censored)\n\n# Use groups to swap name order\nbio = 'Doe, John'\nswapped = re.sub(r'(\\w+), (\\w+)', r'\\2 \\1', bio)\nprint(swapped)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Parentheses <code>()</code> create <strong>capturing groups</strong>. You can reference them in the replacement with <code>\\1</code>, <code>\\2</code>, etc., or use <code>.group(1)</code> on the Match object. Groups make regex truly powerful for extracting structured data."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.beginner.booleans",
+  "title": "Compare Two Numbers",
+  "description": "Create a variable 'a' with value 10 and 'b' with value 20. Print whether a is greater than b (as a boolean), then print whether a is less than b (as a boolean). Each on its own line.",
+  "xp_reward": 25,
+  "starter_code": "# Create your variables and comparisons here\n",
+  "expected_output": "False\nTrue\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "a\\s*=\\s*10\\b",
+      "description": "Creates a variable 'a' set to 10",
+      "fail_message": "Create a variable called 'a' with the value 10."
+    },
+    {
+      "type": "regex",
+      "pattern": "b\\s*=\\s*20\\b",
+      "description": "Creates a variable 'b' set to 20",
+      "fail_message": "Create a variable called 'b' with the value 20."
+    },
+    {
+      "type": "regex",
+      "pattern": "[<>]",
+      "description": "Uses comparison operators (> or <)",
+      "fail_message": "Use comparison operators (> and <) to compare a and b instead of hardcoding the boolean values."
+    }
+  ],
+  "hints": [
+    "Create two variables: a = 10 and b = 20",
+    "Use the > operator to check if a is greater than b, and the < operator to check if a is less than b",
+    "Wrap each comparison in a print() function call"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "False\nTrue\n"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "topic_id": "python.advanced.args",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What type does *args collect positional arguments into?",
+      "options": ["tuple", "list", "dict", "set"],
+      "correct": 0,
+      "explanation": "The *args parameter bundles extra positional arguments into a tuple. You can iterate over it or access elements by index."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What type does **kwargs collect keyword arguments into?",
+      "options": ["dict", "tuple", "list", "string"],
+      "correct": 0,
+      "explanation": "The **kwargs parameter bundles keyword arguments into a dictionary where parameter names become string keys."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What does the * operator do when used in a function call like func(*my_list)?",
+      "options": [
+        "Unpacks the list into separate positional arguments",
+        "Packs the list into a single argument",
+        "Multiplies the list contents",
+        "Creates a copy of the list"
+      ],
+      "correct": 0,
+      "explanation": "When used in a function call, *my_list unpacks each element of the list as a separate positional argument to the function."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What is the correct order of parameters in a function definition?",
+      "options": [
+        "Positional, *args, **kwargs",
+        "*args, positional, **kwargs",
+        "**kwargs, *args, positional",
+        "*args, **kwargs, positional"
+      ],
+      "correct": 0,
+      "explanation": "The correct order is: regular positional parameters, then *args, then **kwargs. This follows from how Python matches arguments at call time."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete the function that accepts any keyword arguments: def show_info(_____):",
+      "answer": "**kwargs",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What happens if you call func(**my_dict) where my_dict has keys that don't match any function parameters?",
+      "options": [
+        "It raises a TypeError",
+        "The extra keys are silently ignored",
+        "They are collected by **kwargs if present",
+        "Python automatically creates new parameters"
+      ],
+      "correct": 2,
+      "explanation": "If the function defines **kwargs, extra keyword arguments are collected into it. If the function doesn't have **kwargs, a TypeError is raised."
+    }
+  ]
+}

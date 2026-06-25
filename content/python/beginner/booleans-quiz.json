@@ -1,0 +1,52 @@
+{
+  "topic_id": "python.beginner.booleans",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What does the expression 5 == 5 evaluate to?",
+      "options": ["True", "False", "5", "Error"],
+      "correct": 0,
+      "explanation": "5 == 5 checks if 5 is equal to 5, which is True."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What is the difference between = and == in Python?",
+      "options": ["They are the same thing", "= assigns a value, == compares values", "= compares values, == assigns a value", "= works with numbers, == works with strings"],
+      "correct": 1,
+      "explanation": "A single = is the assignment operator (x = 5 sets x to 5). Double == is the equality comparison operator (x == 5 checks if x equals 5)."
+    },
+    {
+      "id": "q3",
+      "type": "fill",
+      "question": "What does bool(0) return? Type your answer: _____",
+      "answer": "False",
+      "case_sensitive": true
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "Which of the following values is falsy?",
+      "options": ["'False'", "0", "-1", "'0'"],
+      "correct": 1,
+      "explanation": "0 is falsy. The string 'False' is a non-empty string so it's truthy, and both -1 and '0' are truthy."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What does 10 != 5 evaluate to?",
+      "options": ["True", "False", "10", "5"],
+      "correct": 0,
+      "explanation": "10 != 5 checks if 10 is not equal to 5, which is True."
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "question": "Complete the comparison: 'apple' _____ 'banana' evaluates to True (use the correct operator)",
+      "answer": "<",
+      "case_sensitive": true
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.intermediate.random",
+  "title": "Seeded Random Integer",
+  "description": "Import the random module, set the random seed to 5, generate a random integer between 1 and 10 (inclusive) using randint, and print it.",
+  "xp_reward": 25,
+  "starter_code": "# Import random, set seed, and print a random integer\n\n",
+  "expected_output": "10\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "import\\s+random",
+      "description": "Imports the random module",
+      "fail_message": "You must import the random module at the top of your code."
+    },
+    {
+      "type": "regex",
+      "pattern": "random\\.seed\\s*\\(\\s*5\\s*\\)",
+      "description": "Sets the random seed to 5",
+      "fail_message": "Call random.seed(5) before generating the random number."
+    },
+    {
+      "type": "regex",
+      "pattern": "random\\.randint\\s*\\(",
+      "description": "Uses random.randint() to generate a random integer",
+      "fail_message": "Use random.randint() to generate a random integer between 1 and 10."
+    }
+  ],
+  "hints": [
+    "Start with 'import random' at the top",
+    "Call random.seed(5) to make the output predictable",
+    "Use print(random.randint(1, 10)) to generate and print the number"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "10\n"
+    }
+  ]
+}

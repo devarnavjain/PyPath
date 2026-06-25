@@ -1,0 +1,52 @@
+{
+  "topic_id": "python.beginner.introduction",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What does the print() function do in Python?",
+      "options": ["Prints a document on paper", "Displays text or values to the screen", "Saves data to a file", "Creates a new variable"],
+      "correct": 1,
+      "explanation": "print() outputs text or values to the console so you can see what your program is doing."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "question": "Complete the code to display Hello on screen: _____('Hello')",
+      "answer": "print",
+      "case_sensitive": true
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "Who created Python?",
+      "options": ["Dennis Ritchie", "Guido van Rossum", "Brendan Eich", "James Gosling"],
+      "correct": 1,
+      "explanation": "Guido van Rossum created Python in 1991. The language was named after Monty Python's Flying Circus."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "Python is a ___________ language.",
+      "options": ["compiled", "interpreted", "machine-level", "markup"],
+      "correct": 1,
+      "explanation": "Python is interpreted — code runs directly without a separate compilation step."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Is Python case-sensitive? Type yes or no: _____",
+      "answer": "yes",
+      "case_sensitive": false
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What file extension do Python files use?",
+      "options": [".pt", ".pyth", ".py", ".pn"],
+      "correct": 2,
+      "explanation": "Python source files use the .py extension."
+    }
+  ]
+}

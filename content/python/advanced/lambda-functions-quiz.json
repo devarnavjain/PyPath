@@ -1,0 +1,73 @@
+{
+  "topic_id": "python.advanced.lambda",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What keyword defines a lambda function?",
+      "options": ["lambda", "def", "fn", "function"],
+      "correct": 0,
+      "explanation": "The lambda keyword creates anonymous functions in a single expression. Unlike def, lambda doesn't require a name and automatically returns the expression result."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "Which of the following is valid lambda syntax?",
+      "options": [
+        "lambda x: x * 2",
+        "lambda (x): return x * 2",
+        "lambda x => x * 2",
+        "lambda: x * 2 => return"
+      ],
+      "correct": 0,
+      "explanation": "The correct syntax is lambda parameters: expression. No parentheses around parameters (unless multiple tuples), no return statement, and no => arrow."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What does list(map(lambda x: x.upper(), ['a', 'b'])) return?",
+      "options": [
+        "['A', 'B']",
+        "['a', 'b']",
+        "['A b']",
+        "TypeError"
+      ],
+      "correct": 0,
+      "explanation": "map() applies the lambda to each item. lambda x: x.upper() converts each string to uppercase, producing ['A', 'B']."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What is a key limitation of lambda functions?",
+      "options": [
+        "They can only contain a single expression",
+        "They cannot accept any arguments",
+        "They run slower than regular functions",
+        "They cannot return a value"
+      ],
+      "correct": 0,
+      "explanation": "Lambda bodies are limited to a single expression. You cannot use statements like assignments, loops, or if-elif-else blocks (though ternary expressions work)."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete the lambda that doubles a number: double = ___ x: x * 2",
+      "answer": "lambda",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "When should you prefer a regular def function over a lambda?",
+      "options": [
+        "When the logic is complex or needs to be reused",
+        "When the function takes more than one argument",
+        "When calling map() or filter()",
+        "When the function returns a value"
+      ],
+      "correct": 0,
+      "explanation": "def should be used when logic spans multiple lines, when you need the function in multiple places, or when a descriptive name improves readability. Lambdas are best for simple, one-off operations."
+    }
+  ]
+}

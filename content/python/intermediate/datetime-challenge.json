@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.intermediate.datetime",
+  "title": "Christmas Date Formatter",
+  "description": "Import the datetime module. Create a date object for **Christmas 2024** (December 25, 2024). Then print that date in the format **12/25/2024** using strftime.",
+  "xp_reward": 25,
+  "starter_code": "# Import the datetime module\n# Create a date for December 25, 2024\n# Print it formatted as 12/25/2024\n",
+  "expected_output": "12/25/2024\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "(?:import datetime|from datetime import)",
+      "description": "Imports the datetime module",
+      "fail_message": "Import the datetime module with 'import datetime' or 'from datetime import ...'."
+    },
+    {
+      "type": "regex",
+      "pattern": "\\.strftime\\(",
+      "description": "Uses the strftime method to format the date",
+      "fail_message": "Use the strftime method to format the date instead of printing a hardcoded string."
+    }
+  ],
+  "hints": [
+    "Use datetime.date(2024, 12, 25) to create the date object",
+    "Call strftime on the date object with the format string '%m/%d/%Y'",
+    "Pass the result directly to print(): print(christmas.strftime('%m/%d/%Y'))"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "12/25/2024\n"
+    }
+  ]
+}

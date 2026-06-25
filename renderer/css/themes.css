@@ -1,0 +1,25 @@
+[data-theme="light"] {
+  --bg-primary:     #FFFFFF;
+  --bg-secondary:   #F6F8FA;
+  --bg-tertiary:    #EAEEF2;
+  --bg-hover:       #E1E7ED;
+  --text-primary:   #1C2128;
+  --text-secondary: #57606A;
+  --text-tertiary:  #6E7781;
+  --border-subtle:  #EAEEF2;
+  --border-default: #D0D7DE;
+  --border-strong:  #8C959F;
+  --editor-bg:      #F6F8FA;
+  --output-bg:      #FFFFFF;
+
+  --accent-green:  #0F9D58;
+  --accent-blue:   #0969DA;
+  --accent-amber:  #9A6700;
+  --accent-purple: #8250DF;
+  --accent-red:    #CF222E;
+
+  --success: #0F9D58;
+  --warning: #9A6700;
+  --error:   #CF222E;
+  --info:    #0969DA;
+}

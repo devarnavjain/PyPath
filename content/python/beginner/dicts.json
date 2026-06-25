@@ -1,0 +1,96 @@
+{
+  "id": "python.beginner.dicts",
+  "title": "Dictionaries",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is a Dictionary?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A **dictionary** (or **dict**) stores data in **key-value pairs**. Instead of numbered indexes like a list, each value has a custom label called a **key** — like a real dictionary where you look up a word (key) to find its definition (value)."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "While **lists** store ordered items you access by position (index), **dicts** store labeled items you access by name (key). Lists are great for sequences; dicts are great for structured data."
+    },
+    {
+      "type": "heading",
+      "content": "Creating a Dictionary"
+    },
+    {
+      "type": "paragraph",
+      "content": "Dictionaries use curly braces `{}` with a colon `:` between each key and value. Separate pairs with commas. Keys are usually strings or numbers; values can be any type."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "person = {\n    'name': 'Alice',\n    'age': 25,\n    'city': 'Paris'\n}\n\nprint(person)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Accessing Values"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use square brackets with the key name to get the value: `dict['key']`. If the key doesn't exist, Python raises a **KeyError** — so make sure the key is present."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "student = {'name': 'Bob', 'grade': 'A', 'age': 20}\n\nprint(student['name'])\nprint(student['grade'])",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Adding and Modifying Entries"
+    },
+    {
+      "type": "paragraph",
+      "content": "To add a new key-value pair or update an existing one, just assign to the key: `dict['new_key'] = value`. If the key already exists, its value is **overwritten**."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "user = {'username': 'coder42'}\nuser['email'] = 'coder42@example.com'\nuser['username'] = 'pythonfan'\n\nprint(user)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Useful Dict Methods"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python dicts have helpful methods. `.keys()` returns all keys, `.values()` returns all values, and `.items()` returns both as pairs you can unpack in a loop."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "inventory = {'apples': 5, 'bananas': 3, 'oranges': 7}\n\nprint('Keys:', list(inventory.keys()))\nprint('Values:', list(inventory.values()))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Looping Through a Dictionary"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can loop through keys directly with `for key in dict:`, or use `.items()` to get both key and value at the same time — just like you loop through a list, but with two variables!"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "scores = {'math': 90, 'science': 85, 'english': 88}\n\nfor subject, score in scores.items():\n    print(subject + ': ' + str(score))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Think of a list as a row of numbered lockers, and a dict as a set of labeled cubbies. When order matters, use a list. When labels matter, use a dict!"
+    }
+  ]
+}

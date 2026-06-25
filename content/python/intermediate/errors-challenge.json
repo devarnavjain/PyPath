@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.intermediate.errors",
+  "title": "Safe Division with Error Handling",
+  "description": "Create a list `numbers = [10, 0, 5]`. Loop through it and try to divide 100 by each number using `try/except`. If the division succeeds, print the result. If a ZeroDivisionError occurs, print \"skip\" instead. Each output should be on its own line.",
+  "xp_reward": 25,
+  "starter_code": "# Create your list and use try/except to divide safely\n\n",
+  "expected_output": "10.0\nskip\n20.0\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "try\\s*:",
+      "description": "Contains a 'try:' block",
+      "fail_message": "You need to use a 'try:' block to catch the division error."
+    },
+    {
+      "type": "regex",
+      "pattern": "except\\s+",
+      "description": "Contains an 'except' block",
+      "fail_message": "You need an 'except' block to handle the ZeroDivisionError."
+    }
+  ],
+  "hints": [
+    "Create a list numbers = [10, 0, 5] and use a for loop to go through it",
+    "Inside the loop, put 100 / num inside a try block, and catch ZeroDivisionError in the except block",
+    "Print the result normally, and print 'skip' when the error occurs"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "10.0\nskip\n20.0\n"
+    }
+  ]
+}

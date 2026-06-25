@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.advanced.magicmethods",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What does __str__ control in a class?",
+      "options": ["The length of a string", "The string representation shown by print()", "How strings are concatenated", "How strings are split"],
+      "correct": 1,
+      "explanation": "__str__ defines what print() and str() show for your object. It should return a human-readable string that users will find helpful."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What does __add__ let you do with custom objects?",
+      "options": ["Add numbers inside the object", "Use the + operator on your objects", "Add strings together", "Add items to a list"],
+      "correct": 1,
+      "explanation": "__add__ lets you define custom behavior for the + operator. When you do obj1 + obj2, Python calls obj1.__add__(obj2)."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "Which magic method is called by len()?",
+      "options": ["__length__", "__len__", "__size__", "__str__"],
+      "correct": 1,
+      "explanation": "__len__ is called by the built-in len() function. It must return a non-negative integer representing the 'size' of the object."
+    },
+    {
+      "id": "q4",
+      "type": "fill",
+      "question": "What magic method is used to customize the == operator? _____",
+      "answer": "__eq__",
+      "case_sensitive": true
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "What does __repr__ return?",
+      "options": ["A user-friendly readable string", "An unambiguous string representation, often code-like", "Nothing at all", "The object's memory address"],
+      "correct": 1,
+      "explanation": "__repr__ should return an unambiguous representation, ideally one that could recreate the object. It's shown in the console and used for debugging."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "If Vector has __add__ defined, what does v1 + v2 call?",
+      "options": ["v1.__add__(v2)", "v2.__add__(v1)", "__add__(v1, v2)", "add(v1, v2)"],
+      "correct": 0,
+      "explanation": "v1 + v2 calls v1.__add__(v2). The left operand's __add__ method is called with the right operand as the argument."
+    }
+  ]
+}

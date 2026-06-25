@@ -1,0 +1,82 @@
+{
+  "id": "python.advanced.magicmethods",
+  "title": "Magic Methods",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What Are Magic Methods?"
+    },
+    {
+      "type": "paragraph",
+      "content": "Magic methods are special methods that start and end with double underscores (<code>__method__</code>). Python calls them automatically in response to certain operations. You already know one — <code>__init__</code>. By defining magic methods in your classes, you can make your objects work with Python's built-in features like <code>print()</code>, <code>+</code>, <code>==</code>, and <code>len()</code>."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Magic methods are also called <strong>dunder methods</strong> (short for 'double underscore'). They're not meant to be called directly — Python calls them for you behind the scenes."
+    },
+    {
+      "type": "heading",
+      "content": "__str__ and __repr__"
+    },
+    {
+      "type": "paragraph",
+      "content": "<code>__str__</code> controls what <code>print()</code> shows for your object. <code>__repr__</code> returns an 'official' string representation, ideally one that could recreate the object. <code>__str__</code> is for users; <code>__repr__</code> is for developers debugging code."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Book:\n    def __init__(self, title, author):\n        self.title = title\n        self.author = author\n\n    def __str__(self):\n        return f'{self.title} by {self.author}'\n\n    def __repr__(self):\n        return f\"Book('{self.title}', '{self.author}')\"\n\nbook = Book('1984', 'George Orwell')\nprint(book)\nprint(repr(book))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Custom Addition with __add__"
+    },
+    {
+      "type": "paragraph",
+      "content": "The <code>__add__</code> method lets you use the <code>+</code> operator on your objects. It takes another object as a parameter and returns a new result — just like how <code>3 + 4</code> returns 7. A classic example is a Vector class for 2D coordinates."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Vector:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return f'({self.x}, {self.y})'\n\n    def __add__(self, other):\n        return Vector(self.x + other.x, self.y + other.y)\n\nv1 = Vector(2, 3)\nv2 = Vector(4, 5)\nprint(v1 + v2)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "<code>__add__</code> receives <code>other</code> as the value on the right side of <code>+</code>. So <code>v1 + v2</code> calls <code>v1.__add__(v2)</code>. You should always return a new object rather than modifying one of the existing ones."
+    },
+    {
+      "type": "heading",
+      "content": "Equality with __eq__"
+    },
+    {
+      "type": "paragraph",
+      "content": "By default, Python compares objects by memory address — two objects with identical data are considered different. Override <code>__eq__</code> to define what 'equal' means for your class."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Book:\n    def __init__(self, title, author):\n        self.title = title\n        self.author = author\n\n    def __eq__(self, other):\n        return self.title == other.title and self.author == other.author\n\nb1 = Book('1984', 'George Orwell')\nb2 = Book('1984', 'George Orwell')\nb3 = Book('1984', 'George Orwell')\nb4 = Book('Animal Farm', 'George Orwell')\nprint(b1 == b2)\nprint(b1 == b3)\nprint(b1 == b4)\nprint(b1 == b1)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Length with __len__"
+    },
+    {
+      "type": "paragraph",
+      "content": "Implement <code>__len__</code> to make your object work with <code>len()</code>. It must return a non-negative integer. This is useful for collections you build yourself."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Playlist:\n    def __init__(self):\n        self.songs = []\n\n    def add(self, song):\n        self.songs.append(song)\n\n    def __len__(self):\n        return len(self.songs)\n\np = Playlist()\np.add('Song A')\np.add('Song B')\np.add('Song C')\nprint(len(p))",
+      "runnable": true
+    }
+  ]
+}

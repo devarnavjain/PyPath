@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.advanced.collections",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What is a deque optimized for?",
+      "options": ["Fast appends and pops from both ends", "Fast sorting of elements", "Fast searching by value", "Memory-efficient storage of large data"],
+      "correct": 0,
+      "explanation": "A deque (double-ended queue) provides O(1) performance for append and pop operations on either end, unlike a list which is O(n) for left-side operations."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What does Counter('hello') return?",
+      "options": ["Counter({'h': 1, 'e': 1, 'l': 2, 'o': 1})", "A sorted list of unique letters", "The integer 5", "A tuple of ('h', 'e', 'l', 'l', 'o')"],
+      "correct": 0,
+      "explanation": "Counter('hello') counts each character in the string, resulting in a dictionary-like object mapping each character to its count."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What happens when you access a missing key in a defaultdict?",
+      "options": ["It returns a default value without raising KeyError", "It raises a KeyError just like a regular dict", "It returns None silently", "It raises a ValueError"],
+      "correct": 0,
+      "explanation": "defaultdict never raises KeyError. When a missing key is accessed, it calls the factory function (like int or list) to create and return a default value."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What does namedtuple create?",
+      "options": ["A lightweight immutable class with named fields", "A regular tuple that can be modified", "A dictionary with default values", "A list with named indices"],
+      "correct": 0,
+      "explanation": "namedtuple creates an immutable class whose instances have named fields accessed with dot notation, while still supporting tuple features like indexing and unpacking."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete: from collections import ______ for a double-ended queue.",
+      "answer": "deque",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "Given c = Counter(['a', 'b', 'a', 'c', 'a', 'b']), what does c.most_common(2) return?",
+      "options": ["[('a', 3), ('b', 2)]", "[('a', 3)]", "[('a', 3), ('b', 2), ('c', 1)]", "[(3, 'a'), (2, 'b')]"],
+      "correct": 0,
+      "explanation": "most_common(2) returns the 2 most common elements as (element, count) tuples sorted by count descending. 'a' appears 3 times, 'b' appears 2 times, 'c' appears 1 time."
+    }
+  ]
+}

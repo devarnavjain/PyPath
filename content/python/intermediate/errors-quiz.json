@@ -1,0 +1,52 @@
+{
+  "topic_id": "python.intermediate.errors",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What happens when code inside a 'try' block raises an exception?",
+      "options": ["The program crashes immediately", "Execution jumps to the 'except' block", "The error is ignored silently", "Python retries the code automatically"],
+      "correct": 1,
+      "explanation": "When an exception occurs in the try block, execution immediately moves to the matching except block."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "Which exception is raised when you try to divide by zero?",
+      "options": ["ValueError", "IndexError", "ZeroDivisionError", "MathError"],
+      "correct": 2,
+      "explanation": "ZeroDivisionError is raised when you attempt to divide a number by zero."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "When does the 'else' block in a try/except/else structure run?",
+      "options": ["When an exception occurs", "Before the try block", "When no exception occurs", "Regardless of whether an exception occurs"],
+      "correct": 2,
+      "explanation": "The else block runs only if no exception was raised in the try block."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "When does the 'finally' block run?",
+      "options": ["Only if an exception occurs", "Only if no exception occurs", "Always, regardless of exceptions", "Only if there is no else block"],
+      "correct": 2,
+      "explanation": "The finally block always executes, whether an exception occurred or not. It is typically used for cleanup."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Fill in the blank: try: ... except ValueError __ e: print(e)",
+      "answer": "as",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "question": "What keyword do you use to manually trigger an exception inside your code?",
+      "answer": "raise",
+      "case_sensitive": true
+    }
+  ]
+}

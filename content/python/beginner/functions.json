@@ -1,0 +1,76 @@
+{
+  "id": "python.beginner.functions",
+  "title": "Functions",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is a Function?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A function is a reusable block of code that performs a specific task. Instead of writing the same code multiple times, you define it once in a function and call it whenever you need it. Functions help keep your code organized and readable."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def greet():\n    print('Hello, PyPath!')\n\ngreet()\ngreet()",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "The <code>def</code> keyword defines a function. The code inside the function is indented. To run the function, you write its name followed by parentheses: <code>greet()</code>. Notice how we called it twice and it printed twice!"
+    },
+    {
+      "type": "heading",
+      "content": "Functions with Parameters"
+    },
+    {
+      "type": "paragraph",
+      "content": "Functions become even more powerful when they accept <strong>parameters</strong> — inputs that change how the function behaves."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def greet(name):\n    print(f'Hello, {name}!)\n\ngreet('Alice')\ngreet('Bob')\ngreet('PyPath')",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "The variable <code>name</code> inside the function is called a <strong>parameter</strong>. The value you pass when calling it (<code>'Alice'</code>) is called an <strong>argument</strong>."
+    },
+    {
+      "type": "heading",
+      "content": "Return Values"
+    },
+    {
+      "type": "paragraph",
+      "content": "Functions can send back a value using the <code>return</code> keyword. This lets you use the result of a function in other parts of your code."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "def add(a, b):\n    result = a + b\n    return result\n\nsum = add(5, 3)\nprint(sum)\nprint(add(10, 20))",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "When Python hits the <code>return</code> statement, the function immediately exits and sends the value back. Any code after <code>return</code> inside the function will not run."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "A function without a <code>return</code> statement returns <code>None</code> by default. If you see <code>None</code> appearing in your output unexpectedly, check that your function has a return statement!"
+    },
+    {
+      "type": "heading",
+      "content": "Practice"
+    },
+    {
+      "type": "paragraph",
+      "content": "Write a function called <code>square</code> that takes a number and returns its square. Then test it with a few different values using <code>print()</code>."
+    }
+  ]
+}

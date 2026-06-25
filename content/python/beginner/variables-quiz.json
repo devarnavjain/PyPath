@@ -1,0 +1,52 @@
+{
+  "topic_id": "python.beginner.variables",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "Which of these is a valid variable name in Python?",
+      "options": ["2nd_place", "my-var", "my_var", "class"],
+      "correct": 2,
+      "explanation": "Variable names must start with a letter or underscore. 'class' is a reserved keyword and 'my-var' contains a hyphen."
+    },
+    {
+      "id": "q2",
+      "type": "fill",
+      "question": "What symbol is used to assign a value to a variable in Python?",
+      "answer": "=",
+      "case_sensitive": true
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What data type is the value 3.14?",
+      "options": ["int", "float", "str", "bool"],
+      "correct": 1,
+      "explanation": "Numbers with decimal points are float type in Python."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What does the type() function do?",
+      "options": ["Converts a value to a different type", "Returns the data type of a value", "Creates a new variable", "Prints the value to screen"],
+      "correct": 1,
+      "explanation": "type() returns the data type of the value passed to it."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete the f-string: print(f'My name is _____')\n\nThe variable name contains 'Bob'.",
+      "answer": "{name}",
+      "case_sensitive": false
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "Which of these will cause an error?",
+      "options": ["x = 10", "name = 'Python' + 3", "total = 5 + 3", "flag = True"],
+      "correct": 1,
+      "explanation": "You cannot concatenate a string and an integer with +. Use an f-string or convert the number to a string first."
+    }
+  ]
+}

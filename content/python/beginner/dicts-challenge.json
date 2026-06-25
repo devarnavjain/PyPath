@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.beginner.dicts",
+  "title": "Student Dictionary",
+  "description": "Create a dictionary called **student** with keys `'name'` (value `'Alice'`), `'age'` (value `22`), and `'grade'` (value `'A'`). Then use a **for loop with .items()** to print each key and value on its own line in the format: `name: Alice`",
+  "xp_reward": 25,
+  "starter_code": "# Create your dict and loop here\n",
+  "expected_output": "name: Alice\nage: 22\ngrade: A\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "student\\s*=\\s*\\{['\"]name['\"]\\s*:",
+      "description": "Creates a variable called 'student' with a dictionary containing a 'name' key",
+      "fail_message": "Create a variable called 'student' and assign it a dictionary with a 'name' key."
+    },
+    {
+      "type": "regex",
+      "pattern": "\\.items\\(\\)",
+      "description": "Uses .items() to iterate over key-value pairs",
+      "fail_message": "Use the .items() method inside your for loop to get both the key and value from the dictionary."
+    }
+  ],
+  "hints": [
+    "Create the dict: student = {'name': 'Alice', 'age': 22, 'grade': 'A'}",
+    "Loop with .items(): for key, value in student.items():",
+    "Inside the loop, print with: print(key + ': ' + str(value))"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "name: Alice\nage: 22\ngrade: A\n"
+    }
+  ]
+}

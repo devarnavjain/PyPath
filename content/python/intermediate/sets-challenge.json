@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.intermediate.sets",
+  "title": "Find the Intersection",
+  "description": "You are given two lists: `list_a = [1, 2, 2, 3, 4]` and `list_b = [3, 4, 5, 6]`. Convert both lists to **sets**, find their **intersection** (the numbers common to both), and then print the result **sorted** as a list.",
+  "xp_reward": 25,
+  "starter_code": "list_a = [1, 2, 2, 3, 4]\nlist_b = [3, 4, 5, 6]\n\n# Convert to sets, find intersection, sort, and print\n",
+  "expected_output": "[3, 4]\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "set\\s*\\(",
+      "description": "Uses set() to convert a list to a set",
+      "fail_message": "Convert each list to a set using the set() function, like: set_a = set(list_a)"
+    },
+    {
+      "type": "regex",
+      "pattern": "&|\\bintersection\\s*\\(",
+      "description": "Finds the intersection using & operator or .intersection() method",
+      "fail_message": "Use the & operator (e.g. set_a & set_b) or the .intersection() method to find the intersection."
+    }
+  ],
+  "hints": [
+    "Convert each list to a set: set_a = set(list_a), set_b = set(list_b)",
+    "Find the intersection with: common = set_a & set_b",
+    "Convert the result to a sorted list and print: print(sorted(list(common)))"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "[3, 4]\n"
+    }
+  ]
+}

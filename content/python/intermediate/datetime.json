@@ -1,0 +1,93 @@
+{
+  "id": "python.intermediate.datetime",
+  "title": "Working with Dates and Time",
+  "tier": "intermediate",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "The datetime Module"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python's <strong>datetime</strong> module gives you the power to work with dates, times, and time intervals. It's part of the standard library — no extra installation needed. The two most important classes are <code>datetime.date</code> (year, month, day) and <code>datetime.datetime</code> (year, month, day, hour, minute, second)."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import datetime\n\n# Create a date\nchristmas = datetime.date(2024, 12, 25)\nprint(christmas)\n\n# Create a datetime\nparty = datetime.datetime(2024, 12, 25, 20, 30)\nprint(party)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "The <code>datetime</code> module is one of Python's most useful standard library modules. You'll reach for it whenever your program needs to know <strong>when</strong> something happens."
+    },
+    {
+      "type": "heading",
+      "content": "Getting the Current Date and Time"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use <code>datetime.date.today()</code> to get the current date, and <code>datetime.datetime.now()</code> to get the current date and time down to the microsecond. These are the two functions you'll use most often."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import datetime\n\ntoday = datetime.date.today()\nnow = datetime.datetime.now()\n\nprint('Today:', today)\nprint('Now:', now)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Formatting Dates with strftime"
+    },
+    {
+      "type": "paragraph",
+      "content": "The <strong>strftime</strong> method (string format time) converts a date or datetime into a formatted string. You provide a format string with special codes: <code>%Y</code> for 4-digit year, <code>%m</code> for 2-digit month, <code>%d</code> for 2-digit day, <code>%A</code> for full weekday name, and <code>%B</code> for full month name."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import datetime\n\nd = datetime.date(2024, 12, 25)\n\nprint(d.strftime('%m/%d/%Y'))\nprint(d.strftime('%A, %B %d, %Y'))\nprint(d.strftime('%Y-%m-%d'))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Format codes are case-sensitive. <code>%Y</code> gives <code>2024</code> but <code>%y</code> gives just <code>24</code>. <code>%m</code> gives <code>12</code> but <code>%M</code> gives <strong>minutes</strong> (00-59). Mixing them up is a common mistake!"
+    },
+    {
+      "type": "heading",
+      "content": "Parsing Strings into Dates with strptime"
+    },
+    {
+      "type": "paragraph",
+      "content": "The reverse of strftime is <strong>strptime</strong> (string parse time). It takes a string and a format, and returns a datetime object. This is how you turn user input or file data into real date objects you can work with."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import datetime\n\ndate_str = '2024-12-25'\nparsed = datetime.datetime.strptime(date_str, '%Y-%m-%d')\n\nprint('Parsed date:', parsed.date())\nprint('Year:', parsed.year)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Date Arithmetic with timedelta"
+    },
+    {
+      "type": "paragraph",
+      "content": "The <strong>timedelta</strong> class represents a duration — a difference between two dates or times. You can add or subtract timedeltas from dates and datetimes to calculate future or past dates. Create one with <code>datetime.timedelta(days=7)</code>, then use <code>+</code> or <code>-</code>."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import datetime\n\ntoday = datetime.date.today()\none_week = datetime.timedelta(days=7)\nnext_week = today + one_week\nlast_week = today - one_week\n\nprint('Today:', today)\nprint('Next week:', next_week)\nprint('Last week:', last_week)",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "You can also pass <code>weeks</code>, <code>hours</code>, <code>minutes</code>, and <code>seconds</code> to <code>timedelta</code>. For example, <code>datetime.timedelta(hours=3, minutes=30)</code> creates a duration of 3 and a half hours."
+    }
+  ]
+}

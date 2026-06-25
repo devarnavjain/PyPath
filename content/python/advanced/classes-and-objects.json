@@ -1,0 +1,78 @@
+{
+  "id": "python.advanced.classes",
+  "title": "Classes and Objects",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What is a Class?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A <strong>class</strong> is a blueprint for creating objects. Think of it like a cookie cutter — the class defines the shape, and each <strong>object</strong> (or <strong>instance</strong>) is a cookie made from that cutter. Classes bundle together data (attributes) and behavior (methods) into a single package."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Dog:\n    def bark(self):\n        print('Woof!')\n\nmy_dog = Dog()\nmy_dog.bark()",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "The <code>class</code> keyword defines a class. Inside, we write methods — functions that belong to the class. To create an instance, we call the class like a function: <code>Dog()</code>. Then we call methods on that instance with the dot notation: <code>my_dog.bark()</code>."
+    },
+    {
+      "type": "heading",
+      "content": "The __init__ Method"
+    },
+    {
+      "type": "paragraph",
+      "content": "The <code>__init__</code> method is the <strong>constructor</strong>. It runs automatically when you create a new instance and is where you set up initial attributes. Think of it as the setup instructions that run every time you stamp out a new object."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Dog:\n    def __init__(self, name):\n        self.name = name\n\n    def bark(self):\n        print(f'{self.name} says Woof!')\n\nmy_dog = Dog('Rex')\nmy_dog.bark()",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "The <code>self</code> parameter refers to the <strong>current instance</strong>. When you call <code>my_dog.bark()</code>, Python automatically passes <code>my_dog</code> as the <code>self</code> argument. That's how the method knows which instance's data to use."
+    },
+    {
+      "type": "heading",
+      "content": "Instance Methods"
+    },
+    {
+      "type": "paragraph",
+      "content": "Instance methods are regular functions inside a class. Their first parameter is always <code>self</code>, which gives them access to the instance's attributes and other methods. You can define as many as you need to model the behavior of your objects."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Dog:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def bark(self):\n        print(f'{self.name} says Woof!')\n\n    def birthday(self):\n        self.age += 1\n        print(f'{self.name} is now {self.age} years old!')\n\nmy_dog = Dog('Rex', 3)\nmy_dog.bark()\nmy_dog.birthday()",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Multiple Instances"
+    },
+    {
+      "type": "paragraph",
+      "content": "The real power of classes is creating many independent instances. Each one has its own set of attributes — changing one doesn't affect the others."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "class Dog:\n    def __init__(self, name):\n        self.name = name\n\n    def bark(self):\n        print(f'{self.name} says Woof!')\n\ndog1 = Dog('Rex')\ndog2 = Dog('Bella')\n\ndog1.bark()\ndog2.bark()",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "Each instance is completely separate. <code>dog1.name</code> and <code>dog2.name</code> are different values stored in different memory locations. Classes give you a clean way to organize code that works with structured data."
+    }
+  ]
+}

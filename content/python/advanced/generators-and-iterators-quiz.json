@@ -1,0 +1,63 @@
+{
+  "topic_id": "python.advanced.generators",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What keyword turns a regular function into a generator function?",
+      "options": ["yield", "return", "iterate", "await"],
+      "correct": 0,
+      "explanation": "The yield keyword is what makes a function a generator. It pauses the function and returns a value, saving its state for later resumption."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What exception does a generator raise when it has no more values to produce?",
+      "options": ["StopIteration", "GeneratorExit", "ValueError", "StopAsyncIteration"],
+      "correct": 0,
+      "explanation": "When a generator is exhausted — meaning no more yield statements remain to execute — Python raises StopIteration. A for loop catches this automatically."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "How is a generator expression different from a list comprehension?",
+      "options": [
+        "It uses parentheses and produces values lazily",
+        "It uses square brackets and runs faster",
+        "It can only contain numbers",
+        "There is no difference"
+      ],
+      "correct": 0,
+      "explanation": "A generator expression uses () and produces values one at a time on demand (lazy evaluation). A list comprehension uses [] and builds the entire list in memory immediately."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What does calling next() on a generator do?",
+      "options": [
+        "Resumes the function until the next yield and returns that value",
+        "Restarts the generator from the beginning",
+        "Returns all remaining values at once",
+        "Deletes the generator from memory"
+      ],
+      "correct": 0,
+      "explanation": "next() resumes execution of the generator function from where it paused. It runs until it hits the next yield statement, returns that value, and pauses again."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete the generator that yields numbers from 1 to n: def count(n): ___ i = 1; while i <= n: ___ i; i += 1",
+      "answer": "yield",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "How many times can you iterate over a single generator instance?",
+      "options": ["Once", "Twice", "Unlimited times", "It depends on the size of the data"],
+      "correct": 0,
+      "explanation": "Generators are single-use. Once exhausted (all values yielded), they cannot be iterated again. You must call the generator function again to create a fresh instance."
+    }
+  ]
+}

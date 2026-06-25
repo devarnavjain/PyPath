@@ -1,0 +1,52 @@
+{
+  "topic_id": "python.intermediate.fileio",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "Which mode should you use with open() to read a file?",
+      "options": ["'r'", "'w'", "'a'", "'rw'"],
+      "correct": 0,
+      "explanation": "'r' is the read mode. It is also the default mode if you call open() with no second argument."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "What does the 'w' mode do if the file already exists?",
+      "options": ["It appends to the file", "It raises an error", "It overwrites the file", "It opens the file for reading"],
+      "correct": 2,
+      "explanation": "'w' mode overwrites the existing file. Use 'a' if you want to append instead."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What is the advantage of using the 'with' statement when opening files?",
+      "options": ["It makes the code run faster", "It automatically closes the file", "It prevents all errors", "It encrypts the file contents"],
+      "correct": 1,
+      "explanation": "The 'with' statement (context manager) ensures the file is properly closed when the block ends, even if an exception occurs."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What does .readlines() return?",
+      "options": ["A single string with all contents", "A list of strings, one per line", "An integer with the number of lines", "A tuple of characters"],
+      "correct": 1,
+      "explanation": ".readlines() returns a list where each element is one line from the file (including the trailing newline character)."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete the code to write to a file: with open('data.txt', '___') as file:",
+      "answer": "w",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "fill",
+      "question": "Which mode letter do you use to append to an existing file without overwriting?",
+      "answer": "a",
+      "case_sensitive": true
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "python.intermediate.builtins",
+  "title": "Useful Built-in Functions",
+  "tier": "intermediate",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "Functions That Come with Python"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python ships with dozens of built-in functions — no import needed. Beyond the basics like <code>print()</code>, <code>len()</code>, and <code>type()</code>, there's a collection of powerful functions that make common tasks cleaner and more readable."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "All the functions in this lesson are available <strong>without any import</strong>. They are always ready to use — one of the best parts of learning Python!"
+    },
+    {
+      "type": "heading",
+      "content": "enumerate — Number Your Items"
+    },
+    {
+      "type": "paragraph",
+      "content": "When you loop through a list and need to know each item's position, <strong>enumerate()</strong> is your friend. It returns pairs of <code>(index, item)</code>, saving you from manually tracking a counter variable."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "fruits = ['apple', 'banana', 'cherry']\n\nfor index, fruit in enumerate(fruits):\n    print(f'{index + 1}. {fruit}')",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "By default, <code>enumerate()</code> starts counting at 0. You can pass a second argument to change the starting number: <code>enumerate(fruits, start=1)</code>."
+    },
+    {
+      "type": "heading",
+      "content": "zip — Pair Up Lists"
+    },
+    {
+      "type": "paragraph",
+      "content": "The <strong>zip()</strong> function pairs up items from multiple iterables. If you have two lists and want to process them together, <code>zip()</code> creates tuples of matching items."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "names = ['Alice', 'Bob', 'Charlie']\nscores = [85, 92, 78]\n\nfor name, score in zip(names, scores):\n    print(f'{name}: {score}')",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "If the lists are different lengths, <code>zip()</code> stops at the shortest one. Use <code>itertools.zip_longest()</code> if you need to keep going."
+    },
+    {
+      "type": "heading",
+      "content": "sorted and reversed"
+    },
+    {
+      "type": "paragraph",
+      "content": "The <strong>sorted()</strong> function returns a new sorted list from any iterable, without modifying the original. The <strong>reversed()</strong> function returns an iterator that goes through items in reverse order."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "numbers = [3, 1, 4, 1, 5, 9, 2]\n\nprint('Sorted:', sorted(numbers))\nprint('Reversed:', list(reversed(numbers)))\nprint('Original:', numbers)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "any, all, and isinstance"
+    },
+    {
+      "type": "paragraph",
+      "content": "<strong>any()</strong> returns <code>True</code> if at least one item in an iterable is truthy. <strong>all()</strong> returns <code>True</code> only if every item is truthy. <strong>isinstance()</strong> checks whether a value is of a specific type — cleaner than comparing <code>type()</code>."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "checks = [True, False, True]\nprint('Any true?', any(checks))\nprint('All true?', all(checks))\n\nprint(isinstance(42, int))\nprint(isinstance('hello', list))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "min, max, and sum"
+    },
+    {
+      "type": "paragraph",
+      "content": "These three functions do exactly what you'd expect. <strong>min()</strong> returns the smallest item, <strong>max()</strong> returns the largest, and <strong>sum()</strong> adds up all the numbers in an iterable. Simple, but incredibly useful."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "grades = [88, 92, 76, 95, 83]\n\nprint('Highest:', max(grades))\nprint('Lowest:', min(grades))\nprint('Total:', sum(grades))\nprint('Average:', sum(grades) / len(grades))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Most of these functions accept an optional <code>key</code> argument that lets you customize the comparison. For example, <code>max(words, key=len)</code> returns the longest word instead of the alphabetically last one."
+    }
+  ]
+}

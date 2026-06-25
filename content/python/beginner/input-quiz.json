@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.beginner.input",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What type does the input() function always return?",
+      "options": ["int", "float", "str", "bool"],
+      "correct": 2,
+      "explanation": "input() always returns a string, even if the user types a number like 42."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "How do you convert user input to an integer?",
+      "options": ["integer(x)", "int(x)", "str(x)", "float(x)"],
+      "correct": 1,
+      "explanation": "int(x) converts the value x to an integer."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What happens if you run int(\"hello\")?",
+      "options": ["Returns 0", "Returns None", "Raises a ValueError", "Converts to integer"],
+      "correct": 2,
+      "explanation": "\"hello\" is not a valid number, so Python raises a ValueError."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "Which f-string correctly prints \"Hello, Alex!\" given name = \"Alex\"?",
+      "options": ["f\"Hello, name!\"", "f\"Hello, {name}!\"", "\"Hello, {name}!\"", "f\"{Hello, name!}\""],
+      "correct": 1,
+      "explanation": "In f-strings, variables go inside curly braces {}. Only f\"Hello, {name}!\" produces \"Hello, Alex!\"."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete: To convert user input to a decimal number, use the ______ function.",
+      "answer": "float",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "Given: age = input(\"Age: \") and the user types 15. What is type(age)?",
+      "options": ["int", "str", "float", "NoneType"],
+      "correct": 1,
+      "explanation": "input() always returns a string, so age is a string even though \"15\" looks like a number."
+    }
+  ]
+}

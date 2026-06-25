@@ -1,0 +1,63 @@
+{
+  "topic_id": "python.advanced.context",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What keyword is used to invoke a context manager?",
+      "options": ["with", "using", "open", "try"],
+      "correct": 0,
+      "explanation": "The with keyword starts a context manager block. It calls __enter__ at the start and __exit__ when the block finishes, guaranteeing cleanup."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "When using a context manager for file handling, when is the file closed?",
+      "options": [
+        "Automatically when the with block exits",
+        "Only when .close() is called manually",
+        "When the program ends",
+        "Immediately after the first read or write"
+      ],
+      "correct": 0,
+      "explanation": "The context manager calls __exit__ (which includes file.close()) automatically when the with block finishes — whether it completes normally or raises an exception."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "Which method is called when execution enters a with block?",
+      "options": ["__enter__", "__exit__", "__init__", "__start__"],
+      "correct": 0,
+      "explanation": "__enter__ is called at the start of the with block. It handles setup and its return value is bound to the variable after as."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "If an exception occurs inside a with block, what happens to the context manager's cleanup?",
+      "options": [
+        "__exit__ still runs and receives the exception details",
+        "Cleanup is skipped and the exception propagates immediately",
+        "The program crashes without any cleanup",
+        "You must catch the exception first or cleanup is skipped"
+      ],
+      "correct": 0,
+      "explanation": "__exit__ always runs, even on exceptions. It receives the exception type, value, and traceback so it can handle cleanup or even suppress the exception."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete the with statement for reading a file: ___ open('data.txt', 'r') ___ f:",
+      "answer": "with as",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "What should __exit__ return to suppress an exception that occurred in the with block?",
+      "options": ["True", "False", "None", "The exception itself"],
+      "correct": 0,
+      "explanation": "Returning True from __exit__ tells Python the exception has been handled and should be suppressed. Returning False (the default) lets the exception propagate normally."
+    }
+  ]
+}

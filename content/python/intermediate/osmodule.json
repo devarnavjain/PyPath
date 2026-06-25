@@ -1,0 +1,88 @@
+{
+  "id": "python.intermediate.osmodule",
+  "title": "The OS Module",
+  "tier": "intermediate",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "The os Module"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python's <strong>os</strong> module lets you interact with the operating system — navigating the file system, managing files and folders, and reading environment variables. It's a bridge between your Python code and the computer's files and settings."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import os\n\nprint('Current directory:', os.getcwd())",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "The <code>os</code> module can <strong>delete files and create folders</strong>. When working with file operations, always double-check your paths. There's no undo button for <code>os.remove()</code>!"
+    },
+    {
+      "type": "heading",
+      "content": "Navigating the File System"
+    },
+    {
+      "type": "paragraph",
+      "content": "Two essential functions: <strong>os.getcwd()</strong> returns the current working directory (where your script is running), and <strong>os.listdir()</strong> returns a list of all files and folders in a given directory. Pass <code>'.'</code> to list the current directory."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import os\n\nprint('Current directory:', os.getcwd())\nprint('Files here:', os.listdir('.'))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Building Paths the Right Way"
+    },
+    {
+      "type": "paragraph",
+      "content": "Never build file paths by string concatenation — on Windows the separator is <code>\\</code>, on Mac and Linux it's <code>/</code>. Use <strong>os.path.join()</strong> to build paths correctly for whatever operating system your code runs on."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import os\n\nfolder = 'documents'\nfilename = 'notes.txt'\nfull_path = os.path.join(folder, filename)\n\nprint('Full path:', full_path)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Checking and Creating Directories"
+    },
+    {
+      "type": "paragraph",
+      "content": "Before creating a folder, check if it already exists with <strong>os.path.exists()</strong>. Use <strong>os.mkdir()</strong> to create a single directory. For nested directories (like <code>parent/child/grandchild</code>), use <strong>os.makedirs()</strong> instead."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import os\n\nfolder = 'temp_example'\n\nif not os.path.exists(folder):\n    os.mkdir(folder)\n    print(f'Created {folder}')\nelse:\n    print(f'{folder} already exists')\n\n# Clean up\nos.rmdir(folder)\nprint(f'Removed {folder}')",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Decomposing Paths"
+    },
+    {
+      "type": "paragraph",
+      "content": "The <code>os.path</code> module has useful helpers for breaking paths apart: <strong>os.path.basename()</strong> returns the file or folder name at the end of a path, <strong>os.path.dirname()</strong> returns everything before it, and <strong>os.path.splitext()</strong> splits a filename into <code>(name, extension)</code>."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "import os\n\npath = '/home/user/docs/report.pdf'\n\nprint('Basename:', os.path.basename(path))\nprint('Dirname:', os.path.dirname(path))\nprint('Split ext:', os.path.splitext(path))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "The <strong>5 most useful</strong> <code>os</code> functions: <code>os.getcwd()</code> to find where you are, <code>os.listdir()</code> to see what's there, <code>os.path.join()</code> to build paths, <code>os.path.exists()</code> to check before acting, and <code>os.path.splitext()</code> to split filenames from extensions."
+    }
+  ]
+}

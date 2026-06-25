@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.beginner.lists",
+  "title": "Print a Fruit List",
+  "description": "Create a list called **fruits** with the values `'apple'`, `'banana'`, `'cherry'`. Then use a **for loop** to print each fruit on its own line.",
+  "xp_reward": 25,
+  "starter_code": "# Create your list and loop here\n",
+  "expected_output": "apple\nbanana\ncherry\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "fruits\\s*=\\s*\\[.*apple.*banana.*cherry",
+      "description": "Creates a variable called 'fruits' with a list containing 'apple', 'banana', 'cherry'",
+      "fail_message": "Create a variable called 'fruits' and assign it a list with the items 'apple', 'banana', 'cherry'."
+    },
+    {
+      "type": "regex",
+      "pattern": "\\bfor\\b",
+      "description": "Uses a 'for' loop to iterate over the list",
+      "fail_message": "Use a 'for' loop to iterate through the list and print each fruit instead of printing them one by one."
+    }
+  ],
+  "hints": [
+    "Create a list with square brackets: fruits = ['apple', 'banana', 'cherry']",
+    "Use a for loop: for fruit in fruits:",
+    "Inside the loop, call print(fruit) on each item"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "apple\nbanana\ncherry\n"
+    }
+  ]
+}

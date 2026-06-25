@@ -1,0 +1,96 @@
+{
+  "id": "python.beginner.strings",
+  "title": "Strings and Text",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "Strings in Python"
+    },
+    {
+      "type": "paragraph",
+      "content": "A <strong>string</strong> is a sequence of characters — letters, numbers, spaces, punctuation — wrapped in quotes. Strings are how Python handles text, and they are everywhere in programming."
+    },
+    {
+      "type": "heading",
+      "content": "Creating Strings"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can use <strong>single quotes</strong> <code>'...'</code> or <strong>double quotes</strong> <code>\"...\"</code>. Both work the same. Use double quotes if your text contains an apostrophe, and single quotes if it contains double quotes."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "name = \"Alice\"\ngreeting = 'Hello'\nprint(greeting, name)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Concatenation and Repetition"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use <code>+</code> to <strong>concatenate</strong> (join) strings together. Use <code>*</code> to <strong>repeat</strong> a string a given number of times."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "first = \"Py\"\nsecond = \"thon\"\nprint(first + second)\nprint(\"Ha\" * 3)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "String Length and Methods"
+    },
+    {
+      "type": "paragraph",
+      "content": "The <code>len()</code> function returns the number of characters in a string. Python also provides many built-in <strong>string methods</strong>: <code>upper()</code>, <code>lower()</code>, <code>strip()</code> (removes surrounding whitespace), and <code>replace()</code>."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "text = \"  Hello World  \"\nprint(len(text))\nprint(text.upper())\nprint(text.lower())\nprint(text.strip())\nprint(text.replace(\"World\", \"Python\"))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Strings are <strong>immutable</strong> — methods like <code>upper()</code> and <code>strip()</code> don't change the original string. They return a <strong>new</strong> string instead. The original stays the same."
+    },
+    {
+      "type": "heading",
+      "content": "Indexing and Slicing"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can access individual characters using <strong>square brackets</strong> with the index number. Python uses <strong>zero-based indexing</strong>, so <code>[0]</code> is the first character. Use <code>[start:end]</code> to <strong>slice</strong> a portion of the string."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "word = \"Python\"\nprint(word[0])\nprint(word[-1])\nprint(word[1:4])",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "f-strings"
+    },
+    {
+      "type": "paragraph",
+      "content": "An <strong>f-string</strong> lets you embed variables directly inside a string. Prefix the string with <code>f</code> and use <code>{ }</code> to insert variable values."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "name = \"Alice\"\nage = 12\nprint(f\"{name} is {age} years old\")",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "content": "f-strings are the modern, recommended way to format strings in Python 3.6+. They are cleaner and faster than older approaches like <code>%</code> formatting or <code>.format()</code>."
+    }
+  ]
+}

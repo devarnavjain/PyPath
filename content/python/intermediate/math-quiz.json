@@ -1,0 +1,53 @@
+{
+  "topic_id": "python.intermediate.math",
+  "pass_score": 80,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "What does math.ceil(4.2) return?",
+      "options": ["4", "4.2", "5", "4.0"],
+      "correct": 2,
+      "explanation": "math.ceil() rounds UP to the nearest integer. 4.2 rounds up to 5."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "Approximately what is the value of math.pi?",
+      "options": ["2.718", "3.14159", "1.414", "0.577"],
+      "correct": 1,
+      "explanation": "math.pi is approximately 3.14159. It's the ratio of a circle's circumference to its diameter."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "What does math.sqrt(100) return?",
+      "options": ["10", "10.0", "100", "50.0"],
+      "correct": 1,
+      "explanation": "math.sqrt() always returns a float, even for perfect squares. math.sqrt(100) gives 10.0, not 10."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "What does math.floor(3.9) return?",
+      "options": ["3", "4", "3.9", "4.0"],
+      "correct": 0,
+      "explanation": "math.floor() rounds DOWN to the nearest integer. 3.9 floors to 3."
+    },
+    {
+      "id": "q5",
+      "type": "fill",
+      "question": "Complete: math.______(5) returns 120.",
+      "answer": "factorial",
+      "case_sensitive": true
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "Approximately how many degrees is math.pi radians?",
+      "options": ["180", "360", "90", "57"],
+      "correct": 0,
+      "explanation": "math.pi radians equals 180 degrees. Use math.degrees(math.pi) to convert and get 180.0."
+    }
+  ]
+}

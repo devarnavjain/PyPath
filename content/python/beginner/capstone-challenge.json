@@ -1,0 +1,39 @@
+{
+  "topic_id": "python.beginner.capstone",
+  "title": "Number Guessing Game",
+  "description": "Write a program that simulates a number guessing game. Set a variable `secret` to `7`. Set a variable `guess` to `3`. Use an **if/else** to check: if `guess` equals `secret`, print `'Correct! You guessed it!'`; otherwise print `'Wrong. The secret number was 7.'`",
+  "xp_reward": 25,
+  "starter_code": "# Set secret and guess, then check with if/else\n",
+  "expected_output": "Wrong. The secret number was 7.\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "secret\\s*=\\s*7\\b",
+      "description": "Creates a variable 'secret' set to 7",
+      "fail_message": "Create a variable called 'secret' and set it to 7."
+    },
+    {
+      "type": "regex",
+      "pattern": "\\bif\\b",
+      "description": "Uses if/else for conditional logic",
+      "fail_message": "Use an 'if' statement to compare guess to secret instead of hardcoding which message prints."
+    },
+    {
+      "type": "regex",
+      "pattern": "==",
+      "description": "Uses the equality operator (==) to compare values",
+      "fail_message": "Use the == operator to check if guess equals secret."
+    }
+  ],
+  "hints": [
+    "Set two variables: secret = 7, guess = 3",
+    "Use if guess == secret: to compare them",
+    "The else branch should print the secret number using: print('Wrong. The secret number was ' + str(secret) + '.')"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "Wrong. The secret number was 7.\n"
+    }
+  ]
+}

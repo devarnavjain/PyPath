@@ -1,0 +1,27 @@
+{
+  "topic_id": "python.advanced.context",
+  "title": "Custom Greeting Context Manager",
+  "description": "Write a class called Greeting that acts as a context manager. Its __enter__ method should print 'Hello' and return self. Its __exit__ method should print 'Goodbye'. Then use the with statement to create a Greeting instance and print 'Inside' inside the block. The output must be exactly Hello, Inside, Goodbye — one per line.",
+  "xp_reward": 25,
+  "starter_code": "class Greeting:\n    def __enter__(self):\n        # Print 'Hello' and return self\n        pass\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        # Print 'Goodbye'\n        pass\n\n# Use the context manager\nwith Greeting():\n    print('Inside')",
+  "expected_output": "Hello\nInside\nGoodbye\n",
+  "hints": [
+    "In __enter__, use print('Hello') and then return self",
+    "In __exit__, use print('Goodbye') — you can ignore the parameters for now",
+    "The with Greeting(): block is already written for you — just fill in the print statements"
+  ],
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "with\\s+",
+      "description": "Uses the with keyword to invoke a context manager",
+      "fail_message": "You must use the 'with' keyword to invoke your Greeting context manager."
+    }
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "Hello\nInside\nGoodbye\n"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.beginner.loops",
+  "title": "Count to Five",
+  "description": "Use a for loop with range() to print the numbers 1 through 5, each on its own line.",
+  "xp_reward": 25,
+  "starter_code": "# Write your for loop here\n",
+  "expected_output": "1\n2\n3\n4\n5\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "\\b(for|while)\\b",
+      "description": "Uses a loop (for or while) to repeat code",
+      "fail_message": "Use a 'for' or 'while' loop to print the numbers instead of printing each one individually."
+    },
+    {
+      "type": "regex",
+      "pattern": "range\\(",
+      "description": "Uses range() to generate the sequence of numbers",
+      "fail_message": "Use range(1, 6) with your loop to generate the numbers 1 through 5."
+    }
+  ],
+  "hints": [
+    "Use range(1, 6) to get the numbers 1 through 5",
+    "Use a for loop: for num in range(1, 6):",
+    "Inside the loop, print(num) to output each number on its own line"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "1\n2\n3\n4\n5\n"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "topic_id": "python.advanced.itertools",
+  "title": "Three-Number Permutations",
+  "description": "Import itertools. Use **itertools.permutations()** to find all permutations of the list **[1, 2, 3]**. Convert the result to a list and print it. The output should show all 6 possible orderings of the numbers 1, 2, and 3.",
+  "xp_reward": 25,
+  "starter_code": "# Import itertools\n# Generate permutations of [1, 2, 3]\n# Convert to list and print\n",
+  "expected_output": "[(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)]\n",
+  "code_requirements": [
+    {
+      "type": "regex",
+      "pattern": "(?:import itertools|from itertools import)",
+      "description": "Imports the itertools module",
+      "fail_message": "Import itertools with 'import itertools' or 'from itertools import ...'."
+    },
+    {
+      "type": "regex",
+      "pattern": "(?:itertools\\.)?permutations\\(",
+      "description": "Uses itertools.permutations() to generate permutations",
+      "fail_message": "Use itertools.permutations() to generate all permutations of [1, 2, 3]."
+    }
+  ],
+  "hints": [
+    "Start with: import itertools",
+    "Use itertools.permutations([1, 2, 3]) to generate all orderings",
+    "Wrap in list() and print: print(list(itertools.permutations([1, 2, 3])))"
+  ],
+  "tests": [
+    {
+      "description": "Output matches exactly",
+      "expected_output": "[(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)]\n"
+    }
+  ]
+}

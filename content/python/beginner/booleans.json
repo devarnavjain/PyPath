@@ -1,0 +1,92 @@
+{
+  "id": "python.beginner.booleans",
+  "title": "Booleans and Comparisons",
+  "tier": "beginner",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What Are Booleans?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A boolean is a data type with only two possible values: <code>True</code> or <code>False</code>. Named after the mathematician George Boole, booleans are Python's way of representing truth values. You actually saw booleans briefly in the variables lesson when we discussed data types — now it's time to really understand them."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "is_sunny = True\nis_raining = False\n\nprint(is_sunny)\nprint(is_raining)\nprint(type(is_sunny))",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Comparison Operators"
+    },
+    {
+      "type": "paragraph",
+      "content": "Booleans are created whenever you compare two values using comparison operators. These operators check a relationship and return <code>True</code> or <code>False</code>. Here are the most important ones:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<code>==</code> — equal to (are these the same?)",
+        "<code>!=</code> — not equal to (are these different?)",
+        "<code>&gt;</code> — greater than",
+        "<code>&lt;</code> — less than",
+        "<code>&gt;=</code> — greater than or equal to",
+        "<code>&lt;=</code> — less than or equal to"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "a = 10\nb = 5\n\nprint(a == b)\nprint(a != b)\nprint(a > b)\nprint(a < b)\nprint(a >= 10)\nprint(b <= 3)",
+      "runnable": true
+    },
+    {
+      "type": "paragraph",
+      "content": "You can also compare strings. Python compares them alphabetically using the Unicode order of each character. This builds on what you learned in the strings lesson."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "print('apple' == 'apple')\nprint('apple' != 'banana')\nprint('apple' < 'banana')\nprint('A' == 'a')",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "content": "Don't confuse <code>=</code> (assignment) with <code>==</code> (comparison). A single <code>=</code> sets a value, while <code>==</code> checks if two values are equal. This is one of the most common beginner mistakes!"
+    },
+    {
+      "type": "heading",
+      "content": "The bool() Function"
+    },
+    {
+      "type": "paragraph",
+      "content": "Python's built-in <code>bool()</code> function converts any value into a boolean. This reveals an important concept: every value in Python is either **truthy** or **falsy**. The following values are considered <code>False</code>:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "<code>0</code> and <code>0.0</code> — zero numbers",
+        "<code>''</code> (empty string)",
+        "<code>None</code> — the absence of a value (from the variables lesson)",
+        "<code>[]</code> — an empty list (you haven't met lists yet, but quick heads-up: they're falsy too)"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "print(bool(1))\nprint(bool(0))\nprint(bool('hello'))\nprint(bool(''))\nprint(bool(None))\nprint(bool(-5))",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "Everything else is truthy! Non-empty strings, non-zero numbers, even the string <code>'False'</code> (because it's a non-empty string) all convert to <code>True</code>. This will be very useful when we learn about conditionals next."
+    }
+  ]
+}

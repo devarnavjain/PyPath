@@ -1,0 +1,77 @@
+{
+  "id": "python.advanced.lambda",
+  "title": "Lambda Functions",
+  "tier": "advanced",
+  "xp_reward": 10,
+  "steps": [
+    {
+      "type": "heading",
+      "content": "What Are Lambda Functions?"
+    },
+    {
+      "type": "paragraph",
+      "content": "A lambda function is a small, anonymous function defined in a single line using the lambda keyword. Think of it as a disposable function — you create it on the spot, use it immediately, and move on. Lambdas are ideal for short operations where writing a full def function would be overkill."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "# Regular function\ndef double(x):\n    return x * 2\n\n# Equivalent lambda function\ndouble = lambda x: x * 2\n\nprint(double(5))  # 10\n\n# Lambda is often used inline without assigning to a variable\nprint((lambda x, y: x + y)(3, 4))  # 7",
+      "runnable": true
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "content": "The syntax is lambda parameters: expression. There is no return keyword — the expression result is automatically returned. Lambda bodies are limited to a single expression — no assignments, no loops, no statements."
+    },
+    {
+      "type": "heading",
+      "content": "Using Lambda with map()"
+    },
+    {
+      "type": "paragraph",
+      "content": "The map() function applies a function to every item in an iterable and returns an iterator. Lambda + map is a classic combination: you define the transformation inline without naming a separate function. This makes the code more concise when the transformation logic is simple."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "numbers = [1, 2, 3, 4, 5]\n\n# Square each number using lambda + map\nsquares = list(map(lambda x: x ** 2, numbers))\nprint(squares)  # [1, 4, 9, 16, 25]\n\n# Convert temperatures from Celsius to Fahrenheit\ntemps_c = [0, 20, 30, 100]\ntemps_f = list(map(lambda c: c * 9/5 + 32, temps_c))\nprint(temps_f)",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Using Lambda with filter()"
+    },
+    {
+      "type": "paragraph",
+      "content": "The filter() function selects items from an iterable where a function returns True. Combined with lambda, it creates compact filtering logic. Use it whenever you need to pick items from a list based on a simple condition."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "numbers = [10, 15, 22, 33, 40, 55]\n\n# Filter for odd numbers\nevens = list(filter(lambda x: x % 2 == 0, numbers))\nprint(evens)  # [10, 22, 40]\n\n# Filter for numbers greater than 25\nbig = list(filter(lambda x: x > 25, numbers))\nprint(big)  # [33, 40, 55]",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "Using Lambda with sorted()"
+    },
+    {
+      "type": "paragraph",
+      "content": "The sorted() function accepts a key parameter that specifies a function to extract a comparison key from each element. Lambda is perfect here — it lets you define custom sort rules inline without writing a separate function."
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "content": "students = [('Alice', 85), ('Bob', 72), ('Charlie', 95)]\n\n# Sort by score (second element of each tuple)\nby_score = sorted(students, key=lambda s: s[1])\nprint(by_score)  # [('Bob', 72), ('Alice', 85), ('Charlie', 95)]\n\n# Sort by name (first element)\nby_name = sorted(students, key=lambda s: s[0])\nprint(by_name)  # [('Alice', 85), ('Bob', 72), ('Charlie', 95)]",
+      "runnable": true
+    },
+    {
+      "type": "heading",
+      "content": "When to Use Lambda vs def"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use lambda when the logic fits in a single expression and you only need it once — typically as an argument to map(), filter(), sorted(), or similar functions. Use def when the logic is complex (multiple lines), when you need to reuse the function in multiple places, or when readability would suffer from cramming logic into a lambda. A well-named def always wins over a cryptic lambda."
+    }
+  ]
+}
