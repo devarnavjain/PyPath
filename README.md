@@ -175,7 +175,6 @@ MIT License — see [LICENSE](LICENSE) for details.
 ## 🙏 Acknowledgements
 
 - Python curriculum based on the official [Python 3.12 Documentation](https://docs.python.org/3.12/)
-- Code editor powered by [Monaco Editor](https://microsoft.github.io/monaco-editor/)
 - Built with [Electron](https://electronjs.org)
 
 ---
