@@ -23,8 +23,6 @@ An offline, interactive Python learning desktop app for Windows — built with E
 
 ## 📸 Screenshots
 
-> *(Add screenshots here once uploaded to the repo)*
-
 | Dashboard | Lesson Viewer | Code Challenge |
 |---|---|---|
 | ![Dashboard](docs/screenshots/dashboard.png) | ![Lesson](docs/screenshots/lesson.png) | ![Challenge](docs/screenshots/challenge.png) |
