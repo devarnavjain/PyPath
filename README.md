@@ -55,7 +55,7 @@ Classes and Objects · Inheritance and Polymorphism · Magic Methods · Decorato
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/PyPath.git
+git clone https://github.com/devarnavjain/PyPath.git
 cd PyPath
 
 # 2. Install dependencies
