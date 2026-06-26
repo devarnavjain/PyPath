@@ -1,4 +1,4 @@
-import store from '../store.js';
+import store, { setCurrentUser } from '../store.js';
 import { renderTopbar } from '../components/topbar.js';
 import { refreshSidebar } from '../components/sidebar.js';
 import { navigate, onRouteCleanup, removeRouteCleanup } from '../router.js';
@@ -349,13 +349,23 @@ export async function render(topicId) {
     const xpAmount = lesson.xp_reward || 10;
 
     try {
+      // Only award XP if lesson wasn't already done before
+      const progressResult = await window.electronAPI.getProgress(currentUser.id);
+      const existing = progressResult.data?.find(p => p.topic_id === topicId);
+
+      if (!existing || existing.lesson_done !== 1) {
+        await awardXpAndCheckLevelUp(currentUser.id, xpAmount, 'Lesson complete!');
+      }
+
       await window.electronAPI.updateProgress(currentUser.id, topicId, {
         lesson_done: 1,
         status: 'in_progress',
         tier,
       });
 
-      await awardXpAndCheckLevelUp(currentUser.id, xpAmount, 'Lesson complete!');
+      const freshUser = await window.electronAPI.getUser(currentUser.id);
+      if (freshUser.success) setCurrentUser(freshUser.data);
+
       await refreshSidebar();
 
       // Badge check

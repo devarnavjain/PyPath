@@ -133,41 +133,54 @@ export async function refreshSidebar() {
   const user = store.currentUser;
   if (!user) return;
 
+  // Refresh topic tree
   const treeEl = document.getElementById('js-sidebar-tree');
-  if (!treeEl) return;
-
-  let progressMap = {};
-  try {
-    const res = await window.electronAPI.getProgress(user.id);
-    if (res.success) {
-      for (const p of res.data) {
-        progressMap[p.topic_id] = p.status || 'locked';
+  if (treeEl) {
+    let progressMap = {};
+    try {
+      const res = await window.electronAPI.getProgress(user.id);
+      if (res.success) {
+        for (const p of res.data) {
+          progressMap[p.topic_id] = p.status || 'locked';
+        }
       }
+    } catch (e) {
+      console.error('Failed to refresh sidebar progress:', e);
     }
-  } catch (e) {
-    console.error('Failed to refresh sidebar progress:', e);
-  }
 
-  let topicIndex = null;
-  try {
-    const res = await window.electronAPI.getTopicIndex();
-    if (res.success) topicIndex = res.data;
-  } catch (e) {
-    console.error('Failed to load topic index:', e);
-  }
+    let topicIndex = null;
+    try {
+      const res = await window.electronAPI.getTopicIndex();
+      if (res.success) topicIndex = res.data;
+    } catch (e) {
+      console.error('Failed to load topic index:', e);
+    }
 
-  treeEl.innerHTML = renderTreeHTML(topicIndex, progressMap);
+    treeEl.innerHTML = renderTreeHTML(topicIndex, progressMap);
 
-  treeEl.querySelectorAll('.tree-item').forEach((item) => {
-    item.addEventListener('click', (e) => {
-      if (item.classList.contains('locked')) return;
-      e.stopPropagation();
-      const route = item.dataset.route;
-      if (route) {
-        navigate(`#learn?topic=${route}`);
-      }
+    treeEl.querySelectorAll('.tree-item').forEach((item) => {
+      item.addEventListener('click', (e) => {
+        if (item.classList.contains('locked')) return;
+        e.stopPropagation();
+        const route = item.dataset.route;
+        if (route) {
+          navigate(`#learn?topic=${route}`);
+        }
+      });
     });
-  });
+  }
+
+  // Refresh XP bar, level label, and streak
+  const xpInfo = getXPProgress(user.xp);
+  const xpBarFill = document.querySelector('.sidebar-profile .xp-bar-fill');
+  const xpLabel = document.querySelector('.sidebar-profile .xp-label');
+  const streakBadge = document.querySelector('.sidebar-profile .streak-badge');
+  const profileName = document.querySelector('.sidebar-profile .profile-name');
+
+  if (xpBarFill) xpBarFill.style.width = `${xpInfo.progress}%`;
+  if (xpLabel) xpLabel.textContent = `${user.xp} / ${xpInfo.next} XP · Lv.${xpInfo.level}`;
+  if (streakBadge) streakBadge.textContent = `\uD83D\uDD25 ${user.streak || 0}`;
+  if (profileName) profileName.textContent = user.name;
 }
 
 export async function renderSidebar(user) {

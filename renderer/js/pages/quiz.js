@@ -1,4 +1,4 @@
-import store from '../store.js';
+import store, { setCurrentUser } from '../store.js';
 import { renderTopbar } from '../components/topbar.js';
 import { navigate, onRouteCleanup, removeRouteCleanup } from '../router.js';
 import { refreshSidebar } from '../components/sidebar.js';
@@ -150,15 +150,20 @@ async function handleContinue() {
   const challengePassed = topicProgress ? topicProgress.challenge_passed : 0;
   const newStatus = (lessonDone && score >= state.passScore && challengePassed) ? 'completed' : 'in_progress';
 
+  const wasAlreadyPassed = topicProgress && topicProgress.quiz_score >= 80;
+
+  if (score >= state.passScore && !wasAlreadyPassed) {
+    await awardXpAndCheckLevelUp(currentUser.id, 20, 'Quiz passed!');
+  }
+
   await window.electronAPI.updateProgress(currentUser.id, state.topicId, {
     tier: state.tier,
     quiz_score: score,
     status: newStatus,
   });
 
-  if (score >= state.passScore) {
-    await awardXpAndCheckLevelUp(currentUser.id, 20, 'Quiz passed!');
-  }
+  const freshUser = await window.electronAPI.getUser(currentUser.id);
+  if (freshUser.success) setCurrentUser(freshUser.data);
 
   await refreshSidebar();
 

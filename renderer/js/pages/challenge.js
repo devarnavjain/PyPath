@@ -1,4 +1,4 @@
-﻿import store from '../store.js';
+﻿import store, { setCurrentUser } from '../store.js';
 import { renderTopbar } from '../components/topbar.js';
 import { navigate, onRouteCleanup, removeRouteCleanup } from '../router.js';
 import { createEditor, disposeEditor, getEditorValue, setEditorValue } from '../components/editor.js';
@@ -336,14 +336,21 @@ async function handleMarkComplete(nextTopicId) {
   const quizScore = topicProgress ? topicProgress.quiz_score : 0;
   const newStatus = (lessonDone && quizScore >= 80) ? 'completed' : 'in_progress';
 
+  const xp = state.challenge.xp_reward || 25;
+  const cu = store.currentUser;
+
+  // Only award XP if challenge wasn't already passed before
+  const wasAlreadyPassed = topicProgress && topicProgress.challenge_passed === 1;
+
+  if (!wasAlreadyPassed) {
+    await awardXpAndCheckLevelUp(currentUser.id, xp, 'Challenge complete!');
+  }
+
   await window.electronAPI.updateProgress(currentUser.id, state.topicId, {
     tier: state.tier,
     challenge_passed: 1,
     status: newStatus,
   });
-
-  const xp = state.challenge.xp_reward || 25;
-  const cu = store.currentUser;
 
   // Track no_hints: if user never clicked hint on this challenge
   if (state.hintsRevealed === 0 && cu) {
@@ -352,7 +359,9 @@ async function handleMarkComplete(nextTopicId) {
     await window.electronAPI.updateUser(cu.id, { challenges_no_hints: newCount }).catch(() => {});
   }
 
-  await awardXpAndCheckLevelUp(currentUser.id, xp, 'Challenge complete!');
+  const freshUser = await window.electronAPI.getUser(currentUser.id);
+  if (freshUser.success) setCurrentUser(freshUser.data);
+
   await refreshSidebar();
 
   if (newStatus === 'completed') {
