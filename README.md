@@ -18,6 +18,7 @@ An offline, interactive Python learning desktop app for Windows — built with E
 - 🔍 **Zoom Controls** — `Ctrl++` / `Ctrl+-` / `Ctrl+ScrollWheel` — just like your browser
 - 📊 **Progress Tracking** — Per-topic completion, weak topic detection, and a full My Progress page
 - 📴 **Fully Offline** — No internet required after setup. No account. No subscriptions.
+- 💾 **Your Data Stays Yours** — All profiles, progress, XP, badges, and streaks are stored locally on your PC in a SQLite database (`database/pypath.db`). Nothing is uploaded, tracked, or shared anywhere.
 
 ---
 
